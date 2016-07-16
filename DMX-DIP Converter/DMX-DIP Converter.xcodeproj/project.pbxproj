@@ -1,0 +1,526 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F57A238C1D3AF94B00970E9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57A238B1D3AF94B00970E9E /* AppDelegate.swift */; };
+		F57A238E1D3AF94B00970E9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57A238D1D3AF94B00970E9E /* ViewController.swift */; };
+		F57A23911D3AF94B00970E9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F57A238F1D3AF94B00970E9E /* Main.storyboard */; };
+		F57A23931D3AF94B00970E9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F57A23921D3AF94B00970E9E /* Assets.xcassets */; };
+		F57A23961D3AF94B00970E9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F57A23941D3AF94B00970E9E /* LaunchScreen.storyboard */; };
+		F57A23A11D3AF94B00970E9E /* DMX_DIP_ConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57A23A01D3AF94B00970E9E /* DMX_DIP_ConverterTests.swift */; };
+		F57A23AC1D3AF94C00970E9E /* DMX_DIP_ConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57A23AB1D3AF94C00970E9E /* DMX_DIP_ConverterUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F57A239D1D3AF94B00970E9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F57A23801D3AF94B00970E9E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F57A23871D3AF94B00970E9E;
+			remoteInfo = "DMX-DIP Converter";
+		};
+		F57A23A81D3AF94C00970E9E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F57A23801D3AF94B00970E9E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F57A23871D3AF94B00970E9E;
+			remoteInfo = "DMX-DIP Converter";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F57A23881D3AF94B00970E9E /* DMX-DIP Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DMX-DIP Converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F57A238B1D3AF94B00970E9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F57A238D1D3AF94B00970E9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F57A23901D3AF94B00970E9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F57A23921D3AF94B00970E9E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F57A23951D3AF94B00970E9E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F57A23971D3AF94B00970E9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F57A239C1D3AF94B00970E9E /* DMX-DIP ConverterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DMX-DIP ConverterTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F57A23A01D3AF94B00970E9E /* DMX_DIP_ConverterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMX_DIP_ConverterTests.swift; sourceTree = "<group>"; };
+		F57A23A21D3AF94B00970E9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F57A23A71D3AF94C00970E9E /* DMX-DIP ConverterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DMX-DIP ConverterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F57A23AB1D3AF94C00970E9E /* DMX_DIP_ConverterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMX_DIP_ConverterUITests.swift; sourceTree = "<group>"; };
+		F57A23AD1D3AF94C00970E9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F57A23851D3AF94B00970E9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F57A23991D3AF94B00970E9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F57A23A41D3AF94C00970E9E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F57A237F1D3AF94B00970E9E = {
+			isa = PBXGroup;
+			children = (
+				F57A238A1D3AF94B00970E9E /* DMX-DIP Converter */,
+				F57A239F1D3AF94B00970E9E /* DMX-DIP ConverterTests */,
+				F57A23AA1D3AF94C00970E9E /* DMX-DIP ConverterUITests */,
+				F57A23891D3AF94B00970E9E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F57A23891D3AF94B00970E9E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F57A23881D3AF94B00970E9E /* DMX-DIP Converter.app */,
+				F57A239C1D3AF94B00970E9E /* DMX-DIP ConverterTests.xctest */,
+				F57A23A71D3AF94C00970E9E /* DMX-DIP ConverterUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F57A238A1D3AF94B00970E9E /* DMX-DIP Converter */ = {
+			isa = PBXGroup;
+			children = (
+				F57A238B1D3AF94B00970E9E /* AppDelegate.swift */,
+				F57A238D1D3AF94B00970E9E /* ViewController.swift */,
+				F57A238F1D3AF94B00970E9E /* Main.storyboard */,
+				F57A23921D3AF94B00970E9E /* Assets.xcassets */,
+				F57A23941D3AF94B00970E9E /* LaunchScreen.storyboard */,
+				F57A23971D3AF94B00970E9E /* Info.plist */,
+			);
+			path = "DMX-DIP Converter";
+			sourceTree = "<group>";
+		};
+		F57A239F1D3AF94B00970E9E /* DMX-DIP ConverterTests */ = {
+			isa = PBXGroup;
+			children = (
+				F57A23A01D3AF94B00970E9E /* DMX_DIP_ConverterTests.swift */,
+				F57A23A21D3AF94B00970E9E /* Info.plist */,
+			);
+			path = "DMX-DIP ConverterTests";
+			sourceTree = "<group>";
+		};
+		F57A23AA1D3AF94C00970E9E /* DMX-DIP ConverterUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F57A23AB1D3AF94C00970E9E /* DMX_DIP_ConverterUITests.swift */,
+				F57A23AD1D3AF94C00970E9E /* Info.plist */,
+			);
+			path = "DMX-DIP ConverterUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F57A23871D3AF94B00970E9E /* DMX-DIP Converter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F57A23B01D3AF94C00970E9E /* Build configuration list for PBXNativeTarget "DMX-DIP Converter" */;
+			buildPhases = (
+				F57A23841D3AF94B00970E9E /* Sources */,
+				F57A23851D3AF94B00970E9E /* Frameworks */,
+				F57A23861D3AF94B00970E9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DMX-DIP Converter";
+			productName = "DMX-DIP Converter";
+			productReference = F57A23881D3AF94B00970E9E /* DMX-DIP Converter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F57A239B1D3AF94B00970E9E /* DMX-DIP ConverterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F57A23B31D3AF94C00970E9E /* Build configuration list for PBXNativeTarget "DMX-DIP ConverterTests" */;
+			buildPhases = (
+				F57A23981D3AF94B00970E9E /* Sources */,
+				F57A23991D3AF94B00970E9E /* Frameworks */,
+				F57A239A1D3AF94B00970E9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F57A239E1D3AF94B00970E9E /* PBXTargetDependency */,
+			);
+			name = "DMX-DIP ConverterTests";
+			productName = "DMX-DIP ConverterTests";
+			productReference = F57A239C1D3AF94B00970E9E /* DMX-DIP ConverterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F57A23A61D3AF94C00970E9E /* DMX-DIP ConverterUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F57A23B61D3AF94C00970E9E /* Build configuration list for PBXNativeTarget "DMX-DIP ConverterUITests" */;
+			buildPhases = (
+				F57A23A31D3AF94C00970E9E /* Sources */,
+				F57A23A41D3AF94C00970E9E /* Frameworks */,
+				F57A23A51D3AF94C00970E9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F57A23A91D3AF94C00970E9E /* PBXTargetDependency */,
+			);
+			name = "DMX-DIP ConverterUITests";
+			productName = "DMX-DIP ConverterUITests";
+			productReference = F57A23A71D3AF94C00970E9E /* DMX-DIP ConverterUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F57A23801D3AF94B00970E9E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = collinseben;
+				TargetAttributes = {
+					F57A23871D3AF94B00970E9E = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = PN9YMD99V6;
+						DevelopmentTeamName = "Eben Collins (Personal Team)";
+						ProvisioningStyle = Automatic;
+					};
+					F57A239B1D3AF94B00970E9E = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = PN9YMD99V6;
+						DevelopmentTeamName = "Eben Collins (Personal Team)";
+						ProvisioningStyle = Automatic;
+						TestTargetID = F57A23871D3AF94B00970E9E;
+					};
+					F57A23A61D3AF94C00970E9E = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = PN9YMD99V6;
+						DevelopmentTeamName = "Eben Collins (Personal Team)";
+						ProvisioningStyle = Automatic;
+						TestTargetID = F57A23871D3AF94B00970E9E;
+					};
+				};
+			};
+			buildConfigurationList = F57A23831D3AF94B00970E9E /* Build configuration list for PBXProject "DMX-DIP Converter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F57A237F1D3AF94B00970E9E;
+			productRefGroup = F57A23891D3AF94B00970E9E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F57A23871D3AF94B00970E9E /* DMX-DIP Converter */,
+				F57A239B1D3AF94B00970E9E /* DMX-DIP ConverterTests */,
+				F57A23A61D3AF94C00970E9E /* DMX-DIP ConverterUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F57A23861D3AF94B00970E9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F57A23961D3AF94B00970E9E /* LaunchScreen.storyboard in Resources */,
+				F57A23931D3AF94B00970E9E /* Assets.xcassets in Resources */,
+				F57A23911D3AF94B00970E9E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F57A239A1D3AF94B00970E9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F57A23A51D3AF94C00970E9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F57A23841D3AF94B00970E9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F57A238E1D3AF94B00970E9E /* ViewController.swift in Sources */,
+				F57A238C1D3AF94B00970E9E /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F57A23981D3AF94B00970E9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F57A23A11D3AF94B00970E9E /* DMX_DIP_ConverterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F57A23A31D3AF94C00970E9E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F57A23AC1D3AF94C00970E9E /* DMX_DIP_ConverterUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F57A239E1D3AF94B00970E9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F57A23871D3AF94B00970E9E /* DMX-DIP Converter */;
+			targetProxy = F57A239D1D3AF94B00970E9E /* PBXContainerItemProxy */;
+		};
+		F57A23A91D3AF94C00970E9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F57A23871D3AF94B00970E9E /* DMX-DIP Converter */;
+			targetProxy = F57A23A81D3AF94C00970E9E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F57A238F1D3AF94B00970E9E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F57A23901D3AF94B00970E9E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F57A23941D3AF94B00970E9E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F57A23951D3AF94B00970E9E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F57A23AE1D3AF94C00970E9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F57A23AF1D3AF94C00970E9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F57A23B11D3AF94C00970E9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "DMX-DIP Converter/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.collinseben.DMX-DIP-Converter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F57A23B21D3AF94C00970E9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "DMX-DIP Converter/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.collinseben.DMX-DIP-Converter";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		F57A23B41D3AF94C00970E9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "DMX-DIP ConverterTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.collinseben.DMX-DIP-ConverterTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DMX-DIP Converter.app/DMX-DIP Converter";
+			};
+			name = Debug;
+		};
+		F57A23B51D3AF94C00970E9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "DMX-DIP ConverterTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.collinseben.DMX-DIP-ConverterTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DMX-DIP Converter.app/DMX-DIP Converter";
+			};
+			name = Release;
+		};
+		F57A23B71D3AF94C00970E9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "DMX-DIP ConverterUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.collinseben.DMX-DIP-ConverterUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "DMX-DIP Converter";
+			};
+			name = Debug;
+		};
+		F57A23B81D3AF94C00970E9E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "DMX-DIP ConverterUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.collinseben.DMX-DIP-ConverterUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = "DMX-DIP Converter";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F57A23831D3AF94B00970E9E /* Build configuration list for PBXProject "DMX-DIP Converter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F57A23AE1D3AF94C00970E9E /* Debug */,
+				F57A23AF1D3AF94C00970E9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F57A23B01D3AF94C00970E9E /* Build configuration list for PBXNativeTarget "DMX-DIP Converter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F57A23B11D3AF94C00970E9E /* Debug */,
+				F57A23B21D3AF94C00970E9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F57A23B31D3AF94C00970E9E /* Build configuration list for PBXNativeTarget "DMX-DIP ConverterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F57A23B41D3AF94C00970E9E /* Debug */,
+				F57A23B51D3AF94C00970E9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F57A23B61D3AF94C00970E9E /* Build configuration list for PBXNativeTarget "DMX-DIP ConverterUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F57A23B71D3AF94C00970E9E /* Debug */,
+				F57A23B81D3AF94C00970E9E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F57A23801D3AF94B00970E9E /* Project object */;
+}
