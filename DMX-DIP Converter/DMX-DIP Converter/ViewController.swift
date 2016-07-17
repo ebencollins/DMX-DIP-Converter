@@ -37,6 +37,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var outputLabel: UILabel!
     
+    @IBOutlet weak var topDirectionlabel: UILabel!
+    @IBOutlet weak var botDirectionlabel: UILabel!
+    @IBOutlet weak var directionArrowImage: UIImageView!
+   
+        
     var switches:[UIButton] = [] //an array of the dip switches
     var buttons:[UIButton] = [] //an array holding all of the keypad buttons
     
@@ -44,7 +49,12 @@ class ViewController: UIViewController {
     
     var dipArr:[Bool] = [] //holds active dips
     
+    
+    //settings:
     var addGroupAmnt = 16 //how much should the buttom left key increment by?
+    var invertDipDirection:Bool = false;
+    var onImage:UIImage?
+    var offImage:UIImage?
     
     
     override func viewDidLoad() {
@@ -52,6 +62,21 @@ class ViewController: UIViewController {
         switches = [s0,s1,s2,s3,s4,s5,s6,s7,s8]
         buttons = [b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12]
         buttonText = ["+" + String(addGroupAmnt), "7", "4", "1", "0", "8", "5", "2", "\u{232B}", "9", "6", "3"] //add everything to the arrays
+        
+        if(invertDipDirection){
+            onImage = UIImage(named:  "customswitch_off.png")
+            offImage = UIImage(named: "customswitch_on.png")
+            topDirectionlabel.text = "OFF"
+            botDirectionlabel.text = "ON"
+            directionArrowImage.image = UIImage(named: "arrow_down_64")
+        }else{
+            onImage = UIImage(named:  "customswitch_on.png")
+            offImage = UIImage(named: "customswitch_off.png")
+            topDirectionlabel.text = "ON"
+            botDirectionlabel.text = "OFF"
+            directionArrowImage.image = UIImage(named: "arrow_up_64")
+        }
+        
         
         for b in buttons{ //register the buttons for a touch up inside, set border/color/title
             b.setTitle(buttonText[buttons.index(of: b)!], for: .normal)
@@ -81,9 +106,9 @@ class ViewController: UIViewController {
         for i in 0..<dips.count{
             let sw = switches[i]
             if(dips[i]){
-                sw.setBackgroundImage(UIImage(named:  "customswitch_on.png"), for: .normal)
+                sw.setBackgroundImage(onImage, for: .normal)
             }else{
-                sw.setBackgroundImage(UIImage(named: "customswitch_off.png"), for: .normal)
+                sw.setBackgroundImage(offImage, for: .normal)
             }
             
             dipArr[i] = dips[i];

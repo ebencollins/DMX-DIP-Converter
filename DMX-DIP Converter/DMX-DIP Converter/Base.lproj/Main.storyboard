@@ -537,6 +537,8 @@
                         <outlet property="b7" destination="NhT-yw-SZq" id="VWS-Jm-wAi"/>
                         <outlet property="b8" destination="9q4-Pj-chB" id="gSH-dj-AAU"/>
                         <outlet property="b9" destination="0I9-6M-i4Z" id="n7b-fm-0zt"/>
+                        <outlet property="botDirectionlabel" destination="cYN-IV-ik7" id="r4V-O5-mrc"/>
+                        <outlet property="directionArrowImage" destination="uKT-IL-Nvn" id="TH7-PS-UIh"/>
                         <outlet property="outputLabel" destination="WdD-gO-SvZ" id="lfg-LX-iUy"/>
                         <outlet property="s0" destination="wLZ-8Y-sIm" id="o6v-uL-Zug"/>
                         <outlet property="s1" destination="gcF-0p-O6h" id="mNd-eM-ndg"/>
@@ -547,6 +549,7 @@
                         <outlet property="s6" destination="M5k-sg-DTr" id="ixc-bA-g8B"/>
                         <outlet property="s7" destination="itA-Eq-yeO" id="qTC-lL-Kkd"/>
                         <outlet property="s8" destination="iSR-cb-qTT" id="aYe-rF-KU0"/>
+                        <outlet property="topDirectionlabel" destination="GRR-ol-p3o" id="utL-f2-0R2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OSv-pP-r2v" userLabel="First Responder" sceneMemberID="firstResponder"/>
