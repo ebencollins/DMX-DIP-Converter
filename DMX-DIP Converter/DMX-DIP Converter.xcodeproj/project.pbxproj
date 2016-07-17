@@ -14,6 +14,11 @@
 		F57A23961D3AF94B00970E9E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F57A23941D3AF94B00970E9E /* LaunchScreen.storyboard */; };
 		F57A23A11D3AF94B00970E9E /* DMX_DIP_ConverterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57A23A01D3AF94B00970E9E /* DMX_DIP_ConverterTests.swift */; };
 		F57A23AC1D3AF94C00970E9E /* DMX_DIP_ConverterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57A23AB1D3AF94C00970E9E /* DMX_DIP_ConverterUITests.swift */; };
+		F57A23C21D3B588A00970E9E /* arrow_down_64.png in Resources */ = {isa = PBXBuildFile; fileRef = F57A23BD1D3B588A00970E9E /* arrow_down_64.png */; };
+		F57A23C31D3B588A00970E9E /* arrow_up_64.png in Resources */ = {isa = PBXBuildFile; fileRef = F57A23BE1D3B588A00970E9E /* arrow_up_64.png */; };
+		F57A23C41D3B588A00970E9E /* customswitch_off.png in Resources */ = {isa = PBXBuildFile; fileRef = F57A23BF1D3B588A00970E9E /* customswitch_off.png */; };
+		F57A23C51D3B588A00970E9E /* customswitch_on.png in Resources */ = {isa = PBXBuildFile; fileRef = F57A23C01D3B588A00970E9E /* customswitch_on.png */; };
+		F57A23C61D3B588A00970E9E /* gear_64.png in Resources */ = {isa = PBXBuildFile; fileRef = F57A23C11D3B588A00970E9E /* gear_64.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +52,11 @@
 		F57A23A71D3AF94C00970E9E /* DMX-DIP ConverterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DMX-DIP ConverterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F57A23AB1D3AF94C00970E9E /* DMX_DIP_ConverterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DMX_DIP_ConverterUITests.swift; sourceTree = "<group>"; };
 		F57A23AD1D3AF94C00970E9E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F57A23BD1D3B588A00970E9E /* arrow_down_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow_down_64.png; path = "DMX-DIP Converter/icons/arrow_down_64.png"; sourceTree = "<group>"; };
+		F57A23BE1D3B588A00970E9E /* arrow_up_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = arrow_up_64.png; path = "DMX-DIP Converter/icons/arrow_up_64.png"; sourceTree = "<group>"; };
+		F57A23BF1D3B588A00970E9E /* customswitch_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = customswitch_off.png; path = "DMX-DIP Converter/icons/customswitch_off.png"; sourceTree = "<group>"; };
+		F57A23C01D3B588A00970E9E /* customswitch_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = customswitch_on.png; path = "DMX-DIP Converter/icons/customswitch_on.png"; sourceTree = "<group>"; };
+		F57A23C11D3B588A00970E9E /* gear_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gear_64.png; path = "DMX-DIP Converter/icons/gear_64.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +87,11 @@
 		F57A237F1D3AF94B00970E9E = {
 			isa = PBXGroup;
 			children = (
+				F57A23BD1D3B588A00970E9E /* arrow_down_64.png */,
+				F57A23BE1D3B588A00970E9E /* arrow_up_64.png */,
+				F57A23BF1D3B588A00970E9E /* customswitch_off.png */,
+				F57A23C01D3B588A00970E9E /* customswitch_on.png */,
+				F57A23C11D3B588A00970E9E /* gear_64.png */,
 				F57A238A1D3AF94B00970E9E /* DMX-DIP Converter */,
 				F57A239F1D3AF94B00970E9E /* DMX-DIP ConverterTests */,
 				F57A23AA1D3AF94C00970E9E /* DMX-DIP ConverterUITests */,
@@ -240,7 +255,12 @@
 			files = (
 				F57A23961D3AF94B00970E9E /* LaunchScreen.storyboard in Resources */,
 				F57A23931D3AF94B00970E9E /* Assets.xcassets in Resources */,
+				F57A23C51D3B588A00970E9E /* customswitch_on.png in Resources */,
+				F57A23C41D3B588A00970E9E /* customswitch_off.png in Resources */,
+				F57A23C31D3B588A00970E9E /* arrow_up_64.png in Resources */,
 				F57A23911D3AF94B00970E9E /* Main.storyboard in Resources */,
+				F57A23C61D3B588A00970E9E /* gear_64.png in Resources */,
+				F57A23C21D3B588A00970E9E /* arrow_down_64.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
