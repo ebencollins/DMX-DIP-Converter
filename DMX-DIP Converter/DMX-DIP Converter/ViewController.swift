@@ -40,8 +40,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var topDirectionlabel: UILabel!
     @IBOutlet weak var botDirectionlabel: UILabel!
     @IBOutlet weak var directionArrowImage: UIImageView!
-   
-        
+    
+    
     var switches:[UIButton] = [] //an array of the dip switches
     var buttons:[UIButton] = [] //an array holding all of the keypad buttons
     
@@ -59,8 +59,31 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkDefaults()
+        
         switches = [s0,s1,s2,s3,s4,s5,s6,s7,s8]
         buttons = [b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12]
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true);
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        checkDefaults()
+        if defaults.value(forKey: "preventSleep") as! Bool{
+            UIApplication.shared().isIdleTimerDisabled = true
+        }else{
+            UIApplication.shared().isIdleTimerDisabled = false
+        }
+        
+        if defaults.value(forKey: "invertDirection") as! Bool{
+            invertDipDirection = true;
+        }else{
+            invertDipDirection = false;
+        }
+        addGroupAmnt = defaults.value(forKey: "offsetAmount")! as! Int
+        
+        
         buttonText = ["+" + String(addGroupAmnt), "7", "4", "1", "0", "8", "5", "2", "\u{232B}", "9", "6", "3"] //add everything to the arrays
         
         if(invertDipDirection){
@@ -94,10 +117,12 @@ class ViewController: UIViewController {
         }
         setDips(dips: dipArr)
         
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true);
         
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     func setDips(dips:[Bool]){ //set the dips based on a passed array
@@ -190,4 +215,17 @@ class ViewController: UIViewController {
         return dips;
     }
     
+}
+
+func checkDefaults(){
+    let defaults = UserDefaults.standard
+    if(defaults.value(forKey: "preventSleep") == nil){
+        defaults.set(true, forKey: "preventSleep")
+    }
+    if(defaults.value(forKey: "invertDirection") == nil){
+        defaults.set(false, forKey: "invertDirection")
+    }
+    if(defaults.value(forKey: "offsetAmount") == nil){
+        defaults.set(16, forKey: "offsetAmount")
+    }
 }

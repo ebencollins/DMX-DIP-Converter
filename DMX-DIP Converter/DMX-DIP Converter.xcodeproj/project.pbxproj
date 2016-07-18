@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F51C2EBC1D3C4E0D002FDABB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51C2EBB1D3C4E0D002FDABB /* SettingsViewController.swift */; };
 		F57A238C1D3AF94B00970E9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57A238B1D3AF94B00970E9E /* AppDelegate.swift */; };
 		F57A238E1D3AF94B00970E9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57A238D1D3AF94B00970E9E /* ViewController.swift */; };
 		F57A23911D3AF94B00970E9E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F57A238F1D3AF94B00970E9E /* Main.storyboard */; };
@@ -39,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F51C2EBB1D3C4E0D002FDABB /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = "DMX-DIP Converter/SettingsViewController.swift"; sourceTree = "<group>"; };
+		F51C2EBD1D3C6160002FDABB /* DMX-DIP Converter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "DMX-DIP Converter.entitlements"; sourceTree = "<group>"; };
 		F57A23881D3AF94B00970E9E /* DMX-DIP Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DMX-DIP Converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F57A238B1D3AF94B00970E9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F57A238D1D3AF94B00970E9E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +90,7 @@
 		F57A237F1D3AF94B00970E9E = {
 			isa = PBXGroup;
 			children = (
+				F51C2EBB1D3C4E0D002FDABB /* SettingsViewController.swift */,
 				F57A23BD1D3B588A00970E9E /* arrow_down_64.png */,
 				F57A23BE1D3B588A00970E9E /* arrow_up_64.png */,
 				F57A23BF1D3B588A00970E9E /* customswitch_off.png */,
@@ -112,6 +116,7 @@
 		F57A238A1D3AF94B00970E9E /* DMX-DIP Converter */ = {
 			isa = PBXGroup;
 			children = (
+				F51C2EBD1D3C6160002FDABB /* DMX-DIP Converter.entitlements */,
 				F57A238B1D3AF94B00970E9E /* AppDelegate.swift */,
 				F57A238D1D3AF94B00970E9E /* ViewController.swift */,
 				F57A238F1D3AF94B00970E9E /* Main.storyboard */,
@@ -211,6 +216,11 @@
 						DevelopmentTeam = PN9YMD99V6;
 						DevelopmentTeamName = "Eben Collins (Personal Team)";
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+						};
 					};
 					F57A239B1D3AF94B00970E9E = {
 						CreatedOnToolsVersion = 8.0;
@@ -287,6 +297,7 @@
 			files = (
 				F57A238E1D3AF94B00970E9E /* ViewController.swift in Sources */,
 				F57A238C1D3AF94B00970E9E /* AppDelegate.swift in Sources */,
+				F51C2EBC1D3C4E0D002FDABB /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -523,6 +534,7 @@
 				F57A23B21D3AF94C00970E9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F57A23B31D3AF94C00970E9E /* Build configuration list for PBXNativeTarget "DMX-DIP ConverterTests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +543,7 @@
 				F57A23B51D3AF94C00970E9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F57A23B61D3AF94C00970E9E /* Build configuration list for PBXNativeTarget "DMX-DIP ConverterUITests" */ = {
 			isa = XCConfigurationList;
@@ -539,6 +552,7 @@
 				F57A23B81D3AF94C00970E9E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

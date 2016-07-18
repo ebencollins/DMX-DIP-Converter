@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11163.2" systemVersion="16A238m" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="9Ai-IC-rtG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11163.2" systemVersion="16A238m" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ceE-LV-03S">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11133"/>
@@ -8,6 +8,164 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="i7y-QP-XrV">
+            <objects>
+                <navigationController id="ceE-LV-03S" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="w7z-Ah-G3X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9Ai-IC-rtG" kind="relationship" relationship="rootViewController" id="aMb-44-K5w"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ciI-Nl-0y7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="265" y="278"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="TN4-IU-vtO">
+            <objects>
+                <tableViewController id="YYm-fq-Sws" customClass="SettingsViewController" customModule="DMX_DIP_Converter" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="zqk-fA-PXT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="PREVENT SLEEP" footerTitle="Prevents device sleep while this app is open." id="qRC-Ix-s07">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hdj-zB-8TT">
+                                        <rect key="frame" x="0.0" y="119.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hdj-zB-8TT" id="fdl-Fl-sBH">
+                                            <frame key="frameInset" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Whf-V9-Ieo">
+                                                    <segments>
+                                                        <segment title="First"/>
+                                                        <segment title="Second"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="preventSleepSC:" destination="YYm-fq-Sws" eventType="valueChanged" id="DsK-dC-bdI"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Whf-V9-Ieo" firstAttribute="leading" secondItem="fdl-Fl-sBH" secondAttribute="leading" id="ROM-LM-dcx"/>
+                                                <constraint firstItem="Whf-V9-Ieo" firstAttribute="height" secondItem="fdl-Fl-sBH" secondAttribute="height" id="UzJ-sc-SFc"/>
+                                                <constraint firstAttribute="bottom" secondItem="Whf-V9-Ieo" secondAttribute="bottom" id="aPH-91-W5J"/>
+                                                <constraint firstItem="Whf-V9-Ieo" firstAttribute="width" secondItem="fdl-Fl-sBH" secondAttribute="width" id="neR-Kn-sxC"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Activated Dip Direction" footerTitle="Defines whether up or down activates the DIP switches." id="lP6-ji-KqF">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1Ob-L4-2RY">
+                                        <rect key="frame" x="0.0" y="239" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Ob-L4-2RY" id="vSR-3z-PFh">
+                                            <frame key="frameInset" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xGN-Pn-HpF">
+                                                    <segments>
+                                                        <segment title="First"/>
+                                                        <segment title="Second"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="invertDipDirection:" destination="YYm-fq-Sws" eventType="valueChanged" id="ewR-r3-Ztk"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="xGN-Pn-HpF" firstAttribute="height" secondItem="vSR-3z-PFh" secondAttribute="height" id="BDe-gO-2td"/>
+                                                <constraint firstAttribute="bottom" secondItem="xGN-Pn-HpF" secondAttribute="bottom" id="Flx-eN-nTC"/>
+                                                <constraint firstItem="xGN-Pn-HpF" firstAttribute="leading" secondItem="vSR-3z-PFh" secondAttribute="leading" id="MZa-uG-Yhh"/>
+                                                <constraint firstItem="xGN-Pn-HpF" firstAttribute="width" secondItem="vSR-3z-PFh" secondAttribute="width" id="XeF-FK-dIy"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Offset Increment" footerTitle="Defines how much the offset button increments by." id="FNw-wl-5Z8">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gho-jH-rP0">
+                                        <rect key="frame" x="0.0" y="358.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gho-jH-rP0" id="9zK-np-1sj">
+                                            <frame key="frameInset" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="yBx-sa-iV1">
+                                                    <segments>
+                                                        <segment title="First"/>
+                                                        <segment title="Second"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="incAmount:" destination="YYm-fq-Sws" eventType="valueChanged" id="utu-9r-3Xa"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="yBx-sa-iV1" firstAttribute="width" secondItem="9zK-np-1sj" secondAttribute="width" id="4rc-Ph-pR1"/>
+                                                <constraint firstItem="yBx-sa-iV1" firstAttribute="height" secondItem="9zK-np-1sj" secondAttribute="height" id="R3P-v0-CAe"/>
+                                                <constraint firstAttribute="bottom" secondItem="yBx-sa-iV1" secondAttribute="bottom" id="SED-dq-m3M"/>
+                                                <constraint firstItem="yBx-sa-iV1" firstAttribute="leading" secondItem="9zK-np-1sj" secondAttribute="leading" id="ha0-Gn-kSl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="KYq-qC-BXT">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9r1-M9-YMp">
+                                        <rect key="frame" x="0.0" y="450.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9r1-M9-YMp" id="GQM-Ho-imS">
+                                            <frame key="frameInset" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uX8-h3-7lf">
+                                                    <color key="backgroundColor" red="1" green="0.76470588235294112" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <state key="normal" title="Restore Defaults">
+                                                        <color key="titleColor" red="1" green="0.094267501840000004" blue="0.1132154482" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="restoreDefaults:" destination="YYm-fq-Sws" eventType="touchUpInside" id="Jfj-51-kxe"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="uX8-h3-7lf" secondAttribute="bottom" id="86e-fH-MJB"/>
+                                                <constraint firstItem="uX8-h3-7lf" firstAttribute="height" secondItem="GQM-Ho-imS" secondAttribute="height" id="eao-3b-hWh"/>
+                                                <constraint firstItem="uX8-h3-7lf" firstAttribute="leading" secondItem="GQM-Ho-imS" secondAttribute="leading" id="rVd-Fy-tjC"/>
+                                                <constraint firstItem="uX8-h3-7lf" firstAttribute="width" secondItem="GQM-Ho-imS" secondAttribute="width" id="txN-LK-DmS"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="YYm-fq-Sws" id="J0v-TL-MXk"/>
+                            <outlet property="delegate" destination="YYm-fq-Sws" id="2o6-kl-8jR"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="incAmount" destination="yBx-sa-iV1" id="GnA-VJ-NNO"/>
+                        <outlet property="invertDipDirection" destination="xGN-Pn-HpF" id="arN-o0-HRC"/>
+                        <outlet property="preventSleepSC" destination="Whf-V9-Ieo" id="CDx-To-CTS"/>
+                        <outlet property="restoreDefaults" destination="uX8-h3-7lf" id="dWE-a3-pQf"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LPO-gd-bhv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="265" y="-397"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="9rA-RI-BRP">
             <objects>
@@ -35,6 +193,9 @@
                                                     <constraint firstAttribute="height" constant="32" id="gam-iB-Dmf" userLabel="height = 32"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="gear_64.png"/>
+                                                <connections>
+                                                    <segue destination="YYm-fq-Sws" kind="show" id="fDK-rL-iOB"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -524,6 +685,7 @@
                             <constraint firstItem="HeT-Qj-1Bk" firstAttribute="leading" secondItem="wJn-XA-Eci" secondAttribute="leadingMargin" constant="-16" id="pYG-WI-1Pm"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="9Gb-1Z-xNo"/>
                     <connections>
                         <outlet property="b1" destination="cx5-9h-vwa" id="7UO-DU-Qgr"/>
                         <outlet property="b10" destination="k35-Mt-n5b" id="loq-8D-1wp"/>
