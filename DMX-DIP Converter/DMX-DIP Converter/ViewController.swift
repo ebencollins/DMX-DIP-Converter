@@ -138,6 +138,7 @@ class ViewController: UIViewController {
             
             dipArr[i] = dips[i];
         }
+    
     }
     
     func buttonTapped(sender: UIButton) { //handle the button press (for keypad)
@@ -147,9 +148,6 @@ class ViewController: UIViewController {
         case buttons[0]: //the +n button
             if var val = Int(out){
                 val += addGroupAmnt
-                if val > 511{
-                    return
-                }
                 out = String(val)
             }else{
                 print("Error incrementing")
@@ -168,17 +166,41 @@ class ViewController: UIViewController {
                 out = value!
             }else{
                 out.append(value!)
-                if Int(out) > 511{ //prevent values from over 511 from being passed (max value per universe)
-                    return
-                }
             }
             break
         }
         outputLabel.text = out;
-        //gray out buttons that can't be pressed and disable? here
-        
-        print("out is " + out)
+        checkButtons()
         setDips(dips: numToDips(num: Int(out)!))
+    }
+    
+    func checkButtons(){ //check to see what butons can be pressed without putting the number above 511; disable the rest
+        for i in 0..<buttons.count{
+            var disable:Bool = false;
+            if i == 0{
+                if var val = Int(outputLabel.text!){
+                    val += addGroupAmnt
+                    if val > 511{
+                        disable = true;
+                    }
+                }
+            }else{
+                if Int(buttonText[i]) != nil{
+                    var out = outputLabel.text!;
+                    out.append(buttonText[i])
+                    if(Int(out) > 511){
+                        disable = true;
+                    }
+                }
+            }
+            if(disable){
+                buttons[i].isEnabled = false;
+                buttons[i].alpha = 0.25;
+            }else{
+                buttons[i].isEnabled = true;
+                buttons[i].alpha = 1.0;
+            }
+        }
         
     }
     
@@ -187,6 +209,7 @@ class ViewController: UIViewController {
         dipArr[swIndex] = !dipArr[swIndex]
         setDips(dips: dipArr)
         outputLabel.text = String((dipsToNum(dips: dipArr)))
+        checkButtons();
     }
     
     

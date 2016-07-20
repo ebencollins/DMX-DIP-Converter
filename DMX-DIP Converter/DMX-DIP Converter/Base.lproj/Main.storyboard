@@ -33,10 +33,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="PREVENT SLEEP" footerTitle="Prevents device sleep while this app is open." id="qRC-Ix-s07">
+                            <tableViewSection headerTitle="PREVENT DEVICE SLEEP" id="qRC-Ix-s07">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="hdj-zB-8TT">
-                                        <rect key="frame" x="0.0" y="119.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="120" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hdj-zB-8TT" id="fdl-Fl-sBH">
                                             <frame key="frameInset" width="375" height="44"/>
@@ -62,10 +62,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Activated Dip Direction" footerTitle="Defines whether up or down activates the DIP switches." id="lP6-ji-KqF">
+                            <tableViewSection headerTitle="Activated Dip Direction" id="lP6-ji-KqF">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1Ob-L4-2RY">
-                                        <rect key="frame" x="0.0" y="239" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="221" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Ob-L4-2RY" id="vSR-3z-PFh">
                                             <frame key="frameInset" width="375" height="44"/>
@@ -91,10 +91,10 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Offset Increment" footerTitle="Defines how much the offset button increments by." id="FNw-wl-5Z8">
+                            <tableViewSection headerTitle="Offset Increment" id="FNw-wl-5Z8">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gho-jH-rP0">
-                                        <rect key="frame" x="0.0" y="358.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="322" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gho-jH-rP0" id="9zK-np-1sj">
                                             <frame key="frameInset" width="375" height="44"/>
@@ -123,7 +123,7 @@
                             <tableViewSection id="KYq-qC-BXT">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9r1-M9-YMp">
-                                        <rect key="frame" x="0.0" y="450.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="402" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9r1-M9-YMp" id="GQM-Ho-imS">
                                             <frame key="frameInset" width="375" height="44"/>
@@ -184,7 +184,7 @@
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdD-gO-SvZ">
                                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                                <nil key="textColor"/>
+                                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmc-Td-Q53" userLabel="settingsButton">
