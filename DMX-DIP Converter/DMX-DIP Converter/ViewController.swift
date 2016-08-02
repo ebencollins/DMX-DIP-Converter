@@ -35,6 +35,22 @@ class ViewController: UIViewController {
     @IBOutlet weak var s7: UIButton!
     @IBOutlet weak var s8: UIButton!
     
+    @IBOutlet weak var s0t: UILabel!
+    @IBOutlet weak var s1t: UILabel!
+    @IBOutlet weak var s2t: UILabel!
+    @IBOutlet weak var s3t: UILabel!
+    @IBOutlet weak var s4t: UILabel!
+    @IBOutlet weak var s5t: UILabel!
+    @IBOutlet weak var s6t: UILabel!
+    @IBOutlet weak var s7t: UILabel!
+    @IBOutlet weak var s8t: UILabel!
+    
+    @IBOutlet weak var swView: UIView!
+    
+    
+    @IBOutlet var mainView: UIView!
+    
+//    @IBOutlet weak var outputView: UIView!
     @IBOutlet weak var outputLabel: UILabel!
     
     @IBOutlet weak var topDirectionlabel: UILabel!
@@ -43,6 +59,7 @@ class ViewController: UIViewController {
     
     
     var switches:[UIButton] = [] //an array of the dip switches
+    var swLabels:[UILabel] = []
     var buttons:[UIButton] = [] //an array holding all of the keypad buttons
     
     var buttonText:[String] = [] //an array holding the text that corresponds to the keypad button
@@ -59,17 +76,18 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        checkDefaults()
+        UserDefaults.standard.checkDefaults()
         
         switches = [s0,s1,s2,s3,s4,s5,s6,s7,s8]
         buttons = [b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12]
+        swLabels = [s0t, s1t, s2t, s3t, s4t, s5t, s6t, s7t, s8t]
         
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true);
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         
-        checkDefaults()
+        UserDefaults.standard.checkDefaults()
         if defaults.value(forKey: "preventSleep") as! Bool{
             UIApplication.shared().isIdleTimerDisabled = true
         }else{
@@ -99,22 +117,34 @@ class ViewController: UIViewController {
             botDirectionlabel.text = "OFF"
             directionArrowImage.image = UIImage(named: "arrow_up_64")
         }
-        
+        topDirectionlabel.textColor = defaults.color(forKey: "swtColor")
+        botDirectionlabel.textColor = defaults.color(forKey: "swtColor")
         
         for b in buttons{ //register the buttons for a touch up inside, set border/color/title
+            b.setTitleColor(defaults.color(forKey: "btColor"), for: .normal)
             b.setTitle(buttonText[buttons.index(of: b)!], for: .normal)
             b.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-            b.layer.borderWidth = 1
-            b.layer.borderColor = UIColor.lightGray().cgColor
+            b.layer.borderWidth = 0.5
+            b.layer.borderColor = defaults.color(forKey: "btColor")?.cgColor
+            b.backgroundColor = defaults.color(forKey: "bColor")
         }
         
         dipArr.removeAll()
         for s in switches{ //same as above, but for dips
             s.addTarget(self, action: #selector(switchChanged), for: .touchUpInside) //touch drag inside as well?
             s.layer.borderWidth = 3
-            s.layer.borderColor = UIColor.lightGray().cgColor
+            s.layer.borderColor = defaults.color(forKey: "swColor")?.cgColor
             dipArr.append(false)
         }
+        
+        for l in swLabels{
+            l.textColor = defaults.color(forKey: "swtColor")
+        }
+        
+        swView.backgroundColor = defaults.color(forKey: "swColor")
+        mainView.backgroundColor = defaults.color(forKey: "oColor")
+        
+        outputLabel.textColor = defaults.color(forKey: "otColor")
         setDips(dips: dipArr)
         
         
@@ -238,17 +268,76 @@ class ViewController: UIViewController {
         return dips;
     }
     
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
+    }
+    
 }
 
-func checkDefaults(){
-    let defaults = UserDefaults.standard
-    if(defaults.value(forKey: "preventSleep") == nil){
-        defaults.set(true, forKey: "preventSleep")
+extension UserDefaults{
+    
+//    func color(forKey:String) -> UIColor?{
+//    var color:UIColor?
+//        if let colorData = data(forKey: forKey){
+//            color = NSKeyedUnarchiver.unarchiveObject(with: colorData) as? UIColor
+//        }
+//        return color
+//    }
+//    
+//    func set(color:UIColor?, forKey:String){
+//        var colorData:NSData?
+//        if let color = color{
+//            colorData = NSKeyedArchiver.archivedData(withRootObject: color)
+//        }
+//        set(colorData, forKey: forKey)
+//    }
+   
+    func color(forKey: String) -> UIColor? {
+        var color: UIColor? = UIColor.clear()
+        if let colorData = data(forKey: forKey) {
+            color = NSKeyedUnarchiver.unarchiveObject(with: colorData) as? UIColor
+        }
+        return color
     }
-    if(defaults.value(forKey: "invertDirection") == nil){
-        defaults.set(false, forKey: "invertDirection")
+    
+    func setColor(color: UIColor?, forKey key: String) {
+        var colorData: NSData?
+        if let color = color {
+            colorData = NSKeyedArchiver.archivedData(withRootObject: color)
+        }
+        set(colorData, forKey: key)
     }
-    if(defaults.value(forKey: "offsetAmount") == nil){
-        defaults.set(16, forKey: "offsetAmount")
+    
+    func checkDefaults(){
+        let defaults = UserDefaults.standard
+        if(defaults.value(forKey: "preventSleep") == nil){
+            defaults.set(true, forKey: "preventSleep")
+        }
+        if(defaults.value(forKey: "invertDirection") == nil){
+            defaults.set(false, forKey: "invertDirection")
+        }
+        if(defaults.value(forKey: "offsetAmount") == nil){
+            defaults.set(16, forKey: "offsetAmount")
+        }
+        
+        if(defaults.value(forKey: "btColor") == nil){
+            defaults.setColor(color: UIColor.lightText(), forKey: "btColor")
+        }
+        if(defaults.value(forKey: "swtColor") == nil){
+            defaults.setColor(color: UIColor.black(), forKey: "swtColor")
+        }
+        if(defaults.value(forKey: "otColor") == nil){
+            defaults.setColor(color: UIColor.lightText(), forKey: "otColor")
+        }
+        if(defaults.value(forKey: "bColor") == nil){
+            defaults.setColor(color: UIColor(hue:0, saturation: 0, brightness: 0.26, alpha: 1.0), forKey: "bColor")
+        }
+        if(defaults.value(forKey: "swColor") == nil){
+            defaults.setColor(color: UIColor(hue:0, saturation: 0, brightness: 0.60, alpha: 1.0), forKey: "swColor")
+        }
+        if(defaults.value(forKey: "oColor") == nil){
+            defaults.setColor(color: UIColor(hue:0, saturation: 0, brightness: 0.26, alpha: 1.0), forKey: "oColor")
+        }
+
     }
 }

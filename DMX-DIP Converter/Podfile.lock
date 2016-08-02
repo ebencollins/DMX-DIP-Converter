@@ -1,0 +1,15 @@
+PODS:
+  - LicensesKit (1.2.1):
+    - StringBuilder (= 0.1.1)
+  - StringBuilder (0.1.1)
+
+DEPENDENCIES:
+  - LicensesKit
+
+SPEC CHECKSUMS:
+  LicensesKit: 98f4ea430528c3d6a02c6fc48c32a14ce67c2687
+  StringBuilder: 73676556a0defec4b7ef6c06413d247ba92015f2
+
+PODFILE CHECKSUM: 0c01fc90e5d45936be4b211be06369915c428a10
+
+COCOAPODS: 1.0.1

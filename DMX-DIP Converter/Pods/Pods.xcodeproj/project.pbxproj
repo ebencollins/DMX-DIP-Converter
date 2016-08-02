@@ -1,0 +1,871 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03401E803F7436A2E78E81BF73D0DC9C /* LicensesKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D5B46708331AC49F03859154068860C1 /* LicensesKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		046B118DA9A6D719F55672276A354CBF /* mit_summary.txt in Resources */ = {isa = PBXBuildFile; fileRef = 23F550A77720B38F63139688B63B5411 /* mit_summary.txt */; };
+		09DDDC610A3C8CD453729D9431AC8385 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 98B965ED4F617ED3D5DF5B6DB9267756 /* UIKit.framework */; };
+		0A197887544B8C9E0CB785DC6E985FA4 /* CreativeCommonsAttributionNoDerivs30Unported.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5D32ACDBEB5CB73C48D187FCCD9438 /* CreativeCommonsAttributionNoDerivs30Unported.swift */; };
+		154E2E36EE4B0CDFFC389C926DB90022 /* gpl_20_full.txt in Resources */ = {isa = PBXBuildFile; fileRef = EFFE6F45A325FBCB770C2B3E5D2EF91B /* gpl_20_full.txt */; };
+		20483DBC51517692B3B8C89330103EC8 /* gpl_20_summary.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5FDC4E4E1FE17A6C756F1F72071190B1 /* gpl_20_summary.txt */; };
+		20D10ABABD88524D688D616466D99B62 /* asl_20_summary.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0ECA3A9A6D4331C2AA9090BA852479EE /* asl_20_summary.txt */; };
+		2E826D2B05A73B279A9358BB5FA2AC08 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD06B765354A04E97A51C68129AA8C0 /* Foundation.framework */; };
+		30B51B855515CE33045D11A9BAFB35A3 /* ISCLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 309B610FB1EA8225DD2219184B8B6629 /* ISCLicense.swift */; };
+		313067F9EF9C34932183A4D3936905CA /* GnuLesserGeneralPublicLicense21.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BD7479B2011ED62EE8778AE3F636BC /* GnuLesserGeneralPublicLicense21.swift */; };
+		3612E21CDC63231CA57B543D67596BCA /* License.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C4B60A1985CB34769215AAD9F21E81 /* License.swift */; };
+		41990927D64E2D86AC4CFB7D32222D72 /* Pods-DMX-DIP Converter-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BB27B55E2DC9F847557711EC6A7ECCCF /* Pods-DMX-DIP Converter-dummy.m */; };
+		497A49E9D1ED153EB271C09812C27C45 /* NoticesHtmlBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC4AFD91782DAD37898946295333A386 /* NoticesHtmlBuilder.swift */; };
+		4BD35CCC4C9E949B9B530CF521D073F7 /* bsd3_summary.txt in Resources */ = {isa = PBXBuildFile; fileRef = B6679C9C4E4248B16F8F527320952FFA /* bsd3_summary.txt */; };
+		5C7956E67C2FC00617F180FC247F187B /* ccand_30_summary.txt in Resources */ = {isa = PBXBuildFile; fileRef = 110FC5337F8F3D1254518CBE3D7DF14C /* ccand_30_summary.txt */; };
+		6C70BD3C0E297618E22D3C90B6542F1C /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A3524A24C6172EFCCD2EFE032732B2C /* WebKit.framework */; };
+		70D6FC280D34472907FC90E6B76E9AE3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD06B765354A04E97A51C68129AA8C0 /* Foundation.framework */; };
+		7B71C7EECF0364035EC372FFE1897422 /* gpl_30_summary.txt in Resources */ = {isa = PBXBuildFile; fileRef = 37519F89D96517ED57466077AD777AB4 /* gpl_30_summary.txt */; };
+		7BCD698DC89B24A9D19FAE5DB13A8FB9 /* MozillaPublicLicense20.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB87D3652DE19C2FC06689557BBC31AB /* MozillaPublicLicense20.swift */; };
+		82C7F50322A0B18422376C45E3523FB0 /* bsd3_full.txt in Resources */ = {isa = PBXBuildFile; fileRef = 8815DCA6EEF4ED872D73683C9C6D269E /* bsd3_full.txt */; };
+		879C046279D5D1626BB3E6D7381FC79E /* StringBuilder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F56250BCCF040775E31EC02520E433 /* StringBuilder.framework */; };
+		8A4A9B8456328EB3C81B092590639B53 /* isc_summary.txt in Resources */ = {isa = PBXBuildFile; fileRef = A6FD34F2BDD1B030260D3220E9E63E01 /* isc_summary.txt */; };
+		8E0E2B373EF6108CA8B9735C3CC6F1DF /* StringBuilder-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4D91CEF0758B8E2F4A7CDF6753DFE01D /* StringBuilder-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		95FE588032FE683F304C4259E3EF24C7 /* CustomLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9145EECFF9578773D6223E840C4990 /* CustomLicense.swift */; };
+		A1C5E1C25C2F31B5A9446147B0954704 /* lgpl_21_summary.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4458FA7024B38307D798DAEBE8FD68C1 /* lgpl_21_summary.txt */; };
+		A312ED8597D1D480B06939DDE6B8A631 /* isc_full.txt in Resources */ = {isa = PBXBuildFile; fileRef = AE10B9CDB40C8D22663FEB7CFB1A8BBF /* isc_full.txt */; };
+		A92138433F536A12B153502F5F2D16C0 /* mpl_20_full.txt in Resources */ = {isa = PBXBuildFile; fileRef = 533338496AF184D06FD2F16DB63CBF86 /* mpl_20_full.txt */; };
+		A9B24C97F9230633D3E7E9D2F2E28124 /* ApacheSoftwareLicense20.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74D7CB1490D1738522D8BC2E2376CB13 /* ApacheSoftwareLicense20.swift */; };
+		AA88773F3FD49EBEB58E05FF516866D2 /* StringBuilder-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F89B7A4B4A0DB4C8411CF25758C1E24 /* StringBuilder-dummy.m */; };
+		AAB2AD609A6F7390F1F8DCECFBC16731 /* LicenseResolver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 766F2D4C8144CE8945220B3F4EB81114 /* LicenseResolver.swift */; };
+		B0A940B54BB869E3898A5857665BD7AA /* mit_full.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7F79C5C5517C07E643D42EADC82867D8 /* mit_full.txt */; };
+		B42C6E2F533AF0244800185AB01B33E7 /* GnuGeneralPublicLicense20.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0770F26B4619AC635647A07A64C1C4 /* GnuGeneralPublicLicense20.swift */; };
+		B5565831B2B9C2D7DEC9D1A9BA5E483B /* lgpl_21_full.txt in Resources */ = {isa = PBXBuildFile; fileRef = 57C73A4405300CF2DD23162306A673BE /* lgpl_21_full.txt */; };
+		B79A2470F078092DA44DC9D665982611 /* gpl_30_full.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5AA81A18F0942DAA3B11F28B783777A5 /* gpl_30_full.txt */; };
+		BE0474D8E0E47925D2D32D3A45175405 /* Notice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19458235D29097CAA5DA06B256BD9ED1 /* Notice.swift */; };
+		D00C823122EB02DC2D56B98E644229F3 /* MITLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C64AB8B271C026041E718521F9C999 /* MITLicense.swift */; };
+		D9526B9D65F311559530F35E49E0E3D7 /* mpl_20_summary.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5A5C3E5CD79498C97ED87EB1B7BA1B29 /* mpl_20_summary.txt */; };
+		DCE16206F3CA39F9F0ABF4CFD6099494 /* asl_20_full.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7664F755B96CF8A58FB4AD1E08E33250 /* asl_20_full.txt */; };
+		DE05D9BF5E02F6FD44D9CD7BF79E54F3 /* LicensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DB499499A4FDD2C12530E136FB4A47E /* LicensesViewController.swift */; };
+		DE4633553144AEA8A5627A09A83B9CA9 /* LicensesKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C9337E43AFFE548C44F187D54E97F89 /* LicensesKit-dummy.m */; };
+		E0454909CCF0D228CB4C4720887BEBE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD06B765354A04E97A51C68129AA8C0 /* Foundation.framework */; };
+		E1A8002CD06272641B65EA30C6203938 /* ccand_30_full.txt in Resources */ = {isa = PBXBuildFile; fileRef = D55F845C4597CD6284A76CBB1BD423BC /* ccand_30_full.txt */; };
+		E710BB94693A6330BE9AE6CF547BCACE /* Pods-DMX-DIP Converter-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 847A8AFB63CBEB296BEDF55E12D85F74 /* Pods-DMX-DIP Converter-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF287086FF93229C994476747687A8F1 /* GnuGeneralPublicLicense30.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30D6A24B66BAA434EC6925DDC4F8DE21 /* GnuGeneralPublicLicense30.swift */; };
+		FB56655F054005A441C7531A8CCB51F3 /* BSD3ClauseLicense.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09A1F999952A098EDF89B314CEB57F1 /* BSD3ClauseLicense.swift */; };
+		FCC98F347F124CCE60C8BB5F13EBAF1D /* StringBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4E48A8F84003B4A23603874F68288DA /* StringBuilder.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		34F0B81530078AF487013BF0971EF14A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B6BDE307E41B372A36FB42DAE9E84EE;
+			remoteInfo = StringBuilder;
+		};
+		3A3CB9B4C36A68124BC9A218EC379190 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1B6BDE307E41B372A36FB42DAE9E84EE;
+			remoteInfo = StringBuilder;
+		};
+		A2464D1D8814A64BBA7172BAD32CC7E7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CB00E061742D1AF81A4E0222B47947F7;
+			remoteInfo = LicensesKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		01005B97DE9E2FE8F09124D6637BC5A4 /* Pods-DMX-DIP Converter-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DMX-DIP Converter-acknowledgements.plist"; sourceTree = "<group>"; };
+		046AD5DE731B5E8837B3FEAAA4DD41DF /* Pods-DMX-DIP Converter-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DMX-DIP Converter-frameworks.sh"; sourceTree = "<group>"; };
+		0A3524A24C6172EFCCD2EFE032732B2C /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
+		0ECA3A9A6D4331C2AA9090BA852479EE /* asl_20_summary.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = asl_20_summary.txt; path = "LicensesKit/Supporting Files/Licenses/asl_20_summary.txt"; sourceTree = "<group>"; };
+		0F89B7A4B4A0DB4C8411CF25758C1E24 /* StringBuilder-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "StringBuilder-dummy.m"; sourceTree = "<group>"; };
+		110FC5337F8F3D1254518CBE3D7DF14C /* ccand_30_summary.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ccand_30_summary.txt; path = "LicensesKit/Supporting Files/Licenses/ccand_30_summary.txt"; sourceTree = "<group>"; };
+		13C0E6EE3C4C43367577466767825744 /* StringBuilder-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StringBuilder-prefix.pch"; sourceTree = "<group>"; };
+		146E7E26EF8F866CA80E52127BE689BC /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19458235D29097CAA5DA06B256BD9ED1 /* Notice.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Notice.swift; path = LicensesKit/Model/Notice.swift; sourceTree = "<group>"; };
+		23F550A77720B38F63139688B63B5411 /* mit_summary.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = mit_summary.txt; path = "LicensesKit/Supporting Files/Licenses/mit_summary.txt"; sourceTree = "<group>"; };
+		27BD7479B2011ED62EE8778AE3F636BC /* GnuLesserGeneralPublicLicense21.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GnuLesserGeneralPublicLicense21.swift; path = LicensesKit/Model/Licenses/GnuLesserGeneralPublicLicense21.swift; sourceTree = "<group>"; };
+		309B610FB1EA8225DD2219184B8B6629 /* ISCLicense.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ISCLicense.swift; path = LicensesKit/Model/Licenses/ISCLicense.swift; sourceTree = "<group>"; };
+		30D6A24B66BAA434EC6925DDC4F8DE21 /* GnuGeneralPublicLicense30.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GnuGeneralPublicLicense30.swift; path = LicensesKit/Model/Licenses/GnuGeneralPublicLicense30.swift; sourceTree = "<group>"; };
+		316D953D7F2188A84DAD299DA2B72778 /* LicensesKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LicensesKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		37519F89D96517ED57466077AD777AB4 /* gpl_30_summary.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = gpl_30_summary.txt; path = "LicensesKit/Supporting Files/Licenses/gpl_30_summary.txt"; sourceTree = "<group>"; };
+		3895FD38B1CFD63DEF026B8D9DF424FB /* Pods-DMX-DIP Converter.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-DMX-DIP Converter.modulemap"; sourceTree = "<group>"; };
+		4458FA7024B38307D798DAEBE8FD68C1 /* lgpl_21_summary.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = lgpl_21_summary.txt; path = "LicensesKit/Supporting Files/Licenses/lgpl_21_summary.txt"; sourceTree = "<group>"; };
+		46C3C3FC6E24DD78A7AD7A9184F56DF2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C9337E43AFFE548C44F187D54E97F89 /* LicensesKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LicensesKit-dummy.m"; sourceTree = "<group>"; };
+		4D34A482C37847FF7ACC2274BBFBAE68 /* StringBuilder.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = StringBuilder.modulemap; sourceTree = "<group>"; };
+		4D91CEF0758B8E2F4A7CDF6753DFE01D /* StringBuilder-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StringBuilder-umbrella.h"; sourceTree = "<group>"; };
+		533338496AF184D06FD2F16DB63CBF86 /* mpl_20_full.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = mpl_20_full.txt; path = "LicensesKit/Supporting Files/Licenses/mpl_20_full.txt"; sourceTree = "<group>"; };
+		57C73A4405300CF2DD23162306A673BE /* lgpl_21_full.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = lgpl_21_full.txt; path = "LicensesKit/Supporting Files/Licenses/lgpl_21_full.txt"; sourceTree = "<group>"; };
+		5A5C3E5CD79498C97ED87EB1B7BA1B29 /* mpl_20_summary.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = mpl_20_summary.txt; path = "LicensesKit/Supporting Files/Licenses/mpl_20_summary.txt"; sourceTree = "<group>"; };
+		5A83D584913D61B99E415D680C9FFC6A /* Pods-DMX-DIP Converter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DMX-DIP Converter.debug.xcconfig"; sourceTree = "<group>"; };
+		5AA81A18F0942DAA3B11F28B783777A5 /* gpl_30_full.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = gpl_30_full.txt; path = "LicensesKit/Supporting Files/Licenses/gpl_30_full.txt"; sourceTree = "<group>"; };
+		5FDC4E4E1FE17A6C756F1F72071190B1 /* gpl_20_summary.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = gpl_20_summary.txt; path = "LicensesKit/Supporting Files/Licenses/gpl_20_summary.txt"; sourceTree = "<group>"; };
+		6D96C78A57EB0D2AE52C28ED50D5276A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FD06B765354A04E97A51C68129AA8C0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		74D7CB1490D1738522D8BC2E2376CB13 /* ApacheSoftwareLicense20.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ApacheSoftwareLicense20.swift; path = LicensesKit/Model/Licenses/ApacheSoftwareLicense20.swift; sourceTree = "<group>"; };
+		752A159EA1470BF7EB1D08AB2A93F6AB /* Pods-DMX-DIP Converter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DMX-DIP Converter.release.xcconfig"; sourceTree = "<group>"; };
+		7664F755B96CF8A58FB4AD1E08E33250 /* asl_20_full.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = asl_20_full.txt; path = "LicensesKit/Supporting Files/Licenses/asl_20_full.txt"; sourceTree = "<group>"; };
+		766F2D4C8144CE8945220B3F4EB81114 /* LicenseResolver.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LicenseResolver.swift; path = LicensesKit/Model/LicenseResolver.swift; sourceTree = "<group>"; };
+		7F79C5C5517C07E643D42EADC82867D8 /* mit_full.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = mit_full.txt; path = "LicensesKit/Supporting Files/Licenses/mit_full.txt"; sourceTree = "<group>"; };
+		847A8AFB63CBEB296BEDF55E12D85F74 /* Pods-DMX-DIP Converter-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DMX-DIP Converter-umbrella.h"; sourceTree = "<group>"; };
+		8815DCA6EEF4ED872D73683C9C6D269E /* bsd3_full.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = bsd3_full.txt; path = "LicensesKit/Supporting Files/Licenses/bsd3_full.txt"; sourceTree = "<group>"; };
+		8DB499499A4FDD2C12530E136FB4A47E /* LicensesViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LicensesViewController.swift; path = LicensesKit/LicensesViewController.swift; sourceTree = "<group>"; };
+		90C4B60A1985CB34769215AAD9F21E81 /* License.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = License.swift; path = LicensesKit/Model/Licenses/License.swift; sourceTree = "<group>"; };
+		90C64AB8B271C026041E718521F9C999 /* MITLicense.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MITLicense.swift; path = LicensesKit/Model/Licenses/MITLicense.swift; sourceTree = "<group>"; };
+		9326F872D214366C0BA91D50549D5D74 /* StringBuilder.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StringBuilder.xcconfig; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		98B965ED4F617ED3D5DF5B6DB9267756 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		9B3949A68D5E7CB1EE8C2E4F7A290B28 /* StringBuilder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StringBuilder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B3FDD04082F3C76C40D426945812AA8 /* Pods-DMX-DIP Converter-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DMX-DIP Converter-resources.sh"; sourceTree = "<group>"; };
+		A6FD34F2BDD1B030260D3220E9E63E01 /* isc_summary.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = isc_summary.txt; path = "LicensesKit/Supporting Files/Licenses/isc_summary.txt"; sourceTree = "<group>"; };
+		AA5D32ACDBEB5CB73C48D187FCCD9438 /* CreativeCommonsAttributionNoDerivs30Unported.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CreativeCommonsAttributionNoDerivs30Unported.swift; path = LicensesKit/Model/Licenses/CreativeCommonsAttributionNoDerivs30Unported.swift; sourceTree = "<group>"; };
+		AE0770F26B4619AC635647A07A64C1C4 /* GnuGeneralPublicLicense20.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GnuGeneralPublicLicense20.swift; path = LicensesKit/Model/Licenses/GnuGeneralPublicLicense20.swift; sourceTree = "<group>"; };
+		AE10B9CDB40C8D22663FEB7CFB1A8BBF /* isc_full.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = isc_full.txt; path = "LicensesKit/Supporting Files/Licenses/isc_full.txt"; sourceTree = "<group>"; };
+		B351E146166CD05374FAD88404B1F7E0 /* LicensesKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LicensesKit.xcconfig; sourceTree = "<group>"; };
+		B6679C9C4E4248B16F8F527320952FFA /* bsd3_summary.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = bsd3_summary.txt; path = "LicensesKit/Supporting Files/Licenses/bsd3_summary.txt"; sourceTree = "<group>"; };
+		BB27B55E2DC9F847557711EC6A7ECCCF /* Pods-DMX-DIP Converter-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DMX-DIP Converter-dummy.m"; sourceTree = "<group>"; };
+		BC4AFD91782DAD37898946295333A386 /* NoticesHtmlBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NoticesHtmlBuilder.swift; path = LicensesKit/NoticesHtmlBuilder.swift; sourceTree = "<group>"; };
+		C23BB460947AF8900468C8BEF6C017DD /* Pods_DMX_DIP_Converter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DMX_DIP_Converter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4E48A8F84003B4A23603874F68288DA /* StringBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StringBuilder.swift; path = StringBuilder/StringBuilder.swift; sourceTree = "<group>"; };
+		C81D018750C569559B3C1BCD35E962E6 /* LicensesKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LicensesKit-prefix.pch"; sourceTree = "<group>"; };
+		CB9145EECFF9578773D6223E840C4990 /* CustomLicense.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CustomLicense.swift; path = LicensesKit/Model/Licenses/CustomLicense.swift; sourceTree = "<group>"; };
+		D09A1F999952A098EDF89B314CEB57F1 /* BSD3ClauseLicense.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BSD3ClauseLicense.swift; path = LicensesKit/Model/Licenses/BSD3ClauseLicense.swift; sourceTree = "<group>"; };
+		D55F845C4597CD6284A76CBB1BD423BC /* ccand_30_full.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ccand_30_full.txt; path = "LicensesKit/Supporting Files/Licenses/ccand_30_full.txt"; sourceTree = "<group>"; };
+		D5B46708331AC49F03859154068860C1 /* LicensesKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LicensesKit-umbrella.h"; sourceTree = "<group>"; };
+		E60299CEC7CD824DA42B47A7F6A68E9B /* LicensesKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = LicensesKit.modulemap; sourceTree = "<group>"; };
+		E9F56250BCCF040775E31EC02520E433 /* StringBuilder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StringBuilder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB87D3652DE19C2FC06689557BBC31AB /* MozillaPublicLicense20.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MozillaPublicLicense20.swift; path = LicensesKit/Model/Licenses/MozillaPublicLicense20.swift; sourceTree = "<group>"; };
+		EECFFB1EEBE3095C9E7F08604C827689 /* Pods-DMX-DIP Converter-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DMX-DIP Converter-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EFFE6F45A325FBCB770C2B3E5D2EF91B /* gpl_20_full.txt */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = gpl_20_full.txt; path = "LicensesKit/Supporting Files/Licenses/gpl_20_full.txt"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		024D68712EF77D6F49B46E695548F1BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E826D2B05A73B279A9358BB5FA2AC08 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		502734776EF4833300668ACBFFA1B965 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0454909CCF0D228CB4C4720887BEBE9 /* Foundation.framework in Frameworks */,
+				879C046279D5D1626BB3E6D7381FC79E /* StringBuilder.framework in Frameworks */,
+				09DDDC610A3C8CD453729D9431AC8385 /* UIKit.framework in Frameworks */,
+				6C70BD3C0E297618E22D3C90B6542F1C /* WebKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AAA193CE9FE7E467E8A192E1081608AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				70D6FC280D34472907FC90E6B76E9AE3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		086FFAAC1B21642A23F030DF680B5546 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6FD06B765354A04E97A51C68129AA8C0 /* Foundation.framework */,
+				98B965ED4F617ED3D5DF5B6DB9267756 /* UIKit.framework */,
+				0A3524A24C6172EFCCD2EFE032732B2C /* WebKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		1793921AB9597474F3B84996B775D30C /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				46C3C3FC6E24DD78A7AD7A9184F56DF2 /* Info.plist */,
+				4D34A482C37847FF7ACC2274BBFBAE68 /* StringBuilder.modulemap */,
+				9326F872D214366C0BA91D50549D5D74 /* StringBuilder.xcconfig */,
+				0F89B7A4B4A0DB4C8411CF25758C1E24 /* StringBuilder-dummy.m */,
+				13C0E6EE3C4C43367577466767825744 /* StringBuilder-prefix.pch */,
+				4D91CEF0758B8E2F4A7CDF6753DFE01D /* StringBuilder-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/StringBuilder";
+			sourceTree = "<group>";
+		};
+		1CA140B08E7640B0950569C03EA09B5D /* LicensesKit */ = {
+			isa = PBXGroup;
+			children = (
+				74D7CB1490D1738522D8BC2E2376CB13 /* ApacheSoftwareLicense20.swift */,
+				D09A1F999952A098EDF89B314CEB57F1 /* BSD3ClauseLicense.swift */,
+				AA5D32ACDBEB5CB73C48D187FCCD9438 /* CreativeCommonsAttributionNoDerivs30Unported.swift */,
+				CB9145EECFF9578773D6223E840C4990 /* CustomLicense.swift */,
+				AE0770F26B4619AC635647A07A64C1C4 /* GnuGeneralPublicLicense20.swift */,
+				30D6A24B66BAA434EC6925DDC4F8DE21 /* GnuGeneralPublicLicense30.swift */,
+				27BD7479B2011ED62EE8778AE3F636BC /* GnuLesserGeneralPublicLicense21.swift */,
+				309B610FB1EA8225DD2219184B8B6629 /* ISCLicense.swift */,
+				90C4B60A1985CB34769215AAD9F21E81 /* License.swift */,
+				766F2D4C8144CE8945220B3F4EB81114 /* LicenseResolver.swift */,
+				8DB499499A4FDD2C12530E136FB4A47E /* LicensesViewController.swift */,
+				90C64AB8B271C026041E718521F9C999 /* MITLicense.swift */,
+				EB87D3652DE19C2FC06689557BBC31AB /* MozillaPublicLicense20.swift */,
+				19458235D29097CAA5DA06B256BD9ED1 /* Notice.swift */,
+				BC4AFD91782DAD37898946295333A386 /* NoticesHtmlBuilder.swift */,
+				8436FF1750643E83ED5098FE91D60C87 /* Resources */,
+				AE8055C94D44090EF9E61EB70F86A0A2 /* Support Files */,
+			);
+			path = LicensesKit;
+			sourceTree = "<group>";
+		};
+		3E1935570610950D74ED69B33BFE1E9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9F56250BCCF040775E31EC02520E433 /* StringBuilder.framework */,
+				086FFAAC1B21642A23F030DF680B5546 /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4DE3C0E18B024A184B5F9BE8EC4E3BCD /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DE6EBC8194A49457B512B9436720E43E /* Pods-DMX-DIP Converter */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		6027591C8F19A3403D8343CA7F582CAF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1CA140B08E7640B0950569C03EA09B5D /* LicensesKit */,
+				F673AA656991A5B972E030DE81C6FE29 /* StringBuilder */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				3E1935570610950D74ED69B33BFE1E9C /* Frameworks */,
+				6027591C8F19A3403D8343CA7F582CAF /* Pods */,
+				B13F93C52891BB0606498E73B8CA888D /* Products */,
+				4DE3C0E18B024A184B5F9BE8EC4E3BCD /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		8436FF1750643E83ED5098FE91D60C87 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7664F755B96CF8A58FB4AD1E08E33250 /* asl_20_full.txt */,
+				0ECA3A9A6D4331C2AA9090BA852479EE /* asl_20_summary.txt */,
+				8815DCA6EEF4ED872D73683C9C6D269E /* bsd3_full.txt */,
+				B6679C9C4E4248B16F8F527320952FFA /* bsd3_summary.txt */,
+				D55F845C4597CD6284A76CBB1BD423BC /* ccand_30_full.txt */,
+				110FC5337F8F3D1254518CBE3D7DF14C /* ccand_30_summary.txt */,
+				EFFE6F45A325FBCB770C2B3E5D2EF91B /* gpl_20_full.txt */,
+				5FDC4E4E1FE17A6C756F1F72071190B1 /* gpl_20_summary.txt */,
+				5AA81A18F0942DAA3B11F28B783777A5 /* gpl_30_full.txt */,
+				37519F89D96517ED57466077AD777AB4 /* gpl_30_summary.txt */,
+				AE10B9CDB40C8D22663FEB7CFB1A8BBF /* isc_full.txt */,
+				A6FD34F2BDD1B030260D3220E9E63E01 /* isc_summary.txt */,
+				57C73A4405300CF2DD23162306A673BE /* lgpl_21_full.txt */,
+				4458FA7024B38307D798DAEBE8FD68C1 /* lgpl_21_summary.txt */,
+				7F79C5C5517C07E643D42EADC82867D8 /* mit_full.txt */,
+				23F550A77720B38F63139688B63B5411 /* mit_summary.txt */,
+				533338496AF184D06FD2F16DB63CBF86 /* mpl_20_full.txt */,
+				5A5C3E5CD79498C97ED87EB1B7BA1B29 /* mpl_20_summary.txt */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		AE8055C94D44090EF9E61EB70F86A0A2 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6D96C78A57EB0D2AE52C28ED50D5276A /* Info.plist */,
+				E60299CEC7CD824DA42B47A7F6A68E9B /* LicensesKit.modulemap */,
+				B351E146166CD05374FAD88404B1F7E0 /* LicensesKit.xcconfig */,
+				4C9337E43AFFE548C44F187D54E97F89 /* LicensesKit-dummy.m */,
+				C81D018750C569559B3C1BCD35E962E6 /* LicensesKit-prefix.pch */,
+				D5B46708331AC49F03859154068860C1 /* LicensesKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/LicensesKit";
+			sourceTree = "<group>";
+		};
+		B13F93C52891BB0606498E73B8CA888D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				316D953D7F2188A84DAD299DA2B72778 /* LicensesKit.framework */,
+				C23BB460947AF8900468C8BEF6C017DD /* Pods_DMX_DIP_Converter.framework */,
+				9B3949A68D5E7CB1EE8C2E4F7A290B28 /* StringBuilder.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE6EBC8194A49457B512B9436720E43E /* Pods-DMX-DIP Converter */ = {
+			isa = PBXGroup;
+			children = (
+				146E7E26EF8F866CA80E52127BE689BC /* Info.plist */,
+				3895FD38B1CFD63DEF026B8D9DF424FB /* Pods-DMX-DIP Converter.modulemap */,
+				EECFFB1EEBE3095C9E7F08604C827689 /* Pods-DMX-DIP Converter-acknowledgements.markdown */,
+				01005B97DE9E2FE8F09124D6637BC5A4 /* Pods-DMX-DIP Converter-acknowledgements.plist */,
+				BB27B55E2DC9F847557711EC6A7ECCCF /* Pods-DMX-DIP Converter-dummy.m */,
+				046AD5DE731B5E8837B3FEAAA4DD41DF /* Pods-DMX-DIP Converter-frameworks.sh */,
+				9B3FDD04082F3C76C40D426945812AA8 /* Pods-DMX-DIP Converter-resources.sh */,
+				847A8AFB63CBEB296BEDF55E12D85F74 /* Pods-DMX-DIP Converter-umbrella.h */,
+				5A83D584913D61B99E415D680C9FFC6A /* Pods-DMX-DIP Converter.debug.xcconfig */,
+				752A159EA1470BF7EB1D08AB2A93F6AB /* Pods-DMX-DIP Converter.release.xcconfig */,
+			);
+			name = "Pods-DMX-DIP Converter";
+			path = "Target Support Files/Pods-DMX-DIP Converter";
+			sourceTree = "<group>";
+		};
+		F673AA656991A5B972E030DE81C6FE29 /* StringBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				C4E48A8F84003B4A23603874F68288DA /* StringBuilder.swift */,
+				1793921AB9597474F3B84996B775D30C /* Support Files */,
+			);
+			path = StringBuilder;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		BF70D423EFA6B28D7E35E75628507115 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E710BB94693A6330BE9AE6CF547BCACE /* Pods-DMX-DIP Converter-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E52102CE456B65954978380692435F29 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03401E803F7436A2E78E81BF73D0DC9C /* LicensesKit-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E644CDE4561CCBE29C7A916DFF8C9247 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E0E2B373EF6108CA8B9735C3CC6F1DF /* StringBuilder-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1B6BDE307E41B372A36FB42DAE9E84EE /* StringBuilder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D26DBCC992ECE0FB1E1D6E6D18066114 /* Build configuration list for PBXNativeTarget "StringBuilder" */;
+			buildPhases = (
+				0C9D8A06AC24EB2597A7C31B57428BE2 /* Sources */,
+				024D68712EF77D6F49B46E695548F1BB /* Frameworks */,
+				E644CDE4561CCBE29C7A916DFF8C9247 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StringBuilder;
+			productName = StringBuilder;
+			productReference = 9B3949A68D5E7CB1EE8C2E4F7A290B28 /* StringBuilder.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		6CD0829202418737A343C634564A4FCC /* Pods-DMX-DIP Converter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7E1CA095EE6B76343B5DEEDECF0A6AC /* Build configuration list for PBXNativeTarget "Pods-DMX-DIP Converter" */;
+			buildPhases = (
+				3E42A0285D98012F56A55FA734D6CB3A /* Sources */,
+				AAA193CE9FE7E467E8A192E1081608AA /* Frameworks */,
+				BF70D423EFA6B28D7E35E75628507115 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CCC98FBAFDB72C2056F23A91DD774250 /* PBXTargetDependency */,
+				84A37C82DE6CA29CA50D56C6EBC3BDFA /* PBXTargetDependency */,
+			);
+			name = "Pods-DMX-DIP Converter";
+			productName = "Pods-DMX-DIP Converter";
+			productReference = C23BB460947AF8900468C8BEF6C017DD /* Pods_DMX_DIP_Converter.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		CB00E061742D1AF81A4E0222B47947F7 /* LicensesKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4864085F9AEA1A1CC38E5F97AF08B667 /* Build configuration list for PBXNativeTarget "LicensesKit" */;
+			buildPhases = (
+				14118DB8B05FEEEE569E384488A162EC /* Sources */,
+				502734776EF4833300668ACBFFA1B965 /* Frameworks */,
+				20BB05AE73E7C36BD0EBACFD4267FDC7 /* Resources */,
+				E52102CE456B65954978380692435F29 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5D68F22A3FFA671721EFA4447EF44255 /* PBXTargetDependency */,
+			);
+			name = LicensesKit;
+			productName = LicensesKit;
+			productReference = 316D953D7F2188A84DAD299DA2B72778 /* LicensesKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					1B6BDE307E41B372A36FB42DAE9E84EE = {
+						LastSwiftMigration = 0800;
+					};
+					6CD0829202418737A343C634564A4FCC = {
+						LastSwiftMigration = 0800;
+					};
+					CB00E061742D1AF81A4E0222B47947F7 = {
+						LastSwiftMigration = 0800;
+					};
+				};
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = B13F93C52891BB0606498E73B8CA888D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CB00E061742D1AF81A4E0222B47947F7 /* LicensesKit */,
+				6CD0829202418737A343C634564A4FCC /* Pods-DMX-DIP Converter */,
+				1B6BDE307E41B372A36FB42DAE9E84EE /* StringBuilder */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		20BB05AE73E7C36BD0EBACFD4267FDC7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCE16206F3CA39F9F0ABF4CFD6099494 /* asl_20_full.txt in Resources */,
+				20D10ABABD88524D688D616466D99B62 /* asl_20_summary.txt in Resources */,
+				82C7F50322A0B18422376C45E3523FB0 /* bsd3_full.txt in Resources */,
+				4BD35CCC4C9E949B9B530CF521D073F7 /* bsd3_summary.txt in Resources */,
+				E1A8002CD06272641B65EA30C6203938 /* ccand_30_full.txt in Resources */,
+				5C7956E67C2FC00617F180FC247F187B /* ccand_30_summary.txt in Resources */,
+				154E2E36EE4B0CDFFC389C926DB90022 /* gpl_20_full.txt in Resources */,
+				20483DBC51517692B3B8C89330103EC8 /* gpl_20_summary.txt in Resources */,
+				B79A2470F078092DA44DC9D665982611 /* gpl_30_full.txt in Resources */,
+				7B71C7EECF0364035EC372FFE1897422 /* gpl_30_summary.txt in Resources */,
+				A312ED8597D1D480B06939DDE6B8A631 /* isc_full.txt in Resources */,
+				8A4A9B8456328EB3C81B092590639B53 /* isc_summary.txt in Resources */,
+				B5565831B2B9C2D7DEC9D1A9BA5E483B /* lgpl_21_full.txt in Resources */,
+				A1C5E1C25C2F31B5A9446147B0954704 /* lgpl_21_summary.txt in Resources */,
+				B0A940B54BB869E3898A5857665BD7AA /* mit_full.txt in Resources */,
+				046B118DA9A6D719F55672276A354CBF /* mit_summary.txt in Resources */,
+				A92138433F536A12B153502F5F2D16C0 /* mpl_20_full.txt in Resources */,
+				D9526B9D65F311559530F35E49E0E3D7 /* mpl_20_summary.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0C9D8A06AC24EB2597A7C31B57428BE2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA88773F3FD49EBEB58E05FF516866D2 /* StringBuilder-dummy.m in Sources */,
+				FCC98F347F124CCE60C8BB5F13EBAF1D /* StringBuilder.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		14118DB8B05FEEEE569E384488A162EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A9B24C97F9230633D3E7E9D2F2E28124 /* ApacheSoftwareLicense20.swift in Sources */,
+				FB56655F054005A441C7531A8CCB51F3 /* BSD3ClauseLicense.swift in Sources */,
+				0A197887544B8C9E0CB785DC6E985FA4 /* CreativeCommonsAttributionNoDerivs30Unported.swift in Sources */,
+				95FE588032FE683F304C4259E3EF24C7 /* CustomLicense.swift in Sources */,
+				B42C6E2F533AF0244800185AB01B33E7 /* GnuGeneralPublicLicense20.swift in Sources */,
+				EF287086FF93229C994476747687A8F1 /* GnuGeneralPublicLicense30.swift in Sources */,
+				313067F9EF9C34932183A4D3936905CA /* GnuLesserGeneralPublicLicense21.swift in Sources */,
+				30B51B855515CE33045D11A9BAFB35A3 /* ISCLicense.swift in Sources */,
+				3612E21CDC63231CA57B543D67596BCA /* License.swift in Sources */,
+				AAB2AD609A6F7390F1F8DCECFBC16731 /* LicenseResolver.swift in Sources */,
+				DE4633553144AEA8A5627A09A83B9CA9 /* LicensesKit-dummy.m in Sources */,
+				DE05D9BF5E02F6FD44D9CD7BF79E54F3 /* LicensesViewController.swift in Sources */,
+				D00C823122EB02DC2D56B98E644229F3 /* MITLicense.swift in Sources */,
+				7BCD698DC89B24A9D19FAE5DB13A8FB9 /* MozillaPublicLicense20.swift in Sources */,
+				BE0474D8E0E47925D2D32D3A45175405 /* Notice.swift in Sources */,
+				497A49E9D1ED153EB271C09812C27C45 /* NoticesHtmlBuilder.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3E42A0285D98012F56A55FA734D6CB3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41990927D64E2D86AC4CFB7D32222D72 /* Pods-DMX-DIP Converter-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5D68F22A3FFA671721EFA4447EF44255 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = StringBuilder;
+			target = 1B6BDE307E41B372A36FB42DAE9E84EE /* StringBuilder */;
+			targetProxy = 34F0B81530078AF487013BF0971EF14A /* PBXContainerItemProxy */;
+		};
+		84A37C82DE6CA29CA50D56C6EBC3BDFA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = StringBuilder;
+			target = 1B6BDE307E41B372A36FB42DAE9E84EE /* StringBuilder */;
+			targetProxy = 3A3CB9B4C36A68124BC9A218EC379190 /* PBXContainerItemProxy */;
+		};
+		CCC98FBAFDB72C2056F23A91DD774250 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = LicensesKit;
+			target = CB00E061742D1AF81A4E0222B47947F7 /* LicensesKit */;
+			targetProxy = A2464D1D8814A64BBA7172BAD32CC7E7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		42287DDF97330524BA3EF220F0276DA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		45F606E53EC97E582C8216795593AC48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9326F872D214366C0BA91D50549D5D74 /* StringBuilder.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/StringBuilder/StringBuilder-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/StringBuilder/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/StringBuilder/StringBuilder.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = StringBuilder;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		51B98C79582B05D44CF167B3C4706A38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B351E146166CD05374FAD88404B1F7E0 /* LicensesKit.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LicensesKit/LicensesKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LicensesKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LicensesKit/LicensesKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = LicensesKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		51E4FF6EAF65052EC02DFFB56B56A941 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9326F872D214366C0BA91D50549D5D74 /* StringBuilder.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/StringBuilder/StringBuilder-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/StringBuilder/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/StringBuilder/StringBuilder.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = StringBuilder;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A4D7306C480BB44853B41DA37FEE96CB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 752A159EA1470BF7EB1D08AB2A93F6AB /* Pods-DMX-DIP Converter.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-DMX-DIP Converter/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DMX-DIP Converter/Pods-DMX-DIP Converter.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_DMX_DIP_Converter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AE9439C22469D35336242DD983DB5C5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		CF5A00B3D643BEAC74D5A6E8A162F7C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5A83D584913D61B99E415D680C9FFC6A /* Pods-DMX-DIP Converter.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-DMX-DIP Converter/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-DMX-DIP Converter/Pods-DMX-DIP Converter.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_DMX_DIP_Converter;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D0C11363CEA03B8447B73C1A528CBF9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B351E146166CD05374FAD88404B1F7E0 /* LicensesKit.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/LicensesKit/LicensesKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/LicensesKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/LicensesKit/LicensesKit.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = LicensesKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AE9439C22469D35336242DD983DB5C5F /* Debug */,
+				42287DDF97330524BA3EF220F0276DA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4864085F9AEA1A1CC38E5F97AF08B667 /* Build configuration list for PBXNativeTarget "LicensesKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D0C11363CEA03B8447B73C1A528CBF9B /* Debug */,
+				51B98C79582B05D44CF167B3C4706A38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7E1CA095EE6B76343B5DEEDECF0A6AC /* Build configuration list for PBXNativeTarget "Pods-DMX-DIP Converter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF5A00B3D643BEAC74D5A6E8A162F7C0 /* Debug */,
+				A4D7306C480BB44853B41DA37FEE96CB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D26DBCC992ECE0FB1E1D6E6D18066114 /* Build configuration list for PBXNativeTarget "StringBuilder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				51E4FF6EAF65052EC02DFFB56B56A941 /* Debug */,
+				45F606E53EC97E582C8216795593AC48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

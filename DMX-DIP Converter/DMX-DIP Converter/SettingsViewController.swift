@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LicensesKit
 
 var defaults = UserDefaults.standard
 
@@ -84,7 +85,7 @@ class SettingsViewController: UITableViewController {
             for key in Array(defaults.dictionaryRepresentation().keys) {
                 defaults.removeObject(forKey: key)
             }
-            checkDefaults()
+            UserDefaults.standard.checkDefaults()
             
             self.viewDidLoad()
         }))
@@ -96,12 +97,24 @@ class SettingsViewController: UITableViewController {
         present(confirmationPopup, animated: true, completion: nil)
     }
     
-    
+    @IBAction func infoButton(_ sender: AnyObject) {
+        let licensesViewController = LicensesViewController()
+        licensesViewController.addNotice(Notice(name: "GradientSlider", url: "https://github.com/jonhull/GradientSlider", copyright: "Copyright (c) 2015 Jonathan Hull", license: MITLicense()))
+        licensesViewController.addNotice(Notice(name: "LicensesKit", url: "https://github.com/mattwyskiel/LicensesKit", copyright: "Copyright 2015 Matthew Wyskiel. All rights reserved.", license: ApacheSoftwareLicense20()))
+        licensesViewController.pageHeader = "<center><h2>Third Party Code Used in this Application </h2></center>"
+//        present(licensesViewController, animated: true)
+        let navCont = UINavigationController(rootViewController: licensesViewController)
+        licensesViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(closeViewController))
+        present(navCont, animated: true, completion: nil)
+    }
+    func closeViewController(sender: AnyObject) {
+        dismiss(animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        checkDefaults()
+        UserDefaults.standard.checkDefaults()
         
         preventSleepSC.setTitle("ENABLED", forSegmentAt: 0)
         preventSleepSC.setTitle("DISABLED", forSegmentAt: 1)
