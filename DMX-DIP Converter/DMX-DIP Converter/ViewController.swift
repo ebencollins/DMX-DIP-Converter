@@ -49,8 +49,6 @@ class ViewController: UIViewController {
     
     
     @IBOutlet var mainView: UIView!
-    
-//    @IBOutlet weak var outputView: UIView!
     @IBOutlet weak var outputLabel: UILabel!
     
     @IBOutlet weak var topDirectionlabel: UILabel!
@@ -137,8 +135,24 @@ class ViewController: UIViewController {
             dipArr.append(false)
         }
         
-        for l in swLabels{
-            l.textColor = defaults.color(forKey: "swtColor")
+        for i in 0..<swLabels.count{
+            swLabels[i].textColor = defaults.color(forKey: "swtColor")
+            
+            var val:Int = i;
+            switch defaults.value(forKey: "switchLabels") as! Int{
+            case 0:
+                val = i
+                break
+            case 1:
+                val = i + 1
+                break
+            case 2:
+                val = Int(pow(2.0, Double(i)))
+                break
+            default:
+                break
+            }
+            swLabels[i].text? = String(val);
         }
         
         swView.backgroundColor = defaults.color(forKey: "swColor")
@@ -276,14 +290,7 @@ class ViewController: UIViewController {
 
 extension UserDefaults{
     
-//    func color(forKey:String) -> UIColor?{
-//    var color:UIColor?
-//        if let colorData = data(forKey: forKey){
-//            color = NSKeyedUnarchiver.unarchiveObject(with: colorData) as? UIColor
-//        }
-//        return color
-//    }
-//    
+  
 //    func set(color:UIColor?, forKey:String){
 //        var colorData:NSData?
 //        if let color = color{
@@ -318,6 +325,9 @@ extension UserDefaults{
         }
         if(defaults.value(forKey: "offsetAmount") == nil){
             defaults.set(16, forKey: "offsetAmount")
+        }
+        if(defaults.value(forKey: "switchLabels") == nil){
+            defaults.set(0, forKey: "switchLabels")
         }
         
         if(defaults.value(forKey: "btColor") == nil){

@@ -16,6 +16,7 @@ class SettingsViewController: UITableViewController {
     @IBOutlet weak var preventSleepSC: UISegmentedControl!
     @IBOutlet weak var invertDipDirection: UISegmentedControl!
     @IBOutlet weak var incAmount: UISegmentedControl!
+    @IBOutlet weak var switchLabels: UISegmentedControl!
     
     @IBOutlet weak var restoreDefaults: UIButton!
     
@@ -97,6 +98,21 @@ class SettingsViewController: UITableViewController {
         present(confirmationPopup, animated: true, completion: nil)
     }
     
+    @IBAction func switchLabels(_ sender: AnyObject) {
+        switch switchLabels.selectedSegmentIndex{
+        case 0:
+            defaults.setValue(0, forKey: "switchLabels")
+        case 1:
+            defaults.setValue(1, forKey: "switchLabels")
+        case 2:
+            defaults.setValue(2, forKey: "switchLabels")
+        default:
+            break
+        }
+    
+    
+    }
+    
     @IBAction func infoButton(_ sender: AnyObject) {
         let licensesViewController = LicensesViewController()
         licensesViewController.addNotice(Notice(name: "GradientSlider", url: "https://github.com/jonhull/GradientSlider", copyright: "Copyright (c) 2015 Jonathan Hull", license: MITLicense()))
@@ -147,6 +163,28 @@ class SettingsViewController: UITableViewController {
         }
         incAmount.setWidth(2 * UIScreen.main().bounds.width/5, forSegmentAt: 3)
         
+        switchLabels.setTitle("Exponent", forSegmentAt: 0);
+        switchLabels.setTitle("Number", forSegmentAt: 1);
+        if switchLabels.numberOfSegments < 3{
+            switchLabels.insertSegment(withTitle: "Address", at: 2, animated: false);
+        }else{
+            switchLabels.setTitle("Address", forSegmentAt: 2);
+        }
+        
+        
+        switch defaults.value(forKey: "switchLabels") as! Int{
+        case 0:
+            switchLabels.selectedSegmentIndex = 0
+            break;
+        case 1:
+            switchLabels.selectedSegmentIndex = 1
+            break;
+        case 2:
+            switchLabels.selectedSegmentIndex = 2
+            break;
+        default:
+            break;
+        }
         
         switch defaults.value(forKey: "offsetAmount") as! Int{
         case 4:
