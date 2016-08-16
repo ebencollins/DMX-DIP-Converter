@@ -37,7 +37,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.1423611111111111" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" white="0.19791666666666666" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="w8h-wH-kg9" secondAttribute="trailing" id="3mR-gM-BiI"/>
                                             <constraint firstItem="w8h-wH-kg9" firstAttribute="top" secondItem="vkk-Jl-iHZ" secondAttribute="top" id="DuS-MG-bs2"/>
@@ -387,10 +387,10 @@
                                                 </constraints>
                                                 <variation key="default">
                                                     <mask key="constraints">
-                                                        <exclude reference="6QY-n4-JBd"/>
-                                                        <exclude reference="a0n-qU-nDm"/>
                                                         <exclude reference="1sw-ln-uXs"/>
+                                                        <exclude reference="6QY-n4-JBd"/>
                                                         <exclude reference="IGS-kx-e2o"/>
+                                                        <exclude reference="a0n-qU-nDm"/>
                                                     </mask>
                                                 </variation>
                                             </view>
