@@ -8,7 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		7E167A76B717C094A6F8B5EB /* Pods_DMX_DIP_Converter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D1FB9926D827957E4601B6 /* Pods_DMX_DIP_Converter.framework */; };
+		F5137D141D635F3500D6497C /* DMX-DIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5137D131D635F3500D6497C /* DMX-DIP.swift */; };
+		F5137D151D635FB500D6497C /* DMX-DIP.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5137D131D635F3500D6497C /* DMX-DIP.swift */; };
+		F5137D161D63654B00D6497C /* customswitch_on.png in Resources */ = {isa = PBXBuildFile; fileRef = F57A23C01D3B588A00970E9E /* customswitch_on.png */; };
+		F5137D171D63654D00D6497C /* customswitch_off.png in Resources */ = {isa = PBXBuildFile; fileRef = F57A23BF1D3B588A00970E9E /* customswitch_off.png */; };
+		F5137D181D63654F00D6497C /* arrow_up_64.png in Resources */ = {isa = PBXBuildFile; fileRef = F57A23BE1D3B588A00970E9E /* arrow_up_64.png */; };
+		F5137D191D63655100D6497C /* arrow_down_64.png in Resources */ = {isa = PBXBuildFile; fileRef = F57A23BD1D3B588A00970E9E /* arrow_down_64.png */; };
+		F5137D1A1D63655300D6497C /* gear_64.png in Resources */ = {isa = PBXBuildFile; fileRef = F57A23C11D3B588A00970E9E /* gear_64.png */; };
 		F51C2EBC1D3C4E0D002FDABB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51C2EBB1D3C4E0D002FDABB /* SettingsViewController.swift */; };
+		F54E20531D50A1BF00607782 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54E20521D50A1BF00607782 /* NotificationCenter.framework */; };
+		F54E20561D50A1BF00607782 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54E20551D50A1BF00607782 /* TodayViewController.swift */; };
+		F54E20591D50A1BF00607782 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F54E20571D50A1BF00607782 /* MainInterface.storyboard */; };
+		F54E205D1D50A1BF00607782 /* DMX-DIP Converter Today Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F54E20511D50A1BF00607782 /* DMX-DIP Converter Today Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F550EFF01D4959AA00526336 /* GradientSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F550EFEF1D4959A900526336 /* GradientSlider.swift */; };
 		F57A238C1D3AF94B00970E9E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57A238B1D3AF94B00970E9E /* AppDelegate.swift */; };
 		F57A238E1D3AF94B00970E9E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57A238D1D3AF94B00970E9E /* ViewController.swift */; };
@@ -27,6 +38,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		F54E205B1D50A1BF00607782 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F57A23801D3AF94B00970E9E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F54E20501D50A1BF00607782;
+			remoteInfo = "DMX-DIP Converter Today Extension";
+		};
 		F57A239D1D3AF94B00970E9E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = F57A23801D3AF94B00970E9E /* Project object */;
@@ -43,12 +61,32 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F54E20611D50A1BF00607782 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F54E205D1D50A1BF00607782 /* DMX-DIP Converter Today Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		8E8867CB772E498117BCF04E /* Pods-DMX-DIP Converter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMX-DIP Converter.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DMX-DIP Converter/Pods-DMX-DIP Converter.debug.xcconfig"; sourceTree = "<group>"; };
 		A2FFF9B6EDEC26EDB22A7AA3 /* Pods-DMX-DIP Converter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DMX-DIP Converter.release.xcconfig"; path = "Pods/Target Support Files/Pods-DMX-DIP Converter/Pods-DMX-DIP Converter.release.xcconfig"; sourceTree = "<group>"; };
 		B6D1FB9926D827957E4601B6 /* Pods_DMX_DIP_Converter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DMX_DIP_Converter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F5137D131D635F3500D6497C /* DMX-DIP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DMX-DIP.swift"; sourceTree = "<group>"; };
 		F51C2EBB1D3C4E0D002FDABB /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		F51C2EBD1D3C6160002FDABB /* DMX-DIP Converter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "DMX-DIP Converter.entitlements"; sourceTree = "<group>"; };
+		F54E20511D50A1BF00607782 /* DMX-DIP Converter Today Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DMX-DIP Converter Today Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F54E20521D50A1BF00607782 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		F54E20551D50A1BF00607782 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		F54E20581D50A1BF00607782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		F54E205A1D50A1BF00607782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F550EFEF1D4959A900526336 /* GradientSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientSlider.swift; sourceTree = "<group>"; };
 		F57A23881D3AF94B00970E9E /* DMX-DIP Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DMX-DIP Converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F57A238B1D3AF94B00970E9E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +111,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		F54E204E1D50A1BF00607782 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F54E20531D50A1BF00607782 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F57A23851D3AF94B00970E9E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -102,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				B6D1FB9926D827957E4601B6 /* Pods_DMX_DIP_Converter.framework */,
+				F54E20521D50A1BF00607782 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -115,6 +162,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		F54E20541D50A1BF00607782 /* DMX-DIP Converter Today Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F54E20551D50A1BF00607782 /* TodayViewController.swift */,
+				F54E20571D50A1BF00607782 /* MainInterface.storyboard */,
+				F54E205A1D50A1BF00607782 /* Info.plist */,
+			);
+			path = "DMX-DIP Converter Today Extension";
+			sourceTree = "<group>";
+		};
 		F57A237F1D3AF94B00970E9E = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +183,7 @@
 				F57A238A1D3AF94B00970E9E /* DMX-DIP Converter */,
 				F57A239F1D3AF94B00970E9E /* DMX-DIP ConverterTests */,
 				F57A23AA1D3AF94C00970E9E /* DMX-DIP ConverterUITests */,
+				F54E20541D50A1BF00607782 /* DMX-DIP Converter Today Extension */,
 				F57A23891D3AF94B00970E9E /* Products */,
 				243EA474FDCAFA7FAE6C37F4 /* Pods */,
 				07C04659DC3797D252261E7A /* Frameworks */,
@@ -138,6 +196,7 @@
 				F57A23881D3AF94B00970E9E /* DMX-DIP Converter.app */,
 				F57A239C1D3AF94B00970E9E /* DMX-DIP ConverterTests.xctest */,
 				F57A23A71D3AF94C00970E9E /* DMX-DIP ConverterUITests.xctest */,
+				F54E20511D50A1BF00607782 /* DMX-DIP Converter Today Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -148,6 +207,7 @@
 				F51C2EBD1D3C6160002FDABB /* DMX-DIP Converter.entitlements */,
 				F57A238B1D3AF94B00970E9E /* AppDelegate.swift */,
 				F57A238D1D3AF94B00970E9E /* ViewController.swift */,
+				F5137D131D635F3500D6497C /* DMX-DIP.swift */,
 				F51C2EBB1D3C4E0D002FDABB /* SettingsViewController.swift */,
 				F57E76811D472792008E746A /* ColorSelectorViewController.swift */,
 				F550EFEF1D4959A900526336 /* GradientSlider.swift */,
@@ -181,6 +241,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		F54E20501D50A1BF00607782 /* DMX-DIP Converter Today Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F54E205E1D50A1BF00607782 /* Build configuration list for PBXNativeTarget "DMX-DIP Converter Today Extension" */;
+			buildPhases = (
+				F54E204D1D50A1BF00607782 /* Sources */,
+				F54E204E1D50A1BF00607782 /* Frameworks */,
+				F54E204F1D50A1BF00607782 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DMX-DIP Converter Today Extension";
+			productName = "DMX-DIP Converter Today Extension";
+			productReference = F54E20511D50A1BF00607782 /* DMX-DIP Converter Today Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		F57A23871D3AF94B00970E9E /* DMX-DIP Converter */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = F57A23B01D3AF94C00970E9E /* Build configuration list for PBXNativeTarget "DMX-DIP Converter" */;
@@ -191,10 +268,12 @@
 				F57A23861D3AF94B00970E9E /* Resources */,
 				155967944659A3F2B1C1F3A7 /* [CP] Embed Pods Frameworks */,
 				A4BA800316AEE42BCDF2D538 /* [CP] Copy Pods Resources */,
+				F54E20611D50A1BF00607782 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				F54E205C1D50A1BF00607782 /* PBXTargetDependency */,
 			);
 			name = "DMX-DIP Converter";
 			productName = "DMX-DIP Converter";
@@ -247,6 +326,12 @@
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = collinseben;
 				TargetAttributes = {
+					F54E20501D50A1BF00607782 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = PN9YMD99V6;
+						DevelopmentTeamName = "Eben Collins (Personal Team)";
+						ProvisioningStyle = Automatic;
+					};
 					F57A23871D3AF94B00970E9E = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = PN9YMD99V6;
@@ -290,11 +375,25 @@
 				F57A23871D3AF94B00970E9E /* DMX-DIP Converter */,
 				F57A239B1D3AF94B00970E9E /* DMX-DIP ConverterTests */,
 				F57A23A61D3AF94C00970E9E /* DMX-DIP ConverterUITests */,
+				F54E20501D50A1BF00607782 /* DMX-DIP Converter Today Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		F54E204F1D50A1BF00607782 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F5137D1A1D63655300D6497C /* gear_64.png in Resources */,
+				F54E20591D50A1BF00607782 /* MainInterface.storyboard in Resources */,
+				F5137D161D63654B00D6497C /* customswitch_on.png in Resources */,
+				F5137D181D63654F00D6497C /* arrow_up_64.png in Resources */,
+				F5137D191D63655100D6497C /* arrow_down_64.png in Resources */,
+				F5137D171D63654D00D6497C /* customswitch_off.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F57A23861D3AF94B00970E9E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -375,10 +474,20 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		F54E204D1D50A1BF00607782 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F54E20561D50A1BF00607782 /* TodayViewController.swift in Sources */,
+				F5137D151D635FB500D6497C /* DMX-DIP.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		F57A23841D3AF94B00970E9E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5137D141D635F3500D6497C /* DMX-DIP.swift in Sources */,
 				F57A238E1D3AF94B00970E9E /* ViewController.swift in Sources */,
 				F57E76821D472792008E746A /* ColorSelectorViewController.swift in Sources */,
 				F57A238C1D3AF94B00970E9E /* AppDelegate.swift in Sources */,
@@ -407,6 +516,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		F54E205C1D50A1BF00607782 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F54E20501D50A1BF00607782 /* DMX-DIP Converter Today Extension */;
+			targetProxy = F54E205B1D50A1BF00607782 /* PBXContainerItemProxy */;
+		};
 		F57A239E1D3AF94B00970E9E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = F57A23871D3AF94B00970E9E /* DMX-DIP Converter */;
@@ -420,6 +534,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		F54E20571D50A1BF00607782 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F54E20581D50A1BF00607782 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		F57A238F1D3AF94B00970E9E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -439,6 +561,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		F54E205F1D50A1BF00607782 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "DMX-DIP Converter Today Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.collinseben.DMX-DIP-Converter.DMX-DIP-Converter-Today-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		F54E20601D50A1BF00607782 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "DMX-DIP Converter Today Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.collinseben.DMX-DIP-Converter.DMX-DIP-Converter-Today-Extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		F57A23AE1D3AF94C00970E9E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -532,6 +678,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8E8867CB772E498117BCF04E /* Pods-DMX-DIP Converter.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "DMX-DIP Converter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -545,6 +692,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A2FFF9B6EDEC26EDB22A7AA3 /* Pods-DMX-DIP Converter.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "DMX-DIP Converter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -607,6 +755,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		F54E205E1D50A1BF00607782 /* Build configuration list for PBXNativeTarget "DMX-DIP Converter Today Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F54E205F1D50A1BF00607782 /* Debug */,
+				F54E20601D50A1BF00607782 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		F57A23831D3AF94B00970E9E /* Build configuration list for PBXProject "DMX-DIP Converter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

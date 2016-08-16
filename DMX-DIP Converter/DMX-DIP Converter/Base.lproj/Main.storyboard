@@ -327,7 +327,8 @@
                                                     <constraint firstAttribute="height" constant="21" id="sC3-KK-xoe"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUi-XF-inq">
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUi-XF-inq">
+                                                <frame key="frameInset" width="375" height="129.5"/>
                                                 <connections>
                                                     <action selector="switchView:" destination="dYd-ij-GaU" eventType="touchUpInside" id="tbw-MV-AFp"/>
                                                 </connections>
