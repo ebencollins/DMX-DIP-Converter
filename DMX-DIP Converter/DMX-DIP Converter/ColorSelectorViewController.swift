@@ -49,9 +49,8 @@ class ColorSelectorViewController: UIViewController {
             i?.thickness = 8
         }
         
-        UIColor.blue()
         
-        hue.minColor = UIColor.blue()
+        hue.minColor = UIColor.blue
         hue.hasRainbow = true
         
         let color = UserDefaults.standard.color(forKey: colorKey!)! as UIColor
@@ -79,8 +78,8 @@ class ColorSelectorViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
-        self.preferredContentSize.width = UIScreen.main().bounds.width * 1.0
-        self.preferredContentSize.height = UIScreen.main().bounds.height * 0.2
+        self.preferredContentSize.width = UIScreen.main.bounds.width * 1.0
+        self.preferredContentSize.height = UIScreen.main.bounds.height * 0.2
         
     }
     

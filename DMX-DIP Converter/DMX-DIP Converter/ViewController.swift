@@ -87,9 +87,9 @@ class ViewController: UIViewController {
         
         UserDefaults.standard.checkDefaults()
         if defaults.value(forKey: "preventSleep") as! Bool{
-            UIApplication.shared().isIdleTimerDisabled = true
+            UIApplication.shared.isIdleTimerDisabled = true
         }else{
-            UIApplication.shared().isIdleTimerDisabled = false
+            UIApplication.shared.isIdleTimerDisabled = false
         }
         
         if defaults.value(forKey: "invertDirection") as! Bool{
@@ -232,7 +232,7 @@ class ViewController: UIViewController {
                 if Int(buttonText[i]) != nil{
                     var out = outputLabel.text!;
                     out.append(buttonText[i])
-                    if(Int(out) > 511){
+                    if(Int(out)! > 511){
                         disable = true;
                     }
                 }
@@ -258,8 +258,8 @@ class ViewController: UIViewController {
     
     
 
-    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-        return UIStatusBarStyle.lightContent
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
 }

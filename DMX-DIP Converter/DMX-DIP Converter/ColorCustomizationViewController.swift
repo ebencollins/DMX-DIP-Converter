@@ -71,9 +71,9 @@ class ColorCustomizationViewController: UIViewController, UIPopoverPresentationC
         // Do any additional setup after loading the view.
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "ColorSelectorSegue"){
-            let dest = segue.destinationViewController as! ColorSelectorViewController
+            let dest = segue.destination as! ColorSelectorViewController
             if let pop = dest.popoverPresentationController{
                 pop.delegate = self
                 dest.popoverPresentationController?.sourceRect = (origin?.bounds)!

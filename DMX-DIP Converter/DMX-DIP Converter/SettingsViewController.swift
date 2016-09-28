@@ -159,9 +159,9 @@ class SettingsViewController: UITableViewController {
             incAmount.setTitle("Custom (+" + customTxt + ")", forSegmentAt: 3);
         }
         for i in 0...2{
-            incAmount.setWidth(UIScreen.main().bounds.width/5, forSegmentAt: i)
+            incAmount.setWidth(UIScreen.main.bounds.width/5, forSegmentAt: i)
         }
-        incAmount.setWidth(2 * UIScreen.main().bounds.width/5, forSegmentAt: 3)
+        incAmount.setWidth(2 * UIScreen.main.bounds.width/5, forSegmentAt: 3)
         
         switchLabels.setTitle("Exponent", forSegmentAt: 0);
         switchLabels.setTitle("Number", forSegmentAt: 1);

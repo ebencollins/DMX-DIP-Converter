@@ -15,8 +15,8 @@ import UIKit
     
     //MARK: Properties
     @IBInspectable var hasRainbow:Bool  = false {didSet{updateTrackColors()}}//Uses saturation & lightness from minColor
-    @IBInspectable var minColor:UIColor = UIColor.blue() {didSet{updateTrackColors()}}
-    @IBInspectable var maxColor:UIColor = UIColor.orange() {didSet{updateTrackColors()}}
+    @IBInspectable var minColor:UIColor = UIColor.blue {didSet{updateTrackColors()}}
+    @IBInspectable var maxColor:UIColor = UIColor.orange {didSet{updateTrackColors()}}
     
     @IBInspectable var value: CGFloat {
         get{
@@ -127,7 +127,7 @@ import UIKit
             if let color = _thumbIconLayer.backgroundColor {
                 return UIColor(cgColor: color)
             }
-            return UIColor.white()
+            return UIColor.white
         }
         set {
             _thumbIconLayer.backgroundColor = newValue.cgColor
@@ -150,7 +150,7 @@ import UIKit
     
     func setGradientForBrightnessWithHue(hue:CGFloat,saturation:CGFloat){
         hasRainbow = false
-        minColor = UIColor.black()
+        minColor = UIColor.black
         maxColor = UIColor(hue: hue, saturation: saturation, brightness: 1.0, alpha: 1.0)
     }
     
@@ -174,8 +174,8 @@ import UIKit
     
     func setGradientForGrayscale(){
         hasRainbow = false
-        minColor = UIColor.black()
-        maxColor = UIColor.white()
+        minColor = UIColor.black
+        maxColor = UIColor.white
     }
     
     
@@ -187,12 +187,12 @@ import UIKit
         let thumb = CALayer()
         thumb.cornerRadius = defaultThumbSize/2.0
         thumb.bounds = CGRect(x:0, y:0, width:defaultThumbSize, height:defaultThumbSize)
-        thumb.backgroundColor = UIColor.white().cgColor
-        thumb.shadowColor = UIColor.black().cgColor
+        thumb.backgroundColor = UIColor.white.cgColor
+        thumb.shadowColor = UIColor.black.cgColor
         thumb.shadowOffset = CGSize(width:0.0, height:2.5)
         thumb.shadowRadius = 2.0
         thumb.shadowOpacity = 0.25
-        thumb.borderColor = UIColor.black().withAlphaComponent(0.15).cgColor
+        thumb.borderColor = UIColor.black.withAlphaComponent(0.15).cgColor
         thumb.borderWidth = 0.5
         return thumb
     }()
@@ -203,8 +203,8 @@ import UIKit
         track.startPoint = CGPoint(x:0.0, y:0.5)
         track.endPoint = CGPoint(x:1.0, y:0.5)
         track.locations = [0.0,1.0]
-        track.colors = [UIColor.blue().cgColor,UIColor.orange().cgColor]
-        track.borderColor = UIColor.black().cgColor
+        track.colors = [UIColor.blue.cgColor,UIColor.orange.cgColor]
+        track.borderColor = UIColor.black.cgColor
         return track
     }()
     
@@ -216,7 +216,7 @@ import UIKit
         let iconLayer = CALayer()
         iconLayer.cornerRadius = size/2.0
         iconLayer.bounds = CGRect(x:0, y:0, width:size, height:size)
-        iconLayer.backgroundColor = UIColor.white().cgColor
+        iconLayer.backgroundColor = UIColor.white.cgColor
         return iconLayer
     }()
     
@@ -230,8 +230,8 @@ import UIKit
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
-        minColor = aDecoder.decodeObject(forKey: "minColor") as? UIColor ?? UIColor.lightGray()
-        maxColor = aDecoder.decodeObject(forKey: "maxColor") as? UIColor ?? UIColor.darkGray()
+        minColor = aDecoder.decodeObject(forKey: "minColor") as? UIColor ?? UIColor.lightGray
+        maxColor = aDecoder.decodeObject(forKey: "maxColor") as? UIColor ?? UIColor.darkGray
         
         value = aDecoder.decodeObject(forKey: "value") as? CGFloat ?? 0.0
         minimumValue = aDecoder.decodeObject(forKey: "minimumValue") as? CGFloat ?? 0.0
@@ -275,11 +275,11 @@ import UIKit
     
     //MARK: - Layout
     
-    override func intrinsicContentSize()->CGSize {
+    override var intrinsicContentSize:CGSize {
         return CGSize(width: UIViewNoIntrinsicMetric, height: thumbSize)
     }
     
-    override func alignmentRectInsets() -> UIEdgeInsets {
+    override var alignmentRectInsets:UIEdgeInsets {
         return UIEdgeInsetsMake(4.0, 2.0, 4.0, 2.0)
     }
     
@@ -313,7 +313,7 @@ import UIKit
         if let icon = thumbIcon {
             layerSize = min(max(icon.size.height,icon.size.width),layerSize)
             _thumbIconLayer.cornerRadius = 0.0
-            _thumbIconLayer.backgroundColor = UIColor.clear().cgColor
+            _thumbIconLayer.backgroundColor = UIColor.clear.cgColor
         }else{
             _thumbIconLayer.cornerRadius = layerSize/2.0
         }
@@ -426,7 +426,7 @@ import UIKit
         let step:CGFloat = 1.0 / CGFloat(cnt)
         let locations:[CGFloat] = (0...cnt).map({ i in return (step * CGFloat(i))})
         _trackLayer.colors = locations.map({return UIColor(hue: $0, saturation: s, brightness: l, alpha: a).cgColor})
-        _trackLayer.locations = locations
+        _trackLayer.locations = locations as [NSNumber]?
     }
 }
 

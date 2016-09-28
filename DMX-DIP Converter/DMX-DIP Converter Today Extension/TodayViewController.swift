@@ -41,14 +41,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         for s in switches{
             s.addTarget(self, action: #selector(switchChanged), for: .touchUpInside)
             s.layer.borderWidth = 3
-            s.layer.borderColor = UIColor.clear().cgColor
+            s.layer.borderColor = UIColor.clear.cgColor
             dipArr.append(false)
         }
     }
     
     override func viewDidLayoutSubviews() {
-        self.preferredContentSize.width = UIScreen.main().bounds.width * 1.0
-        self.preferredContentSize.height = UIScreen.main().bounds.width * 0.75
+        self.preferredContentSize.width = UIScreen.main.bounds.width * 1.0
+        self.preferredContentSize.height = UIScreen.main.bounds.width * 0.75
         
     }
     

@@ -50,7 +50,7 @@ extension UserDefaults{
     //    }
     
     func color(forKey: String) -> UIColor? {
-        var color: UIColor? = UIColor.clear()
+        var color: UIColor? = UIColor.clear
         if let colorData = data(forKey: forKey) {
             color = NSKeyedUnarchiver.unarchiveObject(with: colorData) as? UIColor
         }
@@ -60,7 +60,7 @@ extension UserDefaults{
     func setColor(color: UIColor?, forKey key: String) {
         var colorData: NSData?
         if let color = color {
-            colorData = NSKeyedArchiver.archivedData(withRootObject: color)
+            colorData = NSKeyedArchiver.archivedData(withRootObject: color) as NSData?
         }
         set(colorData, forKey: key)
     }
@@ -81,13 +81,13 @@ extension UserDefaults{
         }
         
         if(defaults.value(forKey: "btColor") == nil){
-            defaults.setColor(color: UIColor.lightText(), forKey: "btColor")
+            defaults.setColor(color: UIColor.lightText, forKey: "btColor")
         }
         if(defaults.value(forKey: "swtColor") == nil){
-            defaults.setColor(color: UIColor.black(), forKey: "swtColor")
+            defaults.setColor(color: UIColor.black, forKey: "swtColor")
         }
         if(defaults.value(forKey: "otColor") == nil){
-            defaults.setColor(color: UIColor.lightText(), forKey: "otColor")
+            defaults.setColor(color: UIColor.lightText, forKey: "otColor")
         }
         if(defaults.value(forKey: "bColor") == nil){
             defaults.setColor(color: UIColor(hue:0, saturation: 0, brightness: 0.26, alpha: 1.0), forKey: "bColor")

@@ -150,7 +150,7 @@ public class LicensesViewController: UIViewController, WKNavigationDelegate {
     public func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
         if navigationAction.navigationType == .linkActivated {
             let url = navigationAction.request.url
-            UIApplication.shared().openURL(url!)
+            UIApplication.shared.openURL(url!)
             decisionHandler(.cancel)
             return
         }
