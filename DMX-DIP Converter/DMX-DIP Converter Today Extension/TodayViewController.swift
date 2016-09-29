@@ -5,7 +5,7 @@
 //  Created by Eben Collins on 2016-08-2.
 //  Copyright © 2016 collinseben. All rights reserved.
 //
-
+//
 import UIKit
 import NotificationCenter
 
@@ -32,10 +32,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     
     let defaults = UserDefaults.standard
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+
+        self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         
         switches = [s0, s1, s2, s3, s4, s5, s6, s7, s8]
         for s in switches{
@@ -53,13 +56,14 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
     
-    
-    
     func switchChanged(sender:UIButton!){ //handle the dips being pressed
         let swIndex = switches.index(of: sender)!
         dipArr[swIndex] = !dipArr[swIndex]
         setDips(dips: dipArr)
         outputLabel.text = String((DMXDIP().dipsToNum(dips: dipArr)))
+        let generator = UISelectionFeedbackGenerator()
+        generator.prepare()
+        generator.selectionChanged()
     }
     
     func setDips(dips:[Bool]){
@@ -81,5 +85,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     @IBAction func outputButton(_ sender: AnyObject) {
         let url : NSURL = NSURL(string: "DMX-DIP-Converter://")!
         self.extensionContext?.open(url as URL, completionHandler: nil)
+    }
+
+    @available(iOS 10.0, *)
+    @available(iOSApplicationExtension 10.0, *)
+    func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
+        self.preferredContentSize = (activeDisplayMode == .expanded) ? CGSize(width: 320, height: 400) : CGSize(width: maxSize.width, height: maxSize.height)
     }
 }

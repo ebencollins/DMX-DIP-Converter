@@ -186,6 +186,7 @@ class ViewController: UIViewController {
     }
     
     func buttonTapped(sender: UIButton) { //handle the button press (for keypad)
+        selectionFeedback()
         var value:String?
         var out = outputLabel.text!
         switch sender{
@@ -249,6 +250,7 @@ class ViewController: UIViewController {
     }
     
     func switchChanged(sender:UIButton!){ //handle the dips being pressed
+        selectionFeedback()
         let swIndex = switches.index(of: sender)!
         dipArr[swIndex] = !dipArr[swIndex]
         setDips(dips: dipArr)

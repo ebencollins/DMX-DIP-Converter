@@ -14,6 +14,7 @@ var defaults = UserDefaults.standard
 class SettingsViewController: UITableViewController {
     
     @IBOutlet weak var preventSleepSC: UISegmentedControl!
+    @IBOutlet weak var hapticsSC: UISegmentedControl!
     @IBOutlet weak var invertDipDirection: UISegmentedControl!
     @IBOutlet weak var incAmount: UISegmentedControl!
     @IBOutlet weak var switchLabels: UISegmentedControl!
@@ -22,6 +23,7 @@ class SettingsViewController: UITableViewController {
     
     
     @IBAction func preventSleepSC(_ sender: AnyObject) {
+        selectionFeedback()
         switch preventSleepSC.selectedSegmentIndex{
         case 0:
             defaults.setValue(true, forKey: "preventSleep")
@@ -32,7 +34,19 @@ class SettingsViewController: UITableViewController {
         }
     }
     
+    @IBAction func hapticsSC(_ sender: AnyObject) {
+        selectionFeedback()
+        switch hapticsSC.selectedSegmentIndex{
+        case 0:
+            defaults.setValue(true, forKey: "enableHaptics")
+        case 1:
+            defaults.setValue(false, forKey: "enableHaptics")
+        default:
+            break
+        }
+    }
     @IBAction func invertDipDirection(_ sender: AnyObject) {
+        selectionFeedback()
         switch invertDipDirection.selectedSegmentIndex{
         case 0:
             defaults.setValue(false, forKey: "invertDirection")
@@ -46,12 +60,19 @@ class SettingsViewController: UITableViewController {
     @IBAction func incAmount(_ sender: AnyObject) {
         switch incAmount.selectedSegmentIndex{
         case 0:
+            selectionFeedback()
             defaults.setValue(4, forKey: "offsetAmount")
         case 1:
+            selectionFeedback()
             defaults.setValue(8, forKey: "offsetAmount")
         case 2:
+            selectionFeedback()
             defaults.setValue(16, forKey: "offsetAmount")
         case 3:
+            if(UserDefaults.standard.value(forKey: "enableHaptics") as! Bool){
+                let generator = UINotificationFeedbackGenerator()
+                generator.notificationOccurred(.warning)
+            }
             var inputTextField: UITextField?
             
             let alertController: UIAlertController = UIAlertController(title: "Set Custom Offset", message: "", preferredStyle: .alert)
@@ -61,6 +82,7 @@ class SettingsViewController: UITableViewController {
             }
             alertController.addAction(cancelAction)
             let nextAction: UIAlertAction = UIAlertAction(title: "Done", style: .default) { action -> Void in
+                selectionFeedback()
                 defaults.setValue(Int((inputTextField?.text!)!), forKey: "offsetAmount")
                 self.viewDidLoad()
                 
@@ -80,9 +102,17 @@ class SettingsViewController: UITableViewController {
     }
     
     @IBAction func restoreDefaults(_ sender: AnyObject) {
+        if(UserDefaults.standard.value(forKey: "enableHaptics") as! Bool){
+            let generator = UINotificationFeedbackGenerator()
+            generator.notificationOccurred(.warning)
+        }
         let confirmationPopup = UIAlertController(title: "Reset all settings?", message: "All settigns will be restored to default. This action is not reversible.", preferredStyle: UIAlertControllerStyle.alert)
         
         confirmationPopup.addAction(UIAlertAction(title: "Reset", style: .destructive, handler: {(action: UIAlertAction!) in
+            if(UserDefaults.standard.value(forKey: "enableHaptics") as! Bool){
+                let generator = UINotificationFeedbackGenerator()
+                generator.notificationOccurred(.success)
+            }
             for key in Array(defaults.dictionaryRepresentation().keys) {
                 defaults.removeObject(forKey: key)
             }
@@ -99,6 +129,7 @@ class SettingsViewController: UITableViewController {
     }
     
     @IBAction func switchLabels(_ sender: AnyObject) {
+        selectionFeedback()
         switch switchLabels.selectedSegmentIndex{
         case 0:
             defaults.setValue(0, forKey: "switchLabels")
@@ -138,6 +169,14 @@ class SettingsViewController: UITableViewController {
             preventSleepSC.selectedSegmentIndex=0
         }else{
             preventSleepSC.selectedSegmentIndex=1
+        }
+        
+        hapticsSC.setTitle("ENABLED", forSegmentAt: 0)
+        hapticsSC.setTitle("DISABLED", forSegmentAt: 1)
+        if defaults.value(forKey: "enableHaptics") as! Bool{
+            hapticsSC.selectedSegmentIndex=0
+        }else{
+            hapticsSC.selectedSegmentIndex=1
         }
         
         invertDipDirection.setTitle("DOWN", forSegmentAt: 1)

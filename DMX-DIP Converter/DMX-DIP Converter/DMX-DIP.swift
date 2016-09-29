@@ -38,6 +38,14 @@ struct DMXDIP{
     
 }
 
+func selectionFeedback(){
+    if(UserDefaults.standard.value(forKey: "enableHaptics") as! Bool){
+        let generator = UISelectionFeedbackGenerator()
+        generator.prepare()
+        generator.selectionChanged()
+    }
+}
+
 extension UserDefaults{
     
     
@@ -97,6 +105,10 @@ extension UserDefaults{
         }
         if(defaults.value(forKey: "oColor") == nil){
             defaults.setColor(color: UIColor(hue:0, saturation: 0, brightness: 0.26, alpha: 1.0), forKey: "oColor")
+        }
+        
+        if(defaults.value(forKey: "enableHaptics") == nil){
+            defaults.setValue(true, forKey: "enableHaptics")
         }
         
     }

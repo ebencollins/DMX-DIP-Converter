@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11173.2" systemVersion="16A238m" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ceE-LV-03S">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A313a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ceE-LV-03S">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11143.2"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -62,10 +62,39 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="Haptic Feedback" id="fXx-iI-mvl" userLabel="Haptics">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="ies-0e-9Kz">
+                                        <rect key="frame" x="0.0" y="221" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ies-0e-9Kz" id="Z7h-pz-8B8">
+                                            <frame key="frameInset" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="fiN-mA-ATz">
+                                                    <segments>
+                                                        <segment title="First"/>
+                                                        <segment title="Second"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="hapticsSC:" destination="YYm-fq-Sws" eventType="valueChanged" id="hKT-vW-1ez"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="fiN-mA-ATz" firstAttribute="width" secondItem="Z7h-pz-8B8" secondAttribute="width" id="6eo-gS-5rS"/>
+                                                <constraint firstItem="fiN-mA-ATz" firstAttribute="leading" secondItem="Z7h-pz-8B8" secondAttribute="leading" id="XRP-jG-Pu7"/>
+                                                <constraint firstAttribute="bottom" secondItem="fiN-mA-ATz" secondAttribute="bottom" id="cwd-S5-JDE"/>
+                                                <constraint firstItem="fiN-mA-ATz" firstAttribute="height" secondItem="Z7h-pz-8B8" secondAttribute="height" id="iKa-gw-brh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                             <tableViewSection headerTitle="Activated Dip Direction" id="lP6-ji-KqF">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="1Ob-L4-2RY">
-                                        <rect key="frame" x="0.0" y="221" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="322" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Ob-L4-2RY" id="vSR-3z-PFh">
                                             <frame key="frameInset" width="375" height="44"/>
@@ -94,7 +123,7 @@
                             <tableViewSection headerTitle="Switch labels" id="wVb-Yi-o77" userLabel="Switch labels">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="oNM-x8-T4x">
-                                        <rect key="frame" x="0.0" y="322" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="423" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="oNM-x8-T4x" id="Euj-R6-o7B">
                                             <frame key="frameInset" width="375" height="44"/>
@@ -123,7 +152,7 @@
                             <tableViewSection headerTitle="Offset Increment" id="FNw-wl-5Z8">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="gho-jH-rP0">
-                                        <rect key="frame" x="0.0" y="423" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="524" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gho-jH-rP0" id="9zK-np-1sj">
                                             <frame key="frameInset" width="375" height="44"/>
@@ -152,7 +181,7 @@
                             <tableViewSection id="YfP-hn-5lD" userLabel="color picker">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" id="YHk-cr-Vgs">
-                                        <rect key="frame" x="0.0" y="503" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="604" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YHk-cr-Vgs" id="RHH-Au-b59">
                                             <frame key="frameInset" width="342" height="44"/>
@@ -188,7 +217,7 @@
                             <tableViewSection id="Umb-7r-Ybq" userLabel="Info">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" accessoryType="detailDisclosureButton" indentationWidth="10" id="Q0L-iR-rBS">
-                                        <rect key="frame" x="0.0" y="583" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="684" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Q0L-iR-rBS" id="gKo-Xy-azf">
                                             <frame key="frameInset" width="308" height="44"/>
@@ -223,7 +252,7 @@
                             <tableViewSection id="KYq-qC-BXT">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="9r1-M9-YMp">
-                                        <rect key="frame" x="0.0" y="663" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="764" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9r1-M9-YMp" id="GQM-Ho-imS">
                                             <frame key="frameInset" width="375" height="44"/>
@@ -256,6 +285,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="hapticsSC" destination="fiN-mA-ATz" id="fhL-mQ-GhB"/>
                         <outlet property="incAmount" destination="yBx-sa-iV1" id="GnA-VJ-NNO"/>
                         <outlet property="invertDipDirection" destination="xGN-Pn-HpF" id="arN-o0-HRC"/>
                         <outlet property="preventSleepSC" destination="Whf-V9-Ieo" id="CDx-To-CTS"/>
@@ -327,8 +357,7 @@
                                                     <constraint firstAttribute="height" constant="21" id="sC3-KK-xoe"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUi-XF-inq">
-                                                <frame key="frameInset" width="375" height="129.5"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jUi-XF-inq">
                                                 <connections>
                                                     <action selector="switchView:" destination="dYd-ij-GaU" eventType="touchUpInside" id="tbw-MV-AFp"/>
                                                 </connections>
