@@ -52,10 +52,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
     }
     
-    func widgetPerformUpdate(completionHandler: ((NCUpdateResult) -> Void)) {
+    func widgetPerformUpdate(completionHandler: @escaping (NCUpdateResult) -> Void) {
         setDips(dips: [false, false, false, false, false, false, false, false])
         completionHandler(NCUpdateResult.newData)
     }
+    
+    
+    
     
     func switchChanged(sender:UIButton!){ //handle the dips being pressed
         let swIndex = switches.index(of: sender)!
