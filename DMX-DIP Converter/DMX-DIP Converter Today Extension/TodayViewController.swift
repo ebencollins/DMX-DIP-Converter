@@ -46,11 +46,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         }
     }
     
-    override func viewDidLayoutSubviews() {
-        self.preferredContentSize.width = UIScreen.main.bounds.width * 1.0
-        self.preferredContentSize.height = UIScreen.main.bounds.width * 0.75
-        
-    }
     
     func widgetPerformUpdate(completionHandler: @escaping (NCUpdateResult) -> Void) {
         setDips(dips: [false, false, false, false, false, false, false, false])
