@@ -95,7 +95,8 @@ import UIKit
         }
         
         let arrowImgX = 9 * (labelFrame.width + spacing) - 1
-        arrowImg?.frame = CGRect(x: arrowImgX, y: CGFloat((switchHeight-64)/2), width: frame.size.width - arrowImgX, height: 64)
+        let arrowH = frame.size.height - 48 < 64 ? 0.5 * (frame.size.height - 48) : 64
+        arrowImg?.frame = CGRect(x: arrowImgX, y: CGFloat((switchHeight-Int(arrowH))/2), width: frame.size.width - arrowImgX, height: arrowH)
         
         var bottomArrowLabelFrame = CGRect(x: arrowImgX, y: 0, width: frame.size.width - arrowImgX, height: 24)
         bottomArrowLabelFrame.origin.y = CGFloat(switchHeight + Int(spacing) - 24)
