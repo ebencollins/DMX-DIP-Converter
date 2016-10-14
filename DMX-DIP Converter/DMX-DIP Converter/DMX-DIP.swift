@@ -9,7 +9,6 @@
 import UIKit
 import Foundation
 
-import UIKit
 
 @IBDesignable class DMXDIPSwitchControl : UIControl{
     
@@ -34,13 +33,42 @@ import UIKit
     
     var switchValues:[Bool] = []
     
+    init(frame: CGRect, invert: Bool, tColor: UIColor, bColor: UIColor){
+        print("init custom")
+        textColor = tColor
+        backColor = bColor
+        if(invert){
+            onImage = UIImage(named: "customswitch_off.png")!
+            offImage = UIImage(named: "customswitch_on.png")!
+            directionalArrowImage = UIImage(named: "arrow_down_64.png")!
+            topLabelText = "OFF"
+            bottomLabelText = "ON"
+        }else{
+            onImage = UIImage(named: "customswitch_on.png")!
+            offImage = UIImage(named: "customswitch_off.png")!
+            directionalArrowImage = UIImage(named: "arrow_up_64.png")!
+            topLabelText = "ON"
+            bottomLabelText = "OFF"
+        }
+        super.init(frame: frame)
+        commonSetup()
+    }
+    
     override init(frame: CGRect){
         super.init(frame: frame)
+        print("init frame")
+        commonSetup()
     }
     
     required init?(coder aDecoder: NSCoder){
         super.init(coder: aDecoder)
-       
+        print("init coder")
+        commonSetup()
+        
+    }
+    
+    func commonSetup(){
+        print("commonSetup")
         for i in 0..<9{
             let button = UIButton(frame: CGRect(x: 0, y: 0, width: 16, height: 16))
             button.addTarget(self, action: #selector(DMXDIPSwitchControl.switchFlipped), for: .touchDown)
@@ -172,13 +200,26 @@ import UIKit
     
     var value:Int = 0;
     
+    init(frame: CGRect, tColor: UIColor, bColor: UIColor){
+        textColor = tColor
+        buttonColor = bColor
+        
+        super.init(frame: frame)
+        commonSetup()
+    }
+    
     override init(frame: CGRect){
         super.init(frame: frame)
+        commonSetup()
     }
     
     // MARK: Initialization
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        commonSetup()
+        
+    }
+    func commonSetup(){
         buttonLabels[9] = "+" + String(addGroupAmnt)
         backgroundColor = UIColor.black
         for i in 0..<12{
