@@ -3,7 +3,7 @@
 //  DMX-DIP Converter
 //
 //  Created by Eben Collins on 16/07/26.
-//  Copyright © 2016 collinseben. All rights reserved.
+//  Copyright © 2016 Eben Collins. All rights reserved.
 //
 
 import UIKit

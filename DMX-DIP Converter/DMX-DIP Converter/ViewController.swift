@@ -2,8 +2,7 @@
 //  ViewController.swift
 //  DMX-DIP Converter
 //
-//  Created by Eben Collins on 16/07/16.
-//  Copyright © 2016 collinseben. All rights reserved.
+//  Created by Eben Collins on 16/07/16.//  Copyright © 2016 Eben Collins. All rights reserved.
 //
 
 import UIKit

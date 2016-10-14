@@ -323,8 +323,8 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
-				ORGANIZATIONNAME = collinseben;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = ebencollins;
 				TargetAttributes = {
 					F54E20501D50A1BF00607782 = {
 						CreatedOnToolsVersion = 8.0;
@@ -566,7 +566,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = "DMX-DIP Converter Today Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.collinseben.DMX-DIP-Converter.DMX-DIP-Converter-Today-Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ebencollins.DMX-DIP-Converter.DMX-DIP-Converter-Today-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -578,7 +578,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = "DMX-DIP Converter Today Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.collinseben.DMX-DIP-Converter.DMX-DIP-Converter-Today-Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ebencollins.DMX-DIP-Converter.DMX-DIP-Converter-Today-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -686,7 +686,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "DMX-DIP Converter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.collinseben.DMX-DIP-Converter";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ebencollins.DMX-DIP-Converter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -700,7 +700,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "DMX-DIP Converter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.collinseben.DMX-DIP-Converter";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ebencollins.DMX-DIP-Converter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
