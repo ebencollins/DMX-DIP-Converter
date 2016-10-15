@@ -184,24 +184,16 @@ import Foundation
         sendActions(for: UIControlEvents.valueChanged)
     }
     
-    func updateProperties(){
-        for i in 0..<switchLabels.count{
-            switchLabels[i].textColor = textColor
-            switchLabels[i].text = switchLabelText?[i]
+    func changeColors(mainColor: UIColor, tColor: UIColor){
+        backColor = mainColor
+        textColor = tColor
+        backgroundColor = backColor
+        for label in switchLabels{
+            label.textColor = textColor
         }
         topArrowLabel.textColor = textColor
         bottomArrowLabel.textColor = textColor
         
-        topArrowLabel.text = topLabelText
-        bottomArrowLabel.text = bottomLabelText;
-        arrowImg?.image = directionalArrowImage
-        for i in 0..<9{
-            if(switchValues[i]){
-                switches[i].setBackgroundImage(onImage, for: .normal)
-            }else{
-                switches[i].setBackgroundImage(offImage, for: .normal)
-            }
-        }
     }
 
 }
@@ -222,6 +214,7 @@ import Foundation
     
     var value:Int = 0;
     
+    // MARK: Initialization
     init(frame: CGRect, offsetInc:Int, tColor: UIColor, bColor: UIColor){
         textColor = tColor
         buttonColor = bColor
@@ -236,7 +229,6 @@ import Foundation
         commonSetup()
     }
     
-    // MARK: Initialization
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonSetup()
@@ -279,13 +271,12 @@ import Foundation
         return CGSize(width: 240, height: 44)
     }
     
-    func updateProperties(){
-        buttonLabels[9] = "+" + String(addGroupAmnt)
-        for i in 0..<buttons.count{
-            buttons[i].backgroundColor = buttonColor
-            buttons[i].layer.borderColor = textColor.cgColor
-            buttons[i].setTitleColor(textColor, for: .normal)
-            buttons[i].setTitle(buttonLabels[i], for: .normal)
+    func changeColors(bColor: UIColor, tColor:UIColor){
+        buttonColor = bColor
+        textColor = tColor
+        for b in buttons{
+            b.backgroundColor = bColor
+            b.setTitleColor(tColor, for: .normal)
         }
     }
     
@@ -347,6 +338,107 @@ import Foundation
         }
         
     }
+    
+    
+}
+
+
+@IBDesignable class DMXDIPView: UIView{
+    
+    var defaults:UserDefaults = UserDefaults.standard
+    
+    var switchControl:DMXDIPSwitchControl?
+    var keypadControl:DMXDIPKeypadControl?
+    var outputLabel:UILabel?
+    var outputView:UIView?
+    
+    
+    
+    var outputViewHeight:CGFloat = 0.15
+    var switchControlHeight:CGFloat = 0.25
+    var keypadControlHeight:CGFloat = 0.6
+    var showKeypad:Bool = true
+    
+    
+    // MARK: Initialization
+    init(frame: CGRect, def: UserDefaults, outputSize:CGFloat, switchSize:CGFloat, keypadSize:CGFloat){
+        print("init view")
+        defaults = def
+        outputViewHeight = outputSize
+        switchControlHeight = switchSize
+        keypadControlHeight = keypadSize
+        super.init(frame: frame)
+        load()
+    }
+    
+    override init(frame: CGRect){
+        super.init(frame: frame)
+        load()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        load()
+        
+    }
+    func load(){
+        defaults.synchronize()
+        defaults.checkDefaults()
+        
+        switchControl = DMXDIPSwitchControl(frame: CGRect(x:0, y:0, width: 0, height: 0), invert: defaults.value(forKey: "invertDirection") as! Bool, labelTextMode: defaults.value(forKey: "switchLabels") as! Int, tColor: defaults.color(forKey: "swtColor")!, bColor: defaults.color(forKey: "swColor")!)
+        switchControl?.addTarget(self, action: #selector(self.switchChanged(sender:)), for: .valueChanged)
+        switchControl?.enableHaptics = defaults.value(forKey: "enableHaptics") as! Bool
+        
+        if showKeypad{
+            keypadControl = DMXDIPKeypadControl(frame: CGRect(x: 0, y:0, width: 0, height:0), offsetInc: defaults.value(forKey: "offsetAmount") as! Int, tColor: defaults.color(forKey: "btColor")!, bColor: defaults.color(forKey: "bColor")!)
+            keypadControl?.addTarget(self, action: #selector(self.buttonPressed(sender:)), for: .valueChanged)
+            keypadControl?.backgroundColor = UIColor.black
+            keypadControl?.enableHaptics = defaults.value(forKey: "enableHaptics") as! Bool
+        }
+        outputLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        outputLabel?.text = "0"
+        outputLabel?.font = UIFont(name: (outputLabel?.font.fontName)!, size: (outputViewHeight * frame.height)/3.5)
+        outputLabel?.backgroundColor = defaults.color(forKey: "oColor")!
+        outputLabel?.textColor = defaults.color(forKey: "otColor")!
+        outputLabel?.textAlignment = .right
+        
+        outputView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        outputView?.backgroundColor = outputLabel?.backgroundColor
+        
+        addSubview(outputView!)
+        addSubview(outputLabel!)
+        addSubview(switchControl!)
+        if showKeypad{
+            addSubview(keypadControl!)
+        }
+    }
+    
+    override func layoutSubviews() {
+        outputView?.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height * outputViewHeight)
+        outputLabel?.frame = CGRect(x: 0, y: (outputView?.frame.height)! - (outputLabel?.font.pointSize)!, width: frame.width, height: (outputLabel?.font.pointSize)!)
+        switchControl?.frame = CGRect(x: 0, y: (outputView?.frame.height)!, width: frame.width, height: switchControlHeight * frame.height)
+        if showKeypad{
+            keypadControl?.frame = CGRect(x:0, y: (switchControl?.frame.height)! + (outputView?.frame.height)!, width: frame.width + 2, height: frame.height - ((outputView?.frame.height)! + (switchControl?.frame.height)!))
+        }
+    }
+    
+    override var intrinsicContentSize:CGSize {
+        return CGSize(width: 240, height: 44)
+    }
+    
+    func buttonPressed(sender: DMXDIPKeypadControl){
+        outputLabel?.text = String(describing: keypadControl?.value)
+        switchControl?.update(values: DMXDIP().numToDips(num: (keypadControl?.value)!))
+    }
+    
+    func switchChanged(sender: DMXDIPSwitchControl){
+        let values = switchControl?.switchValues
+        let dmxValue = DMXDIP().dipsToNum(dips: values!)
+        outputLabel?.text = String(dmxValue)
+        keypadControl?.value = dmxValue
+        keypadControl?.checkButtons(currentValue: (keypadControl?.value)!)
+    }
+    
     
     
 }
