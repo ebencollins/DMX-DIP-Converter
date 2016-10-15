@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         defaults.synchronize()
-        defaults.checkDefaults() 
+        defaults.checkDefaults()
         
         switchControl = DMXDIPSwitchControl(frame: CGRect(x:0, y:0, width: 0, height: 0), invert: defaults.value(forKey: "invertDirection") as! Bool, labelTextMode: defaults.value(forKey: "switchLabels") as! Int, tColor: defaults.color(forKey: "swtColor")!, bColor: defaults.color(forKey: "swColor")!)
         switchControl?.addTarget(self, action: #selector(self.switchChanged(sender:)), for: .valueChanged)
@@ -54,6 +54,7 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true);
+        self.viewDidLoad()
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         defaults.synchronize()
         defaults.checkDefaults()
@@ -71,7 +72,7 @@ class ViewController: UIViewController {
         outputLabel?.frame = CGRect(x: 0, y: (outputView?.frame.height)! - (outputLabel?.font.pointSize)!, width: self.view.frame.width, height: (outputLabel?.font.pointSize)!)
         switchControl?.frame = CGRect(x: 0, y: (outputView?.frame.height)!, width: self.view.frame.width, height: 0.25 * self.view.frame.height)
         keypadControl?.frame = CGRect(x:0, y: (switchControl?.frame.height)! + (outputView?.frame.height)!, width: self.view.frame.width + 2, height: self.view.frame.height - ((outputView?.frame.height)! + (switchControl?.frame.height)!))
-        settingsButton?.frame = CGRect(x: 8, y: 20, width: 32, height: 32)
+        settingsButton?.frame = CGRect(x: 8, y: 20, width: 40, height: 40)
         
     }
     
