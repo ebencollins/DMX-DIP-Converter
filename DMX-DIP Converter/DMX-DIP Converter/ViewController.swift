@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         defaults.synchronize()
+        defaults.checkDefaults()
         
         switchControl = DMXDIPSwitchControl(frame: CGRect(x:0, y:0, width: 0, height: 0), invert: defaults.value(forKey: "invertDirection") as! Bool, labelTextMode: defaults.value(forKey: "switchLabels") as! Int, tColor: defaults.color(forKey: "swtColor")!, bColor: defaults.color(forKey: "swColor")!)
         switchControl?.addTarget(self, action: #selector(self.switchChanged(sender:)), for: .valueChanged)
