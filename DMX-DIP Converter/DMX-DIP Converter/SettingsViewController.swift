@@ -9,7 +9,7 @@
 import UIKit
 import LicensesKit
 
-var defaults = UserDefaults.standard
+let defaults = UserDefaults(suiteName: "group.com.ebencollins.DMX-DIP-Converter.share")!
 
 class SettingsViewController: UITableViewController {
     
@@ -69,7 +69,7 @@ class SettingsViewController: UITableViewController {
             selectionFeedback()
             defaults.setValue(16, forKey: "offsetAmount")
         case 3:
-            if(UserDefaults.standard.value(forKey: "enableHaptics") as! Bool){
+            if(defaults.value(forKey: "enableHaptics") as! Bool){
                 let generator = UINotificationFeedbackGenerator()
                 generator.notificationOccurred(.warning)
             }
@@ -102,21 +102,22 @@ class SettingsViewController: UITableViewController {
     }
     
     @IBAction func restoreDefaults(_ sender: AnyObject) {
-        if(UserDefaults.standard.value(forKey: "enableHaptics") as! Bool){
+        if(defaults.value(forKey: "enableHaptics") as! Bool){
             let generator = UINotificationFeedbackGenerator()
             generator.notificationOccurred(.warning)
         }
         let confirmationPopup = UIAlertController(title: "Reset all settings?", message: "All settigns will be restored to default. This action is not reversible.", preferredStyle: UIAlertControllerStyle.alert)
         
         confirmationPopup.addAction(UIAlertAction(title: "Reset", style: .destructive, handler: {(action: UIAlertAction!) in
-            if(UserDefaults.standard.value(forKey: "enableHaptics") as! Bool){
+            if(defaults.value(forKey: "enableHaptics") as! Bool){
                 let generator = UINotificationFeedbackGenerator()
                 generator.notificationOccurred(.success)
             }
             for key in Array(defaults.dictionaryRepresentation().keys) {
                 defaults.removeObject(forKey: key)
             }
-            UserDefaults.standard.checkDefaults()
+            defaults.synchronize()
+            defaults.checkDefaults()
             
             self.viewDidLoad()
         }))
@@ -160,8 +161,8 @@ class SettingsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        UserDefaults.standard.checkDefaults()
+        defaults.synchronize()
+        defaults.checkDefaults()
         
         preventSleepSC.setTitle("ENABLED", forSegmentAt: 0)
         preventSleepSC.setTitle("DISABLED", forSegmentAt: 1)

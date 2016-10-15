@@ -33,10 +33,32 @@ import Foundation
     
     var switchValues:[Bool] = []
     
-    init(frame: CGRect, invert: Bool, tColor: UIColor, bColor: UIColor){
+    init(frame: CGRect, invert: Bool, labelTextMode:Int, tColor: UIColor, bColor: UIColor){
         print("init custom")
         textColor = tColor
         backColor = bColor
+        switch labelTextMode{
+        case 1:
+            var arr:[String] = []
+            for i in 0..<9{
+                arr.append(String(i + 1))
+            }
+            self.switchLabelText = arr
+            break
+        case 2:
+            var arr:[String] = []
+            for i in 0..<9{
+                arr.append(String(describing: pow(2, i)))
+            }
+            self.switchLabelText = arr
+        default:
+            var arr:[String] = []
+            for i in 0..<9{
+                arr.append(String(i))
+            }
+            self.switchLabelText = arr
+        }
+        
         if(invert){
             onImage = UIImage(named: "customswitch_off.png")!
             offImage = UIImage(named: "customswitch_on.png")!
@@ -359,7 +381,8 @@ struct DMXDIP{
 }
 
 func selectionFeedback(){
-    if(UserDefaults.standard.value(forKey: "enableHaptics") as! Bool){
+    let defaults = UserDefaults(suiteName: "group.com.ebencollins.DMX-DIP-Converter.share")!
+    if(defaults.value(forKey: "enableHaptics") as! Bool){
         let generator = UISelectionFeedbackGenerator()
         generator.prepare()
         generator.selectionChanged()
@@ -394,7 +417,7 @@ extension UserDefaults{
     }
     
     func checkDefaults(){
-        let defaults = UserDefaults.standard
+        let defaults = UserDefaults(suiteName: "group.com.ebencollins.DMX-DIP-Converter.share")!
         if(defaults.value(forKey: "preventSleep") == nil){
             defaults.set(true, forKey: "preventSleep")
         }
@@ -431,6 +454,7 @@ extension UserDefaults{
             defaults.setValue(true, forKey: "enableHaptics")
         }
         
+        defaults.synchronize()
         
         
     }

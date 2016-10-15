@@ -13,6 +13,8 @@ class ColorCustomizationViewController: UIViewController, UIPopoverPresentationC
     var origin:UIView?
     var colorKey = ""
     
+    let defaults = UserDefaults(suiteName: "group.com.ebencollins.DMX-DIP-Converter.share")!
+    
     @IBOutlet weak var buttonsView: UIView!
     @IBOutlet weak var displayView: UIView!
     @IBOutlet weak var switchView: UIView!

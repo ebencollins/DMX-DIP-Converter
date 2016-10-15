@@ -18,6 +18,8 @@ class ColorSelectorViewController: UIViewController {
     
     var colorKey:String?
     
+    let defaults = UserDefaults(suiteName: "group.com.ebencollins.DMX-DIP-Converter.share")!
+    
     @IBOutlet weak var hue: GradientSlider!
     @IBOutlet weak var sat: GradientSlider!
     @IBOutlet weak var val: GradientSlider!
@@ -53,7 +55,7 @@ class ColorSelectorViewController: UIViewController {
         hue.minColor = UIColor.blue
         hue.hasRainbow = true
         
-        let color = UserDefaults.standard.color(forKey: colorKey!)! as UIColor
+        let color = defaults.color(forKey: colorKey!)! as UIColor
         var h:CGFloat = 0
         var s:CGFloat = 0
         var b:CGFloat = 0
@@ -73,7 +75,7 @@ class ColorSelectorViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        UserDefaults.standard.setColor(color: UIColor(hue: hue.value, saturation: sat.value, brightness: val.value, alpha: 1.0), forKey: colorKey!)
+        defaults.setColor(color: UIColor(hue: hue.value, saturation: sat.value, brightness: val.value, alpha: 1.0), forKey: colorKey!)
         self.delegate?.setColor(color: UIColor(hue: hue.value, saturation: sat.value, brightness: val.value, alpha: 1.0))
     }
     

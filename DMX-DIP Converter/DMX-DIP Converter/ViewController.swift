@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var keypadControl: DMXDIPKeypadControl!
     @IBOutlet var mainView: UIView!
     
+    let defaults = UserDefaults(suiteName: "group.com.ebencollins.DMX-DIP-Converter.share")!
+    
     @IBAction func switchControl(_ sender: Any) {
         let values = switchControl.switchValues
         let dmxValue = DMXDIP().dipsToNum(dips: values)
@@ -29,13 +31,13 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        UserDefaults.standard.checkDefaults()
+        defaults.checkDefaults()
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true);
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         
-        UserDefaults.standard.checkDefaults()
+        defaults.checkDefaults()
         if defaults.value(forKey: "preventSleep") as! Bool{
             UIApplication.shared.isIdleTimerDisabled = true
         }else{

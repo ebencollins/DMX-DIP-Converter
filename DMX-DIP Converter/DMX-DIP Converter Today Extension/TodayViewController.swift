@@ -15,23 +15,29 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     var keypadControl:DMXDIPKeypadControl?
     var outputLabel:UILabel?
     
+    let defaults = UserDefaults(suiteName: "group.com.ebencollins.DMX-DIP-Converter.share")!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-         self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
+        defaults.synchronize()
+        self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
         
-        switchControl = DMXDIPSwitchControl(frame: CGRect(x:0, y:0, width: 0, height: 0), invert: false, tColor: UIColor.white, bColor: UIColor(hue: 0, saturation: 0, brightness: 0.2, alpha: 1.0))
+        switchControl = DMXDIPSwitchControl(frame: CGRect(x:0, y:0, width: 0, height: 0), invert: defaults.value(forKey: "invertDirection") as! Bool, labelTextMode: defaults.value(forKey: "switchLabels") as! Int, tColor: defaults.color(forKey: "swtColor")!, bColor: defaults.color(forKey: "swColor")!)
         switchControl?.addTarget(self, action: #selector(self.switchChanged(sender:)), for: .valueChanged)
+        switchControl?.enableHaptics = defaults.value(forKey: "enableHaptics") as! Bool
         
-        keypadControl = DMXDIPKeypadControl(frame: CGRect(x: 0, y:0, width: 0, height:0), tColor: UIColor.white, bColor: UIColor.black)
+        keypadControl = DMXDIPKeypadControl(frame: CGRect(x: 0, y:0, width: 0, height:0), tColor: defaults.color(forKey: "btColor")!, bColor: defaults.color(forKey: "bColor")!)
         keypadControl?.addTarget(self, action: #selector(self.buttonPressed(sender:)), for: .valueChanged)
         keypadControl?.backgroundColor = UIColor.black
+        keypadControl?.addGroupAmnt = defaults.value(forKey: "offsetAmount") as! Int
+        keypadControl?.enableHaptics = defaults.value(forKey: "enableHaptics") as! Bool
         
         outputLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         outputLabel?.text = "0"
-        outputLabel?.backgroundColor = UIColor.black
-        outputLabel?.textColor = UIColor.white
+        outputLabel?.backgroundColor = defaults.color(forKey: "oColor")!
+        outputLabel?.textColor = defaults.color(forKey: "otColor")!
         outputLabel?.textAlignment = .right
-    
+        
         
         self.view.addSubview(outputLabel!)
         self.view.addSubview(switchControl!)
@@ -63,7 +69,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         }else{
             outputLabel?.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 24)
             switchControl?.frame = CGRect(x: 0, y: (outputLabel?.frame.height)!, width: self.view.frame.width, height: 0.3 * self.view.frame.height)
-            keypadControl?.frame = CGRect(x:0, y: (switchControl?.frame.height)! + (outputLabel?.frame.height)!, width: self.view.frame.width, height: self.view.frame.height - ((outputLabel?.frame.height)! + (switchControl?.frame.height)!))
+            keypadControl?.frame = CGRect(x:-1, y: (switchControl?.frame.height)! + (outputLabel?.frame.height)! - 1, width: self.view.frame.width + 2, height: self.view.frame.height - ((outputLabel?.frame.height)! + (switchControl?.frame.height)!) + 4)
         }
     }
     
