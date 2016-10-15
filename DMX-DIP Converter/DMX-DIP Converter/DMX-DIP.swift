@@ -225,6 +225,7 @@ import Foundation
     init(frame: CGRect, offsetInc:Int, tColor: UIColor, bColor: UIColor){
         textColor = tColor
         buttonColor = bColor
+        addGroupAmnt = offsetInc
         
         super.init(frame: frame)
         commonSetup()
