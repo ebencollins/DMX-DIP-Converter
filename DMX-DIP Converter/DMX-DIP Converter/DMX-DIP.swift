@@ -146,7 +146,7 @@ import Foundation
         
         let arrowImgX = 9 * (labelFrame.width + spacing) - 1
         let arrowH = bounds.size.height - 48 < 64 ? 0.5 * (bounds.size.height - 48) : 64
-        arrowImg?.frame = CGRect(x: arrowImgX, y: CGFloat((switchHeight-Int(arrowH))/2), width: bounds.size.width - arrowImgX, height: arrowH)
+        arrowImg?.frame = CGRect(x: arrowImgX, y: CGFloat((switchHeight-Int(arrowH))/2), width: bounds.size.width - arrowImgX, height: arrowH < 32 ? 0 : arrowH)
         
         var bottomArrowLabelFrame = CGRect(x: arrowImgX, y: 0, width: bounds.size.width - arrowImgX, height: 24)
         bottomArrowLabelFrame.origin.y = CGFloat(switchHeight + Int(spacing) - 24)
