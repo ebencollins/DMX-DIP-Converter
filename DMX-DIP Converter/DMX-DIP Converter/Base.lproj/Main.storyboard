@@ -526,61 +526,10 @@
                     <view key="view" contentMode="scaleToFill" id="wJn-XA-Eci">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmc-Td-Q53" userLabel="settingsButton">
-                                <rect key="frame" x="8" y="16" width="32" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="Qrz-KO-NOu" userLabel="width = 32"/>
-                                    <constraint firstAttribute="height" constant="32" id="gam-iB-Dmf" userLabel="height = 32"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="gear_64.png"/>
-                                <connections>
-                                    <segue destination="YYm-fq-Sws" kind="show" id="fDK-rL-iOB"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bMp-iF-SQb" userLabel="keypadControl" customClass="DMXDIPKeypadControl" customModule="DMX_DIP_Converter" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="267" width="375" height="400"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <action selector="keypadControl:" destination="9Ai-IC-rtG" eventType="valueChanged" id="kfS-Fd-Txs"/>
-                                </connections>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dtP-Wu-X3U" userLabel="switchControl" customClass="DMXDIPSwitchControl" customModule="DMX_DIP_Converter" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="101" width="375" height="166"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <action selector="switchControl:" destination="9Ai-IC-rtG" eventType="valueChanged" id="b4p-lk-29V"/>
-                                </connections>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdD-gO-SvZ">
-                                <rect key="frame" x="0.0" y="67.5" width="375" height="33.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
-                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="dtP-Wu-X3U" secondAttribute="trailing" id="1aF-zB-WDL"/>
-                            <constraint firstItem="bMp-iF-SQb" firstAttribute="leading" secondItem="wJn-XA-Eci" secondAttribute="leading" id="4UW-YK-kBd"/>
-                            <constraint firstItem="dtP-Wu-X3U" firstAttribute="leading" secondItem="wJn-XA-Eci" secondAttribute="leading" id="8FQ-jQ-Mod"/>
-                            <constraint firstItem="dtP-Wu-X3U" firstAttribute="top" secondItem="WdD-gO-SvZ" secondAttribute="bottom" id="91U-n4-C9S"/>
-                            <constraint firstItem="mmc-Td-Q53" firstAttribute="top" secondItem="wJn-XA-Eci" secondAttribute="topMargin" constant="20" id="JpA-z0-zzT"/>
-                            <constraint firstAttribute="trailing" secondItem="WdD-gO-SvZ" secondAttribute="trailing" id="asU-Rj-8RA"/>
-                            <constraint firstItem="MzE-Sw-xWl" firstAttribute="top" secondItem="bMp-iF-SQb" secondAttribute="bottom" id="foW-6R-oFU"/>
-                            <constraint firstItem="mmc-Td-Q53" firstAttribute="leading" secondItem="wJn-XA-Eci" secondAttribute="leading" constant="8" id="gJ9-Er-VvB"/>
-                            <constraint firstItem="bMp-iF-SQb" firstAttribute="height" secondItem="wJn-XA-Eci" secondAttribute="height" multiplier="0.6" id="hnL-e4-RPM"/>
-                            <constraint firstItem="bMp-iF-SQb" firstAttribute="top" secondItem="dtP-Wu-X3U" secondAttribute="bottom" id="ocV-D5-cC9"/>
-                            <constraint firstItem="WdD-gO-SvZ" firstAttribute="leading" secondItem="wJn-XA-Eci" secondAttribute="leading" id="r9K-4t-8ep"/>
-                            <constraint firstItem="dtP-Wu-X3U" firstAttribute="height" secondItem="wJn-XA-Eci" secondAttribute="height" multiplier="0.25" id="vhy-En-ATK"/>
-                            <constraint firstAttribute="trailing" secondItem="bMp-iF-SQb" secondAttribute="trailing" id="zFF-sS-gpB"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9Gb-1Z-xNo"/>
                     <connections>
-                        <outlet property="keypadControl" destination="bMp-iF-SQb" id="gR8-zk-cxI"/>
-                        <outlet property="mainView" destination="wJn-XA-Eci" id="86m-Rv-5Lw"/>
-                        <outlet property="outputLabel" destination="WdD-gO-SvZ" id="lfg-LX-iUy"/>
-                        <outlet property="switchControl" destination="dtP-Wu-X3U" id="cbe-kF-jbn"/>
+                        <segue destination="YYm-fq-Sws" kind="show" identifier="mainToSettings" id="a9k-Mc-fY1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OSv-pP-r2v" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -588,7 +537,4 @@
             <point key="canvasLocation" x="265" y="278"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="gear_64.png" width="64" height="64"/>
-    </resources>
 </document>

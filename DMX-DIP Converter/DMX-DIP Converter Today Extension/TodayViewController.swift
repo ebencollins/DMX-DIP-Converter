@@ -26,10 +26,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         switchControl?.addTarget(self, action: #selector(self.switchChanged(sender:)), for: .valueChanged)
         switchControl?.enableHaptics = defaults.value(forKey: "enableHaptics") as! Bool
         
-        keypadControl = DMXDIPKeypadControl(frame: CGRect(x: 0, y:0, width: 0, height:0), tColor: defaults.color(forKey: "btColor")!, bColor: defaults.color(forKey: "bColor")!)
+        keypadControl = DMXDIPKeypadControl(frame: CGRect(x: 0, y:0, width: 0, height:0), offsetInc: defaults.value(forKey: "offsetAmount") as! Int, tColor: defaults.color(forKey: "btColor")!, bColor: defaults.color(forKey: "bColor")!)
         keypadControl?.addTarget(self, action: #selector(self.buttonPressed(sender:)), for: .valueChanged)
         keypadControl?.backgroundColor = UIColor.black
-        keypadControl?.addGroupAmnt = defaults.value(forKey: "offsetAmount") as! Int
         keypadControl?.enableHaptics = defaults.value(forKey: "enableHaptics") as! Bool
         
         outputLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
@@ -65,11 +64,11 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     override func viewDidLayoutSubviews() {
         if self.extensionContext?.widgetActiveDisplayMode == NCWidgetDisplayMode.compact{
             outputLabel?.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 24)
-            switchControl?.frame = CGRect(x: 0, y: (outputLabel?.frame.height)!, width: self.view.frame.width, height: self.view.frame.height - (outputLabel?.frame.height)!)
+            switchControl?.frame = CGRect(x: 0, y: (outputLabel?.frame.height)!, width: self.view.frame.width, height: self.view.frame.height - (outputLabel?.frame.height)! + 2)
         }else{
             outputLabel?.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 24)
             switchControl?.frame = CGRect(x: 0, y: (outputLabel?.frame.height)!, width: self.view.frame.width, height: 0.3 * self.view.frame.height)
-            keypadControl?.frame = CGRect(x:-1, y: (switchControl?.frame.height)! + (outputLabel?.frame.height)! - 1, width: self.view.frame.width + 2, height: self.view.frame.height - ((outputLabel?.frame.height)! + (switchControl?.frame.height)!) + 4)
+            keypadControl?.frame = CGRect(x:-1, y: (switchControl?.frame.height)! + (outputLabel?.frame.height)! - 1, width: self.view.frame.width + 2, height: self.view.frame.height - ((outputLabel?.frame.height)! + (switchControl?.frame.height)!) + 6)
         }
     }
     

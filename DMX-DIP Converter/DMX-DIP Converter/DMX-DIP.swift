@@ -222,7 +222,7 @@ import Foundation
     
     var value:Int = 0;
     
-    init(frame: CGRect, tColor: UIColor, bColor: UIColor){
+    init(frame: CGRect, offsetInc:Int, tColor: UIColor, bColor: UIColor){
         textColor = tColor
         buttonColor = bColor
         
