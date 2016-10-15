@@ -244,5 +244,10 @@ class SettingsViewController: UITableViewController {
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        defaults.synchronize()
+    }
+    
     
 }
