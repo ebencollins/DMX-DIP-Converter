@@ -63,12 +63,12 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     override func viewDidLayoutSubviews() {
         if self.extensionContext?.widgetActiveDisplayMode == NCWidgetDisplayMode.compact{
-            outputLabel?.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 24)
-            switchControl?.frame = CGRect(x: 0, y: (outputLabel?.frame.height)!, width: self.view.frame.width, height: self.view.frame.height - (outputLabel?.frame.height)! + 2)
+            outputLabel?.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 32)
+            switchControl?.frame = CGRect(x: 0, y: (outputLabel?.frame.height)!, width: self.view.frame.width, height: self.view.frame.height - (outputLabel?.frame.height)!)
         }else{
-            outputLabel?.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 24)
+            outputLabel?.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 32)
             switchControl?.frame = CGRect(x: 0, y: (outputLabel?.frame.height)!, width: self.view.frame.width, height: 0.3 * self.view.frame.height)
-            keypadControl?.frame = CGRect(x:-1, y: (switchControl?.frame.height)! + (outputLabel?.frame.height)! - 1, width: self.view.frame.width + 2, height: self.view.frame.height - ((outputLabel?.frame.height)! + (switchControl?.frame.height)!) + 6)
+            keypadControl?.frame = CGRect(x:0, y: (switchControl?.frame.height)! + (outputLabel?.frame.height)!, width: self.view.frame.width, height: self.view.frame.height - ((outputLabel?.frame.height)! + (switchControl?.frame.height)!))
         }
     }
     
