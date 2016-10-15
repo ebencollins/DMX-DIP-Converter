@@ -17,7 +17,6 @@
 		F5137D1A1D63655300D6497C /* gear_64.png in Resources */ = {isa = PBXBuildFile; fileRef = F57A23C11D3B588A00970E9E /* gear_64.png */; };
 		F51C2EBC1D3C4E0D002FDABB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51C2EBB1D3C4E0D002FDABB /* SettingsViewController.swift */; };
 		F54E20531D50A1BF00607782 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54E20521D50A1BF00607782 /* NotificationCenter.framework */; };
-		F54E20561D50A1BF00607782 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F54E20551D50A1BF00607782 /* TodayViewController.swift */; };
 		F54E20591D50A1BF00607782 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F54E20571D50A1BF00607782 /* MainInterface.storyboard */; };
 		F54E205D1D50A1BF00607782 /* DMX-DIP Converter Today Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F54E20511D50A1BF00607782 /* DMX-DIP Converter Today Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F550EFF01D4959AA00526336 /* GradientSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F550EFEF1D4959A900526336 /* GradientSlider.swift */; };
@@ -35,6 +34,7 @@
 		F57A23C61D3B588A00970E9E /* gear_64.png in Resources */ = {isa = PBXBuildFile; fileRef = F57A23C11D3B588A00970E9E /* gear_64.png */; };
 		F57E76821D472792008E746A /* ColorSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57E76811D472792008E746A /* ColorSelectorViewController.swift */; };
 		F57E76841D473463008E746A /* ColorCustomizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57E76831D473463008E746A /* ColorCustomizationViewController.swift */; };
+		F5A384A31DB17344007EA0AA /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A384A21DB17344007EA0AA /* TodayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,7 +84,6 @@
 		F51C2EBD1D3C6160002FDABB /* DMX-DIP Converter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "DMX-DIP Converter.entitlements"; sourceTree = "<group>"; };
 		F54E20511D50A1BF00607782 /* DMX-DIP Converter Today Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DMX-DIP Converter Today Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F54E20521D50A1BF00607782 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		F54E20551D50A1BF00607782 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		F54E20581D50A1BF00607782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		F54E205A1D50A1BF00607782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F550EFEF1D4959A900526336 /* GradientSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientSlider.swift; sourceTree = "<group>"; };
@@ -108,6 +107,9 @@
 		F57A23C11D3B588A00970E9E /* gear_64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gear_64.png; path = "DMX-DIP Converter/icons/gear_64.png"; sourceTree = "<group>"; };
 		F57E76811D472792008E746A /* ColorSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorSelectorViewController.swift; sourceTree = "<group>"; };
 		F57E76831D473463008E746A /* ColorCustomizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorCustomizationViewController.swift; sourceTree = "<group>"; };
+		F5A3849D1DB0946B007EA0AA /* DMX-DIP Converter Today Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DMX-DIP Converter Today Extension.entitlements"; sourceTree = "<group>"; };
+		F5A3849E1DB097A0007EA0AA /* LicensesKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LicensesKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/DMX-DIP_Converter-elojvmxasahjracvfitaqiykdcvq/Build/Products/Debug-iphonesimulator/LicensesKit/LicensesKit.framework"; sourceTree = "<group>"; };
+		F5A384A21DB17344007EA0AA /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 		07C04659DC3797D252261E7A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F5A3849E1DB097A0007EA0AA /* LicensesKit.framework */,
 				B6D1FB9926D827957E4601B6 /* Pods_DMX_DIP_Converter.framework */,
 				F54E20521D50A1BF00607782 /* NotificationCenter.framework */,
 			);
@@ -165,9 +168,10 @@
 		F54E20541D50A1BF00607782 /* DMX-DIP Converter Today Extension */ = {
 			isa = PBXGroup;
 			children = (
-				F54E20551D50A1BF00607782 /* TodayViewController.swift */,
+				F5A3849D1DB0946B007EA0AA /* DMX-DIP Converter Today Extension.entitlements */,
 				F54E20571D50A1BF00607782 /* MainInterface.storyboard */,
 				F54E205A1D50A1BF00607782 /* Info.plist */,
+				F5A384A21DB17344007EA0AA /* TodayViewController.swift */,
 			);
 			path = "DMX-DIP Converter Today Extension";
 			sourceTree = "<group>";
@@ -323,14 +327,19 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
-				ORGANIZATIONNAME = collinseben;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Eben Collins";
 				TargetAttributes = {
 					F54E20501D50A1BF00607782 = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = PN9YMD99V6;
 						DevelopmentTeamName = "Eben Collins (Personal Team)";
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					F57A23871D3AF94B00970E9E = {
 						CreatedOnToolsVersion = 8.0;
@@ -339,7 +348,7 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -478,7 +487,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F54E20561D50A1BF00607782 /* TodayViewController.swift in Sources */,
+				F5A384A31DB17344007EA0AA /* TodayViewController.swift in Sources */,
 				F5137D151D635FB500D6497C /* DMX-DIP.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -564,9 +573,10 @@
 		F54E205F1D50A1BF00607782 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "DMX-DIP Converter Today Extension/DMX-DIP Converter Today Extension.entitlements";
 				INFOPLIST_FILE = "DMX-DIP Converter Today Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.collinseben.DMX-DIP-Converter.DMX-DIP-Converter-Today-Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ebencollins.DMX-DIP-Converter.DMX-DIP-Converter-Today-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -576,9 +586,10 @@
 		F54E20601D50A1BF00607782 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "DMX-DIP Converter Today Extension/DMX-DIP Converter Today Extension.entitlements";
 				INFOPLIST_FILE = "DMX-DIP Converter Today Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.collinseben.DMX-DIP-Converter.DMX-DIP-Converter-Today-Extension";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ebencollins.DMX-DIP-Converter.DMX-DIP-Converter-Today-Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -684,9 +695,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "DMX-DIP Converter/DMX-DIP Converter.entitlements";
 				INFOPLIST_FILE = "DMX-DIP Converter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.collinseben.DMX-DIP-Converter";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ebencollins.DMX-DIP-Converter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -698,9 +710,10 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "DMX-DIP Converter/DMX-DIP Converter.entitlements";
 				INFOPLIST_FILE = "DMX-DIP Converter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.collinseben.DMX-DIP-Converter";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ebencollins.DMX-DIP-Converter";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

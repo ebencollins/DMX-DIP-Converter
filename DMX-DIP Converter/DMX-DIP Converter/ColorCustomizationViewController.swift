@@ -3,7 +3,7 @@
 //  DMX-DIP Converter
 //
 //  Created by Eben Collins on 16/07/26.
-//  Copyright © 2016 collinseben. All rights reserved.
+//  Copyright © 2016 Eben Collins. All rights reserved.
 //
 
 import UIKit
@@ -12,6 +12,8 @@ class ColorCustomizationViewController: UIViewController, UIPopoverPresentationC
     
     var origin:UIView?
     var colorKey = ""
+    
+    let defaults = UserDefaults(suiteName: "group.com.ebencollins.DMX-DIP-Converter.share")!
     
     @IBOutlet weak var buttonsView: UIView!
     @IBOutlet weak var displayView: UIView!
