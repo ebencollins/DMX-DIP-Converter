@@ -10,83 +10,44 @@ import UIKit
 import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding {
-    
-    var switchControl:DMXDIPSwitchControl?
-    var keypadControl:DMXDIPKeypadControl?
-    var outputLabel:UILabel?
-    
-    let defaults = UserDefaults(suiteName: "group.com.ebencollins.DMX-DIP-Converter.share")!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        defaults.synchronize()
-        self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
+        var mainView: DMXDIPView?
         
-        switchControl = DMXDIPSwitchControl(frame: CGRect(x:0, y:0, width: 0, height: 0), invert: defaults.value(forKey: "invertDirection") as! Bool, labelTextMode: defaults.value(forKey: "switchLabels") as! Int, tColor: defaults.color(forKey: "swtColor")!, bColor: defaults.color(forKey: "swColor")!)
-        switchControl?.addTarget(self, action: #selector(self.switchChanged(sender:)), for: .valueChanged)
-        switchControl?.enableHaptics = defaults.value(forKey: "enableHaptics") as! Bool
+        let defaults = UserDefaults(suiteName: "group.com.ebencollins.DMX-DIP-Converter.share")!
         
-        keypadControl = DMXDIPKeypadControl(frame: CGRect(x: 0, y:0, width: 0, height:0), offsetInc: defaults.value(forKey: "offsetAmount") as! Int, tColor: defaults.color(forKey: "btColor")!, bColor: defaults.color(forKey: "bColor")!)
-        keypadControl?.addTarget(self, action: #selector(self.buttonPressed(sender:)), for: .valueChanged)
-        keypadControl?.backgroundColor = UIColor.black
-        keypadControl?.enableHaptics = defaults.value(forKey: "enableHaptics") as! Bool
-        
-        outputLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
-        outputLabel?.text = "0"
-        outputLabel?.backgroundColor = defaults.color(forKey: "oColor")!
-        outputLabel?.textColor = defaults.color(forKey: "otColor")!
-        outputLabel?.textAlignment = .right
-        
-        
-        self.view.addSubview(outputLabel!)
-        self.view.addSubview(switchControl!)
-        self.view.addSubview(keypadControl!)
-    }
-    
-    func buttonPressed(sender: DMXDIPKeypadControl){
-        outputLabel?.text = String(describing: keypadControl?.value)
-        switchControl?.update(values: DMXDIP().numToDips(num: (keypadControl?.value)!))
-    }
-    
-    func switchChanged(sender: DMXDIPSwitchControl){
-        let values = switchControl?.switchValues
-        let dmxValue = DMXDIP().dipsToNum(dips: values!)
-        outputLabel?.text = String(dmxValue)
-        keypadControl?.value = dmxValue
-        keypadControl?.checkButtons(currentValue: (keypadControl?.value)!)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        resetValues()
-    }
-    
-    override func viewDidLayoutSubviews() {
-        if self.extensionContext?.widgetActiveDisplayMode == NCWidgetDisplayMode.compact{
-            outputLabel?.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 32)
-            switchControl?.frame = CGRect(x: 0, y: (outputLabel?.frame.height)!, width: self.view.frame.width, height: self.view.frame.height - (outputLabel?.frame.height)!)
-        }else{
-            outputLabel?.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 32)
-            switchControl?.frame = CGRect(x: 0, y: (outputLabel?.frame.height)!, width: self.view.frame.width, height: 0.3 * self.view.frame.height)
-            keypadControl?.frame = CGRect(x:0, y: (switchControl?.frame.height)! + (outputLabel?.frame.height)!, width: self.view.frame.width, height: self.view.frame.height - ((outputLabel?.frame.height)! + (switchControl?.frame.height)!))
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            self.extensionContext?.widgetLargestAvailableDisplayMode = .expanded
+           
+            defaults.synchronize()
+            defaults.checkDefaults()
+            
+            if self.extensionContext?.widgetActiveDisplayMode == NCWidgetDisplayMode.compact{
+                mainView = DMXDIPView(frame: CGRect(x: 0, y:0, width: self.view.frame.width, height: self.view.frame.height), def: defaults, outputSize: 0.15, switchSize:0.25, keypadSize:0.0, fSize: 20)
+            }else{
+                mainView = DMXDIPView(frame: CGRect(x: 0, y:0, width: self.view.frame.width, height: self.view.frame.height), def: defaults, outputSize: 0.05, switchSize:0.25, keypadSize:0.7, fSize: 24)
+            }
+            
+            self.view.addSubview(mainView!)
         }
-    }
+        
+        override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(true);
+            self.viewDidLoad()
+            mainView?.resetValues()
+        }
+        override func viewDidLayoutSubviews() {
+            mainView?.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+        }
     
     func widgetPerformUpdate(completionHandler: @escaping (NCUpdateResult) -> Void) {
-        resetValues()
+        mainView?.resetValues()
         completionHandler(NCUpdateResult.newData)
-    }
-    
-    func resetValues(){
-        outputLabel?.text = "0"
-        keypadControl?.value = 0
-        switchControl?.switchValues = [false, false, false, false, false, false, false, false, false]
-        switchControl?.update(values: (switchControl?.switchValues)!)
     }
     
     func widgetActiveDisplayModeDidChange(_ activeDisplayMode: NCWidgetDisplayMode, withMaximumSize maxSize: CGSize) {
         self.preferredContentSize = (activeDisplayMode == .expanded) ? CGSize(width: 320, height: 400) : CGSize(width: maxSize.width, height: maxSize.height)
-        self.viewDidLayoutSubviews()
+        mainView?.keypadControlHeight = activeDisplayMode == .expanded ? 0.7 : 0
+        mainView?.layoutSubviews()
     }
     
 }
