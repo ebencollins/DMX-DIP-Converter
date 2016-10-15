@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         defaults.synchronize()
         defaults.checkDefaults()
         
-        mainView = DMXDIPView(frame: CGRect(x: 0, y:0, width: self.view.frame.width, height: self.view.frame.height), def: defaults, outputSize: 0.15, switchSize:0.25, keypadSize:0.6)
+        mainView = DMXDIPView(frame: CGRect(x: 0, y:0, width: self.view.bounds.width, height: self.view.bounds.height), def: defaults, outputSize: 0.15, switchSize:0.25, keypadSize:0.6)
 
         
         settingsButton = UIButton(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
@@ -46,7 +46,7 @@ class ViewController: UIViewController {
         
     }
     override func viewDidLayoutSubviews() {
-        mainView?.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        mainView?.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
         settingsButton?.frame = CGRect(x: 8, y: 20, width: 40, height: 40)
     }
     
