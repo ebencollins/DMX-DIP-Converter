@@ -130,8 +130,8 @@ import Foundation
     override func layoutSubviews() {
         let labelHeight = 24;
         let spacing:CGFloat = 4;
-        let switchHeight = Int(frame.size.height) - labelHeight - Int(spacing)
-        let switchWidth = Int((frame.size.width-4.0)/10) - Int(spacing)
+        let switchHeight = Int(bounds.size.height) - labelHeight - Int(spacing)
+        let switchWidth = Int((bounds.size.width-4.0)/10) - Int(spacing)
         
         var switchFrame = CGRect(x: 0, y: Int(spacing), width: switchWidth, height: switchHeight)
         var labelFrame = CGRect(x: 0, y: switchHeight + Int(spacing), width: switchWidth, height: labelHeight)
@@ -145,14 +145,14 @@ import Foundation
         }
         
         let arrowImgX = 9 * (labelFrame.width + spacing) - 1
-        let arrowH = frame.size.height - 48 < 64 ? 0.5 * (frame.size.height - 48) : 64
-        arrowImg?.frame = CGRect(x: arrowImgX, y: CGFloat((switchHeight-Int(arrowH))/2), width: frame.size.width - arrowImgX, height: arrowH)
+        let arrowH = bounds.size.height - 48 < 64 ? 0.5 * (bounds.size.height - 48) : 64
+        arrowImg?.frame = CGRect(x: arrowImgX, y: CGFloat((switchHeight-Int(arrowH))/2), width: bounds.size.width - arrowImgX, height: arrowH)
         
-        var bottomArrowLabelFrame = CGRect(x: arrowImgX, y: 0, width: frame.size.width - arrowImgX, height: 24)
+        var bottomArrowLabelFrame = CGRect(x: arrowImgX, y: 0, width: bounds.size.width - arrowImgX, height: 24)
         bottomArrowLabelFrame.origin.y = CGFloat(switchHeight + Int(spacing) - 24)
         bottomArrowLabel.frame = bottomArrowLabelFrame
         
-        topArrowLabel.frame = CGRect(x: arrowImgX, y: 0, width: frame.size.width - arrowImgX, height: 24)
+        topArrowLabel.frame = CGRect(x: arrowImgX, y: 0, width: bounds.size.width - arrowImgX, height: 24)
     }
     
     override var intrinsicContentSize:CGSize {
@@ -255,8 +255,8 @@ import Foundation
     
     override func layoutSubviews() {
         
-        let buttonHeight = Int(frame.size.height/4)
-        let buttonWidth = Int(frame.size.width/3)
+        let buttonHeight = Int(bounds.size.height/4)
+        let buttonWidth = Int(bounds.size.width/3)
         var buttonFrame = CGRect(x: 0, y: 0, width: buttonWidth, height: buttonHeight)
         for(index, button) in buttons.enumerated(){
             buttonFrame.origin.x = CGFloat(index % 3 * buttonWidth)
@@ -351,18 +351,26 @@ import Foundation
     var keypadControl:DMXDIPKeypadControl?
     var outputLabel:UILabel?
     var outputView:UIView?
-    
-    
+       
     
     var outputViewHeight:CGFloat = 0.15
     var switchControlHeight:CGFloat = 0.25
     var keypadControlHeight:CGFloat = 0.6
-    var showKeypad:Bool = true
+    var fontSize:CGFloat?
     
     
     // MARK: Initialization
-    init(frame: CGRect, def: UserDefaults, outputSize:CGFloat, switchSize:CGFloat, keypadSize:CGFloat){
-        print("init view")
+   init(frame: CGRect, def: UserDefaults, outputSize:CGFloat, switchSize:CGFloat, keypadSize:CGFloat){
+        defaults = def
+        outputViewHeight = outputSize
+        switchControlHeight = switchSize
+        keypadControlHeight = keypadSize
+        super.init(frame: frame)
+        load()
+    }
+    
+    init(frame: CGRect, def: UserDefaults, outputSize:CGFloat, switchSize:CGFloat, keypadSize:CGFloat, fSize:CGFloat){
+        fontSize = fSize
         defaults = def
         outputViewHeight = outputSize
         switchControlHeight = switchSize
@@ -389,15 +397,14 @@ import Foundation
         switchControl?.addTarget(self, action: #selector(self.switchChanged(sender:)), for: .valueChanged)
         switchControl?.enableHaptics = defaults.value(forKey: "enableHaptics") as! Bool
         
-        if showKeypad{
-            keypadControl = DMXDIPKeypadControl(frame: CGRect(x: 0, y:0, width: 0, height:0), offsetInc: defaults.value(forKey: "offsetAmount") as! Int, tColor: defaults.color(forKey: "btColor")!, bColor: defaults.color(forKey: "bColor")!)
-            keypadControl?.addTarget(self, action: #selector(self.buttonPressed(sender:)), for: .valueChanged)
-            keypadControl?.backgroundColor = UIColor.black
-            keypadControl?.enableHaptics = defaults.value(forKey: "enableHaptics") as! Bool
-        }
+        keypadControl = DMXDIPKeypadControl(frame: CGRect(x: 0, y:0, width: 0, height:0), offsetInc: defaults.value(forKey: "offsetAmount") as! Int, tColor: defaults.color(forKey: "btColor")!, bColor: defaults.color(forKey: "bColor")!)
+        keypadControl?.addTarget(self, action: #selector(self.buttonPressed(sender:)), for: .valueChanged)
+        keypadControl?.backgroundColor = UIColor.black
+        keypadControl?.enableHaptics = defaults.value(forKey: "enableHaptics") as! Bool
+
         outputLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         outputLabel?.text = "0"
-        outputLabel?.font = UIFont(name: (outputLabel?.font.fontName)!, size: (outputViewHeight * frame.height)/3.5)
+        outputLabel?.font = UIFont(name: (outputLabel?.font.fontName)!, size: fontSize != nil ? fontSize! : (outputViewHeight * frame.height)/3.5)
         outputLabel?.backgroundColor = defaults.color(forKey: "oColor")!
         outputLabel?.textColor = defaults.color(forKey: "otColor")!
         outputLabel?.textAlignment = .right
@@ -408,17 +415,18 @@ import Foundation
         addSubview(outputView!)
         addSubview(outputLabel!)
         addSubview(switchControl!)
-        if showKeypad{
-            addSubview(keypadControl!)
-        }
+        addSubview(keypadControl!)
     }
     
     override func layoutSubviews() {
-        outputView?.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height * outputViewHeight)
-        outputLabel?.frame = CGRect(x: 0, y: (outputView?.frame.height)! - (outputLabel?.font.pointSize)!, width: frame.width, height: (outputLabel?.font.pointSize)!)
-        switchControl?.frame = CGRect(x: 0, y: (outputView?.frame.height)!, width: frame.width, height: switchControlHeight * frame.height)
-        if showKeypad{
-            keypadControl?.frame = CGRect(x:0, y: (switchControl?.frame.height)! + (outputView?.frame.height)!, width: frame.width + 2, height: frame.height - ((outputView?.frame.height)! + (switchControl?.frame.height)!))
+        outputView?.frame = CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height * outputViewHeight < (outputLabel?.font.pointSize)! ? (outputLabel?.font.pointSize)! : bounds.height * outputViewHeight)
+        outputLabel?.frame = CGRect(x: 0, y: (outputView?.bounds.height)! - (outputLabel?.font.pointSize)!, width: bounds.width, height: (outputLabel?.font.pointSize)!)
+        if keypadControlHeight != 0{
+            switchControl?.frame = CGRect(x: 0, y: (outputView?.bounds.height)!, width: bounds.width, height: switchControlHeight * bounds.height)
+            keypadControl?.frame = CGRect(x:0, y: (switchControl?.bounds.height)! + (outputView?.bounds.height)!, width: bounds.width, height: bounds.height - ((outputView?.bounds.height)! + (switchControl?.bounds.height)!))
+        }else{
+            switchControl?.frame = CGRect(x: 0, y: (outputView?.bounds.height)!, width: bounds.width, height: bounds.height - (outputView?.bounds.height)!)
+            keypadControl?.frame = CGRect(x: -5, y: -5, width: 0, height: 0)
         }
     }
     
@@ -437,6 +445,13 @@ import Foundation
         outputLabel?.text = String(dmxValue)
         keypadControl?.value = dmxValue
         keypadControl?.checkButtons(currentValue: (keypadControl?.value)!)
+    }
+    
+    func resetValues(){
+        outputLabel?.text = "0"
+        keypadControl?.value = 0
+        switchControl?.switchValues = [false, false, false, false, false, false, false, false, false]
+        switchControl?.update(values: (switchControl?.switchValues)!)
     }
     
     
