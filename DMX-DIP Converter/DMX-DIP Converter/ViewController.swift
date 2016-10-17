@@ -46,7 +46,6 @@ class ViewController: UIViewController {
         
     }
     override func viewDidLayoutSubviews() {
-        print(0.5*(mainView?.outputViewHeight)! * (mainView?.bounds.height)!)
         mainView?.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
         settingsButton?.frame = CGRect(x: 8, y: 20, width: 0.37*(mainView?.outputViewHeight)! * (mainView?.bounds.height)!, height: 0.37*(mainView?.outputViewHeight)! * (mainView?.bounds.height)!)
     }
