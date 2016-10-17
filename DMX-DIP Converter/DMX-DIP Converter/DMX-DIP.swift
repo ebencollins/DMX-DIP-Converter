@@ -12,7 +12,7 @@ import Foundation
 
 @IBDesignable class DMXDIPSwitchControl : UIControl{
     
-    private var switches = [UIButton]()
+    var switches = [UIButton]()
     private var switchLabels = [UILabel]()
     private var arrowImg:UIImageView?
     private var topArrowLabel = UILabel()
@@ -125,6 +125,8 @@ import Foundation
         addSubview(bottomArrowLabel)
         
         backgroundColor = backColor
+        
+        self.sendActions(for: .allEvents)
     }
     
     override func layoutSubviews() {
@@ -181,7 +183,7 @@ import Foundation
             switchValues[i] = values[i];
         }
         
-        sendActions(for: UIControlEvents.valueChanged)
+        sendActions(for: UIControlEvents.allEvents)
     }
     
     func changeColors(mainColor: UIColor, tColor: UIColor){
@@ -250,7 +252,7 @@ import Foundation
             buttons.append(button)
             addSubview(button)
         }
-        
+        self.sendActions(for: .allEvents)
     }
     
     override func layoutSubviews() {
@@ -271,11 +273,11 @@ import Foundation
         return CGSize(width: 240, height: 44)
     }
     
-    func changeColors(bColor: UIColor, tColor:UIColor){
-        buttonColor = bColor
+    func changeColors(mainColor: UIColor, tColor:UIColor){
+        buttonColor = mainColor
         textColor = tColor
         for b in buttons{
-            b.backgroundColor = bColor
+            b.backgroundColor = mainColor
             b.setTitleColor(tColor, for: .normal)
         }
     }
@@ -309,7 +311,7 @@ import Foundation
             break
         }
         checkButtons(currentValue: value)
-        sendActions(for: UIControlEvents.valueChanged)
+        sendActions(for: .valueChanged)
     }
     
     func checkButtons(currentValue: Int){ //check to see what butons can be pressed without putting the number above what is specified; disable the rest
@@ -350,7 +352,7 @@ import Foundation
     var switchControl:DMXDIPSwitchControl?
     var keypadControl:DMXDIPKeypadControl?
     var outputLabel:UILabel?
-    var outputView:UIView?
+    var outputView:UIControl?
        
     
     var outputViewHeight:CGFloat = 0.15
@@ -409,8 +411,10 @@ import Foundation
         outputLabel?.textColor = defaults.color(forKey: "otColor")!
         outputLabel?.textAlignment = .right
         
-        outputView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        outputView = UIControl(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         outputView?.backgroundColor = outputLabel?.backgroundColor
+        outputView?.sendActions(for: .allEvents)
+        
         
         addSubview(outputView!)
         addSubview(outputLabel!)
