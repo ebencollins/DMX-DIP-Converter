@@ -343,47 +343,8 @@
                     <view key="view" contentMode="scaleToFill" id="CCN-7v-63L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="czD-ew-cON">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OgR-99-afB" customClass="GradientSlider" customModule="DMX_DIP_Converter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="222.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <action selector="hue:" destination="VHR-Hb-5gu" eventType="valueChanged" id="vBt-x6-qMd"/>
-                                        </connections>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZV-Gk-M3j" customClass="GradientSlider" customModule="DMX_DIP_Converter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="222.5" width="375" height="222"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <action selector="sat:" destination="VHR-Hb-5gu" eventType="valueChanged" id="8Mr-8t-dhk"/>
-                                        </connections>
-                                    </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbF-iW-wUr" customClass="GradientSlider" customModule="DMX_DIP_Converter" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="444.5" width="375" height="222.5"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <action selector="val:" destination="VHR-Hb-5gu" eventType="valueChanged" id="Roj-2d-Wuk"/>
-                                        </connections>
-                                    </view>
-                                </subviews>
-                            </stackView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="czD-ew-cON" firstAttribute="centerX" secondItem="CCN-7v-63L" secondAttribute="centerX" id="1mn-cO-wHz"/>
-                            <constraint firstItem="czD-ew-cON" firstAttribute="centerY" secondItem="CCN-7v-63L" secondAttribute="centerY" id="GZq-Gu-t8P"/>
-                            <constraint firstItem="czD-ew-cON" firstAttribute="width" secondItem="CCN-7v-63L" secondAttribute="width" id="HnO-ih-3Tr"/>
-                            <constraint firstItem="czD-ew-cON" firstAttribute="height" secondItem="CCN-7v-63L" secondAttribute="height" id="MQZ-jB-Pcn"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="hue" destination="OgR-99-afB" id="W54-Ma-uCh"/>
-                        <outlet property="sat" destination="HZV-Gk-M3j" id="EbO-cM-zD0"/>
-                        <outlet property="val" destination="lbF-iW-wUr" id="QwG-JI-Y79"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Eyo-5h-Yjh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
