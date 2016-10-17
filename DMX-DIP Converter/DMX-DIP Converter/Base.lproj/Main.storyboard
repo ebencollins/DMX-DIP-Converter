@@ -348,21 +348,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OgR-99-afB" customClass="GradientSlider" customModule="DMX_DIP_Converter" customModuleProvider="target">
-                                        <rect key="frame" x="-2" y="-4" width="379" height="230.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="222.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <action selector="hue:" destination="VHR-Hb-5gu" eventType="valueChanged" id="vBt-x6-qMd"/>
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZV-Gk-M3j" customClass="GradientSlider" customModule="DMX_DIP_Converter" customModuleProvider="target">
-                                        <rect key="frame" x="-2" y="218.5" width="379" height="230"/>
+                                        <rect key="frame" x="0.0" y="222.5" width="375" height="222"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <action selector="sat:" destination="VHR-Hb-5gu" eventType="valueChanged" id="8Mr-8t-dhk"/>
                                         </connections>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lbF-iW-wUr" customClass="GradientSlider" customModule="DMX_DIP_Converter" customModuleProvider="target">
-                                        <rect key="frame" x="-2" y="440.5" width="379" height="230.5"/>
+                                        <rect key="frame" x="0.0" y="444.5" width="375" height="222.5"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <action selector="val:" destination="VHR-Hb-5gu" eventType="valueChanged" id="Roj-2d-Wuk"/>

@@ -9,14 +9,14 @@
 import UIKit
 
 protocol ColorSelectedViewDelegate{
-    func setColor(color:UIColor)
+    func setColor(main:UIColor, text:UIColor)
 }
 
 class ColorSelectorViewController: UIViewController {
     
     var delegate: ColorSelectedViewDelegate?
     
-    var colorKey:String?
+    var colorKeys:(main: String, text: String)?
     
     let defaults = UserDefaults(suiteName: "group.com.ebencollins.DMX-DIP-Converter.share")!
     
@@ -51,11 +51,10 @@ class ColorSelectorViewController: UIViewController {
             i?.thickness = 8
         }
         
-        
         hue.minColor = UIColor.blue
         hue.hasRainbow = true
         
-        let color = defaults.color(forKey: colorKey!)! as UIColor
+        let color = defaults.color(forKey: colorKeys!.main)! as UIColor
         var h:CGFloat = 0
         var s:CGFloat = 0
         var b:CGFloat = 0
@@ -75,8 +74,8 @@ class ColorSelectorViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        defaults.setColor(color: UIColor(hue: hue.value, saturation: sat.value, brightness: val.value, alpha: 1.0), forKey: colorKey!)
-        self.delegate?.setColor(color: UIColor(hue: hue.value, saturation: sat.value, brightness: val.value, alpha: 1.0))
+        defaults.setColor(color: UIColor(hue: hue.value, saturation: sat.value, brightness: val.value, alpha: 1.0), forKey: colorKeys!.main)
+        self.delegate?.setColor(main: UIColor(hue: hue.value, saturation: sat.value, brightness: val.value, alpha: 1.0), text: UIColor.white)
     }
     
     override func viewDidLayoutSubviews() {
@@ -101,7 +100,7 @@ class ColorSelectorViewController: UIViewController {
             val.setGradientForBrightnessWithHue(hue: hue.value, saturation: sat.value)
         }
         
-        self.delegate?.setColor(color: currentColor)
+        self.delegate?.setColor(main: currentColor, text: UIColor.orange)
 
 
     }
