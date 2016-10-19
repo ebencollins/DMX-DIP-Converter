@@ -13,77 +13,49 @@ protocol ColorSelectedViewDelegate{
 }
 
 class ColorSelectorViewController: UIViewController {
+    private let defaults = UserDefaults(suiteName: "group.com.ebencollins.DMX-DIP-Converter.share")!
     
     var delegate: ColorSelectedViewDelegate?
-    
     var colorKeys:(main: String, text: String)?
-    
-    let defaults = UserDefaults(suiteName: "group.com.ebencollins.DMX-DIP-Converter.share")!
 
-    
-    func hueVC(_ sender: AnyObject) {
-        sat.setGradientForSaturationWithHue(hue: hue.value, brightness: val.value)
-        val.setGradientForBrightnessWithHue(hue: hue.value, saturation: sat.value)
-        update(value: hue)
-    }
-    func satVC(_ sender: AnyObject) {
-        val.setGradientForBrightnessWithHue(hue: hue.value, saturation: sat.value)
-        hue.setGradientForHueWithSaturation(saturation: sat.value, brightness: val.value)
-        update(value: sat)
-    }
-    
-    func valVC(_ sender: AnyObject) {
-        sat.setGradientForSaturationWithHue(hue: hue.value, brightness: val.value)
-        hue.setGradientForHueWithSaturation(saturation: sat.value, brightness: val.value)
-        update(value: val)
-    }
-    
-    var hue:GradientSlider = GradientSlider()
-    var sat:GradientSlider = GradientSlider()
-    var val:GradientSlider = GradientSlider()
+    private var colorSliders:[String: GradientSlider] = [:]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        colorSliders["hue"] = GradientSlider()
+        colorSliders["sat"] = GradientSlider()
+        colorSliders["val"] = GradientSlider()
         
-        hue.addTarget(nil, action: #selector(hueVC(_:)), for: .valueChanged)
-        sat.addTarget(nil, action: #selector(hueVC(_:)), for: .valueChanged)
-        val.addTarget(nil, action: #selector(hueVC(_:)), for: .valueChanged)
-        self.view.addSubview(hue)
-        self.view.addSubview(sat)
-        self.view.addSubview(val)
+        colorSliders["hue"]?.minColor = .blue
+        colorSliders["hue"]?.hasRainbow = true
         
-        
-        for i in [hue, sat, val]{
-            i.minimumValue = 0
-            i.maximumValue = 1
-            i.thickness = 8
+        for slider in colorSliders.values{
+            slider.addTarget(nil, action: #selector(valueChanged(sender:)), for: .valueChanged)
+            slider.minimumValue = 0
+            slider.maximumValue = 1
+            slider.thickness = 8
+            self.view.addSubview(slider)
         }
         
-        hue.minColor = UIColor.blue
-        hue.hasRainbow = true
-        
         let color = defaults.color(forKey: colorKeys!.main)! as UIColor
-        var h:CGFloat = 0
-        var s:CGFloat = 0
-        var b:CGFloat = 0
-        var a:CGFloat = 0
-        color.getHue(&h, saturation: &s, brightness: &b, alpha: &a)
+        var currentColor:(hue: CGFloat, sat: CGFloat, val: CGFloat, alpha: CGFloat) = (0, 0, 0, 0)
+        color.getHue(&currentColor.hue, saturation: &currentColor.sat, brightness: &currentColor.val, alpha: &currentColor.alpha)
         
-        hue.setValue(value: h);
-        sat.setValue(value: s);
-        val.setValue(value: b)
+        colorSliders["hue"]?.setValue(value: currentColor.hue);
+        colorSliders["sat"]?.setValue(value: currentColor.sat);
+        colorSliders["val"]?.setValue(value: currentColor.val)
         
         
-        update(value: hue)
-        update(value: sat)
-        update(value: val)
+        for slider in colorSliders.values{
+            update(gradientSlider: slider)
+        }
        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        defaults.setColor(color: UIColor(hue: hue.value, saturation: sat.value, brightness: val.value, alpha: 1.0), forKey: colorKeys!.main)
-        self.delegate?.setColor(main: UIColor(hue: hue.value, saturation: sat.value, brightness: val.value, alpha: 1.0), text: UIColor.white)
+        defaults.setColor(color: UIColor(hue: (colorSliders["hue"]?.value)!, saturation: (colorSliders["sat"]?.value)!, brightness: (colorSliders["val"]?.value)!, alpha: 1.0), forKey: colorKeys!.main)
+        self.delegate?.setColor(main: UIColor(hue: (colorSliders["hue"]?.value)!, saturation: (colorSliders["sat"]?.value)!, brightness: (colorSliders["val"]?.value)!, alpha: 1.0), text: UIColor.white)
     }
     
     override func viewDidLayoutSubviews() {
@@ -93,30 +65,33 @@ class ColorSelectorViewController: UIViewController {
         
         let sliderHeight = self.view.bounds.height * 0.1
         let sliderWidth = self.view.bounds.width
-        hue.frame = CGRect(x: self.view.bounds.minX, y: self.view.bounds.minY + self.view.bounds.height/6 - sliderHeight/2, width: sliderWidth, height: sliderHeight)
-        sat.frame = CGRect(x: self.view.bounds.minX, y: self.view.bounds.minY + 3*self.view.bounds.height/6 - sliderHeight/2, width: sliderWidth, height: sliderHeight)
-        val.frame = CGRect(x: self.view.bounds.minX, y: self.view.bounds.minY + 5*self.view.bounds.height/6 - sliderHeight/2, width: sliderWidth, height: sliderHeight)
+        colorSliders["hue"]?.frame = CGRect(x: self.view.bounds.minX, y: self.view.bounds.minY + self.view.bounds.height/6 - sliderHeight/2, width: sliderWidth, height: sliderHeight)
+        colorSliders["sat"]?.frame = CGRect(x: self.view.bounds.minX, y: self.view.bounds.minY + 3*self.view.bounds.height/6 - sliderHeight/2, width: sliderWidth, height: sliderHeight)
+        colorSliders["val"]?.frame = CGRect(x: self.view.bounds.minX, y: self.view.bounds.minY + 5*self.view.bounds.height/6 - sliderHeight/2, width: sliderWidth, height: sliderHeight)
     }
     
     
-    func update(value:GradientSlider){
-        let currentColor = UIColor(hue: hue.value, saturation: sat.value, brightness: val.value, alpha: 1.0)
-        for i in [hue, sat, val]{
-            i.thumbColor = currentColor
+    func update(gradientSlider:GradientSlider){
+        let currentColor = UIColor(hue: (colorSliders["hue"]?.value)!, saturation: (colorSliders["sat"]?.value)!, brightness: (colorSliders["val"]?.value)!, alpha: 1.0)
+        for slider in colorSliders.values{
+            slider.thumbColor = currentColor
         }
-        if value != hue{
-            hue.setGradientForHueWithSaturation(saturation: sat.value, brightness: val.value)
+        if gradientSlider != colorSliders["hue"]!{
+            colorSliders["hue"]?.setGradientForHueWithSaturation(saturation: (colorSliders["sat"]?.value)!, brightness: (colorSliders["val"]?.value)!)
         }
-        if value != sat{
-            sat.setGradientForSaturationWithHue(hue: hue.value, brightness: val.value)
+        if gradientSlider != colorSliders["sat"]!{
+            colorSliders["sat"]?.setGradientForSaturationWithHue(hue: (colorSliders["hue"]?.value)!, brightness: (colorSliders["val"]?.value)!)
         }
-        if value != val{
-            val.setGradientForBrightnessWithHue(hue: hue.value, saturation: sat.value)
+        if gradientSlider != colorSliders["val"]!{
+            colorSliders["val"]?.setGradientForBrightnessWithHue(hue: (colorSliders["hue"]?.value)!, saturation: (colorSliders["sat"]?.value)!)
         }
         
-        self.delegate?.setColor(main: currentColor, text: UIColor.orange)
+        self.delegate?.setColor(main: UIColor(hue: (colorSliders["hue"]?.value)!, saturation: (colorSliders["sat"]?.value)!, brightness: (colorSliders["val"]?.value)!, alpha: 1.0), text: UIColor.orange)
 
-
+    }
+    
+    func valueChanged(sender: GradientSlider){
+        update(gradientSlider: sender)
     }
     
 }
