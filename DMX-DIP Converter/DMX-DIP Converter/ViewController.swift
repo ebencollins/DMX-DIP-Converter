@@ -20,7 +20,6 @@ class ViewController: UIViewController {
         defaults.checkDefaults()
         
         mainView = DMXDIPView(frame: CGRect(x: 0, y:0, width: self.view.bounds.width, height: self.view.bounds.height), def: defaults, outputSize: 0.15, switchSize:0.25, keypadSize:0.6)
-
         
         settingsButton = UIButton(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         settingsButton?.setImage(UIImage(named: "gear_64.png"), for: .normal)
