@@ -41,8 +41,6 @@ class ViewController: UIViewController {
         }else{
             UIApplication.shared.isIdleTimerDisabled = false
         }
-        
-        
     }
     override func viewDidLayoutSubviews() {
         mainView?.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
@@ -53,6 +51,7 @@ class ViewController: UIViewController {
         super.viewWillDisappear(true)
         self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
