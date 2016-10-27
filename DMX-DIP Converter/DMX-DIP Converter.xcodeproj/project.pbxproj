@@ -16,6 +16,7 @@
 		F5137D191D63655100D6497C /* arrow_down_64.png in Resources */ = {isa = PBXBuildFile; fileRef = F57A23BD1D3B588A00970E9E /* arrow_down_64.png */; };
 		F5137D1A1D63655300D6497C /* gear_64.png in Resources */ = {isa = PBXBuildFile; fileRef = F57A23C11D3B588A00970E9E /* gear_64.png */; };
 		F51C2EBC1D3C4E0D002FDABB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51C2EBB1D3C4E0D002FDABB /* SettingsViewController.swift */; };
+		F5268A2A1DB8EE6200A244CE /* GradientSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F550EFEF1D4959A900526336 /* GradientSlider.swift */; };
 		F54E20531D50A1BF00607782 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F54E20521D50A1BF00607782 /* NotificationCenter.framework */; };
 		F54E20591D50A1BF00607782 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F54E20571D50A1BF00607782 /* MainInterface.storyboard */; };
 		F54E205D1D50A1BF00607782 /* DMX-DIP Converter Today Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F54E20511D50A1BF00607782 /* DMX-DIP Converter Today Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -212,9 +213,9 @@
 				F57A238B1D3AF94B00970E9E /* AppDelegate.swift */,
 				F57A238D1D3AF94B00970E9E /* ViewController.swift */,
 				F5137D131D635F3500D6497C /* DMX-DIP.swift */,
+				F550EFEF1D4959A900526336 /* GradientSlider.swift */,
 				F51C2EBB1D3C4E0D002FDABB /* SettingsViewController.swift */,
 				F57E76811D472792008E746A /* ColorSelectorViewController.swift */,
-				F550EFEF1D4959A900526336 /* GradientSlider.swift */,
 				F57E76831D473463008E746A /* ColorCustomizationViewController.swift */,
 				F57A238F1D3AF94B00970E9E /* Main.storyboard */,
 				F57A23921D3AF94B00970E9E /* Assets.xcassets */,
@@ -488,6 +489,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5A384A31DB17344007EA0AA /* TodayViewController.swift in Sources */,
+				F5268A2A1DB8EE6200A244CE /* GradientSlider.swift in Sources */,
 				F5137D151D635FB500D6497C /* DMX-DIP.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

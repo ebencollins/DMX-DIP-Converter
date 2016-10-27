@@ -463,6 +463,98 @@ import Foundation
 }
 
 
+class ColorSelector: UIControl{
+    
+    private var colorSliders:[String: GradientSlider] = [:]
+    var color = UIColor.black
+    
+    // MARK: Initialization
+    
+    init(frame: CGRect, startColor: UIColor){
+        super.init(frame: frame)
+        color = startColor
+        load()
+    }
+    
+    override init(frame: CGRect){
+        super.init(frame: frame)
+        load()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        load()
+        
+    }
+    func load(){
+        colorSliders["hue"] = GradientSlider()
+        colorSliders["sat"] = GradientSlider()
+        colorSliders["val"] = GradientSlider()
+        
+        colorSliders["hue"]?.minColor = .blue
+        colorSliders["hue"]?.hasRainbow = true
+        
+        for slider in colorSliders.values{
+            slider.addTarget(nil, action: #selector(valueChanged(sender:)), for: .valueChanged)
+            slider.minimumValue = 0
+            slider.maximumValue = 1
+            slider.thickness = 8
+            addSubview(slider)
+        }
+        
+        var currentColor:(hue: CGFloat, sat: CGFloat, val: CGFloat, alpha: CGFloat) = (0, 0, 0, 0)
+        color.getHue(&currentColor.hue, saturation: &currentColor.sat, brightness: &currentColor.val, alpha: &currentColor.alpha)
+        
+        colorSliders["hue"]?.setValue(value: currentColor.hue);
+        colorSliders["sat"]?.setValue(value: currentColor.sat);
+        colorSliders["val"]?.setValue(value: currentColor.val)
+        
+        for slider in colorSliders.values{
+            update(gradientSlider: slider)
+        }
+        
+    }
+    
+    override func layoutSubviews() {
+        let sliderHeight = bounds.height * 0.1
+        let sliderWidth = bounds.width
+        colorSliders["hue"]?.frame = CGRect(x: bounds.minX, y: bounds.minY + bounds.height/6 - sliderHeight/2, width: sliderWidth, height: sliderHeight)
+        colorSliders["sat"]?.frame = CGRect(x: bounds.minX, y: bounds.minY + 3*bounds.height/6 - sliderHeight/2, width: sliderWidth, height: sliderHeight)
+        colorSliders["val"]?.frame = CGRect(x: bounds.minX, y: bounds.minY + 5*bounds.height/6 - sliderHeight/2, width: sliderWidth, height: sliderHeight)
+    }
+    
+    override var intrinsicContentSize:CGSize {
+        return CGSize(width: 240, height: 44)
+    }
+    
+    
+    func update(gradientSlider:GradientSlider){
+        let currentColor = UIColor(hue: (colorSliders["hue"]?.value)!, saturation: (colorSliders["sat"]?.value)!, brightness: (colorSliders["val"]?.value)!, alpha: 1.0)
+        for slider in colorSliders.values{
+            slider.thumbColor = currentColor
+        }
+        if gradientSlider != colorSliders["hue"]!{
+            colorSliders["hue"]?.setGradientForHueWithSaturation(saturation: (colorSliders["sat"]?.value)!, brightness: (colorSliders["val"]?.value)!)
+        }
+        if gradientSlider != colorSliders["sat"]!{
+            colorSliders["sat"]?.setGradientForSaturationWithHue(hue: (colorSliders["hue"]?.value)!, brightness: (colorSliders["val"]?.value)!)
+        }
+        if gradientSlider != colorSliders["val"]!{
+            colorSliders["val"]?.setGradientForBrightnessWithHue(hue: (colorSliders["hue"]?.value)!, saturation: (colorSliders["sat"]?.value)!)
+        }
+        color = currentColor
+        sendActions(for: .valueChanged)
+        
+    }
+    
+    func valueChanged(sender: GradientSlider){
+        update(gradientSlider: sender)
+    }
+    
+    
+    
+}
+
 struct DMXDIP{
     func dipsToNum(dips:[Bool]) -> Int{ //input an array containing the values of the dips to return the integer address
         var finalNumber = 0
