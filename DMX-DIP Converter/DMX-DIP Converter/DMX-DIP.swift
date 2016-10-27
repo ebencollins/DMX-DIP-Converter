@@ -246,6 +246,7 @@ import Foundation
             button.addTarget(self, action: #selector(DMXDIPKeypadControl.buttonTapped), for: .touchDown)
             button.layer.borderWidth = 0.5
             button.layer.borderColor = textColor.cgColor
+            button.setTitleColor(textColor, for: .normal)
             button.adjustsImageWhenHighlighted = true
             button.adjustsImageWhenDisabled = true
             button.showsTouchWhenHighlighted = true
@@ -279,6 +280,7 @@ import Foundation
         for b in buttons{
             b.backgroundColor = mainColor
             b.setTitleColor(tColor, for: .normal)
+            b.layer.borderColor = tColor.cgColor
         }
     }
     

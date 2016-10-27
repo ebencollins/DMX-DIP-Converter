@@ -24,7 +24,7 @@ class ColorSelectorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       mainColorSelector = ColorSelector(frame: CGRect(x: 0, y: 0, width: 0, height: 0), startColor: defaults.color(forKey: (colorKeys?.main)!)!)
+        mainColorSelector = ColorSelector(frame: CGRect(x: 0, y: 0, width: 0, height: 0), startColor: defaults.color(forKey: (colorKeys?.main)!)!)
         textColorSelector = ColorSelector(frame: CGRect(x: 0, y: 0, width: 0, height: 0), startColor: defaults.color(forKey: (colorKeys?.text)!)!)
         for cs in [mainColorSelector, textColorSelector]{
             cs?.addTarget(nil, action: #selector(colorSelectorValueChanged(sender:)), for: .valueChanged)
@@ -57,12 +57,12 @@ class ColorSelectorViewController: UIViewController {
     func drawLineFromPoint(start : CGPoint, end:CGPoint, lineColor: UIColor, view:UIView) {
         
         //design the path
-        var path = UIBezierPath()
+        let path = UIBezierPath()
         path.move(to: start)
         path.addLine(to: end)
         
         //design path in layer
-        var shapeLayer = CAShapeLayer()
+        let shapeLayer = CAShapeLayer()
         shapeLayer.path = path.cgPath
         shapeLayer.strokeColor = lineColor.cgColor
         shapeLayer.lineWidth = 1.0
