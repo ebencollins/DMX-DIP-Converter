@@ -32,8 +32,23 @@ class ColorSelectorViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true);
+        if(defaults.value(forKey: "enableHaptics") as! Bool){
+            let generator = UIImpactFeedbackGenerator(style: .medium)
+            generator.prepare()
+            generator.impactOccurred();
+            
+        }
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
+        if(defaults.value(forKey: "enableHaptics") as! Bool){
+            let generator = UISelectionFeedbackGenerator()
+            generator.prepare()
+            generator.selectionChanged()
+        }
         defaults.setColor(color: mainColorSelector?.color, forKey: (colorKeys?.main)!)
         defaults.setColor(color: textColorSelector?.color, forKey: (colorKeys?.text)!)
         self.delegate?.setColor(main: (mainColorSelector?.color)!, text: (textColorSelector?.color)!)
