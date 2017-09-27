@@ -587,7 +587,7 @@ struct DMXDIP{
 }
 
 func selectionFeedback(){
-    let defaults = UserDefaults(suiteName: "group.com.ebencollins.DMX-DIP-Converter.share")!
+    let defaults = UserDefaults(suiteName: "group.com.ebencollins.DMXDIPConverter.share")!
     if(defaults.value(forKey: "enableHaptics") as! Bool){
         let generator = UISelectionFeedbackGenerator()
         generator.prepare()
@@ -623,7 +623,7 @@ extension UserDefaults{
     }
     
     func checkDefaults(){
-        let defaults = UserDefaults(suiteName: "group.com.ebencollins.DMX-DIP-Converter.share")!
+        let defaults = UserDefaults(suiteName: "group.com.ebencollins.DMXDIPConverter.share")!
         if(defaults.value(forKey: "preventSleep") == nil){
             defaults.set(true, forKey: "preventSleep")
         }

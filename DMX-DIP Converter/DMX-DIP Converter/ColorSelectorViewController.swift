@@ -13,7 +13,7 @@ protocol ColorSelectedViewDelegate{
 }
 
 class ColorSelectorViewController: UIViewController {
-    private let defaults = UserDefaults(suiteName: "group.com.ebencollins.DMX-DIP-Converter.share")!
+    private let defaults = UserDefaults(suiteName: "group.com.ebencollins.DMXDIPConverter.share")!
     
     var delegate: ColorSelectedViewDelegate?
     var colorKeys:(main: String, text: String)?

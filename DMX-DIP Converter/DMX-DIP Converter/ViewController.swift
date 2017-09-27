@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     var mainView: DMXDIPView?
     var settingsButton:UIButton?
     
-    let defaults = UserDefaults(suiteName: "group.com.ebencollins.DMX-DIP-Converter.share")!
+    let defaults = UserDefaults(suiteName: "group.com.ebencollins.DMXDIPConverter.share")!
     
     override func viewDidLoad() {
         super.viewDidLoad()

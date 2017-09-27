@@ -12,7 +12,7 @@ import NotificationCenter
 class TodayViewController: UIViewController, NCWidgetProviding {
         var mainView: DMXDIPView?
         
-        let defaults = UserDefaults(suiteName: "group.com.ebencollins.DMX-DIP-Converter.share")!
+        let defaults = UserDefaults(suiteName: "group.com.ebencollins.DMXDIPConverter.share")!
         
         override func viewDidLoad() {
             super.viewDidLoad()

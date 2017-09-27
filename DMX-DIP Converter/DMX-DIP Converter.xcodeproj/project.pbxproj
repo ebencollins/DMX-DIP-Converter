@@ -36,6 +36,7 @@
 		F57E76821D472792008E746A /* ColorSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57E76811D472792008E746A /* ColorSelectorViewController.swift */; };
 		F57E76841D473463008E746A /* ColorCustomizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F57E76831D473463008E746A /* ColorCustomizationViewController.swift */; };
 		F5A384A31DB17344007EA0AA /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A384A21DB17344007EA0AA /* TodayViewController.swift */; };
+		F5EE7CDA1F1EEA6900764DE7 /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = F5EE7CD91F1EEA6900764DE7 /* AppIcon.appiconset */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		F5A3849D1DB0946B007EA0AA /* DMX-DIP Converter Today Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "DMX-DIP Converter Today Extension.entitlements"; sourceTree = "<group>"; };
 		F5A3849E1DB097A0007EA0AA /* LicensesKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LicensesKit.framework; path = "../../../Library/Developer/Xcode/DerivedData/DMX-DIP_Converter-elojvmxasahjracvfitaqiykdcvq/Build/Products/Debug-iphonesimulator/LicensesKit/LicensesKit.framework"; sourceTree = "<group>"; };
 		F5A384A21DB17344007EA0AA /* TodayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		F5EE7CD91F1EEA6900764DE7 /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; path = AppIcon.appiconset; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -219,6 +221,7 @@
 				F57E76831D473463008E746A /* ColorCustomizationViewController.swift */,
 				F57A238F1D3AF94B00970E9E /* Main.storyboard */,
 				F57A23921D3AF94B00970E9E /* Assets.xcassets */,
+				F5EE7CD91F1EEA6900764DE7 /* AppIcon.appiconset */,
 				F57A23941D3AF94B00970E9E /* LaunchScreen.storyboard */,
 				F57A23971D3AF94B00970E9E /* Info.plist */,
 			);
@@ -412,6 +415,7 @@
 				F57A23931D3AF94B00970E9E /* Assets.xcassets in Resources */,
 				F57A23C51D3B588A00970E9E /* customswitch_on.png in Resources */,
 				F57A23C41D3B588A00970E9E /* customswitch_off.png in Resources */,
+				F5EE7CDA1F1EEA6900764DE7 /* AppIcon.appiconset in Resources */,
 				F57A23C31D3B588A00970E9E /* arrow_up_64.png in Resources */,
 				F57A23911D3AF94B00970E9E /* Main.storyboard in Resources */,
 				F57A23C61D3B588A00970E9E /* gear_64.png in Resources */,
@@ -711,6 +715,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CODE_SIGN_ENTITLEMENTS = "DMX-DIP Converter/DMX-DIP Converter.entitlements";
 				DEVELOPMENT_TEAM = C45VR6U6J3;
 				INFOPLIST_FILE = "DMX-DIP Converter/Info.plist";
@@ -727,6 +732,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				CODE_SIGN_ENTITLEMENTS = "DMX-DIP Converter/DMX-DIP Converter.entitlements";
 				DEVELOPMENT_TEAM = C45VR6U6J3;
 				INFOPLIST_FILE = "DMX-DIP Converter/Info.plist";
