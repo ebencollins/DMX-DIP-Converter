@@ -9,7 +9,7 @@
 import UIKit
 import LicensesKit
 
-let defaults = UserDefaults(suiteName: "group.com.ebencollins.DMX-DIP-Converter.share")!
+let defaults = UserDefaults(suiteName: "group.com.ebencollins.DMXDIPConverter.share")!
 
 class SettingsViewController: UITableViewController {
     
@@ -145,7 +145,7 @@ class SettingsViewController: UITableViewController {
     
     }
     
-    @IBAction func infoButton(_ sender: AnyObject) {
+    @IBAction func acknowledgementsButton(_ sender: AnyObject) {
         let licensesViewController = LicensesViewController()
         licensesViewController.addNotice(Notice(name: "GradientSlider", url: "https://github.com/jonhull/GradientSlider", copyright: "Copyright (c) 2015 Jonathan Hull", license: MITLicense()))
         licensesViewController.addNotice(Notice(name: "LicensesKit", url: "https://github.com/mattwyskiel/LicensesKit", copyright: "Copyright 2015 Matthew Wyskiel. All rights reserved.", license: ApacheSoftwareLicense20()))
@@ -155,6 +155,18 @@ class SettingsViewController: UITableViewController {
         licensesViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(closeViewController))
         present(navCont, animated: true, completion: nil)
     }
+    @IBAction func githubButton(_ sender: AnyObject) {
+        openURL(URLString: "https://github.com/Zahzi/DMX-DIP-Converter")
+    }
+    
+    @IBAction func issuesButton(_ sender: AnyObject) {
+        openURL(URLString: "https://github.com/Zahzi/DMX-DIP-Converter/issues/new")
+    }
+    
+    @IBAction func licenseButton(_ sender: AnyObject) {
+        openURL(URLString: "https://raw.githubusercontent.com/Zahzi/DMX-DIP-Converter/master/LICENSE")
+    }
+    
     func closeViewController(sender: AnyObject) {
         dismiss(animated: true, completion: nil)
     }
@@ -242,6 +254,18 @@ class SettingsViewController: UITableViewController {
         }
         
         
+    }
+    
+    func openURL(URLString:String){
+        guard let url = URL(string: URLString) else {
+            return
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
