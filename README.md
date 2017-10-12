@@ -14,9 +14,16 @@ Availible on the [App Store](https://itunes.apple.com/us/app/dmx-dip-converter/i
 - Customizable offset button to easily calculate the addresses for many similar instruments
 - Customizable appearance: activation direction can be up/down, labels can be set to start at 0, 1, or show the actual DMX value, and colors can be customized for virtually infinite combinations.
 - Setting to prevent device sleep while in-app
-- Licensed under GPLv3. Source code can be found on GitHub: [https://github.com/Zahzi/DMX-DIP-Converter](https://github.com/Zahzi/DMX-DIP-Converter)
+- Licensed under [GPLv3](LICENSE). Source code can be found on GitHub: [https://github.com/Zahzi/DMX-DIP-Converter](https://github.com/Zahzi/DMX-DIP-Converter)
 
 
 
 ## Images
 <img src="https://files.ebencollins.com/screenshots/iphone1.png" title="Main view" width="33.3%"/><img src="https://files.ebencollins.com/screenshots/iphone2.png" title="Settings" width="33.3%"/><img src="https://files.ebencollins.com/screenshots/iphone4.png" title="Today extension" width="33.3%"/>
+
+
+
+## Attributions
+### Third party code used in this application
+- [GradientSlider](https://github.com/jonhull/gradientslider)
+- [LicensesKit](https://github.com/mattwyskiel/licenseskit)
